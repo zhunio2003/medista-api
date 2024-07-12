@@ -1,5 +1,25 @@
 package ista.sistemaClinica.model.entity;
 
-public class ExamenComplementario {
+import java.io.Serializable;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "examen_complementario")
+public class ExamenComplementario implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id_exa;
+
+    private String nombre_exa;
+    private Boolean aplico_exa;
+
+    @ManyToOne
+    @JoinColumn(name = "id_AtencionMedica")
+    private AtencionMedica atencionMedica;
+
+    private static final long serialVersionUID = 1L;
+
+    // Getters y Setters
 }
+
