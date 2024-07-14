@@ -14,11 +14,38 @@ public class SignosVitales implements Serializable {
     private String nombre_sig;
     private String unidad_sig;
 
-    @ManyToOne
-    @JoinColumn(name = "id_AtencionMedica")
-    private AtencionMedica atencionMedica;
 
     private static final long serialVersionUID = 1L;
-
+    
     // Getters y Setters
+	public Long getId_sig() {
+		return id_sig;
+	}
+
+
+	public void setId_sig(Long id_sig) {
+		this.id_sig = id_sig;
+	}
+
+
+	public String getNombre_sig() {
+		return nombre_sig;
+	}
+
+
+	public void setNombre_sig(String nombre_sig) {
+		this.nombre_sig = nombre_sig;
+	}
+
+
+	public String getUnidad_sig() {
+		return unidad_sig;
+	}
+
+
+	public void setUnidad_sig(String unidad_sig) {
+		this.unidad_sig = unidad_sig;
+	}
+
+    
 }
