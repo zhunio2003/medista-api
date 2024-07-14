@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "atencion_signos")
-public class AtencionSignos implements Serializable {
+public class AtencionSigno implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class AtencionSignos implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "fk_id_signos_vitales")
-    private SignosVitales signos_vitales;
+    private SignoVital signos_vitales;
 
     private static final long serialVersionUID = 1L;
 
@@ -48,11 +48,11 @@ public class AtencionSignos implements Serializable {
 		this.atencion_medica = atencion_medica;
 	}
 
-	public SignosVitales getSignos_vitales() {
+	public SignoVital getSignos_vitales() {
 		return signos_vitales;
 	}
 
-	public void setSignos_vitales(SignosVitales signos_vitales) {
+	public void setSignos_vitales(SignoVital signos_vitales) {
 		this.signos_vitales = signos_vitales;
 	}
 

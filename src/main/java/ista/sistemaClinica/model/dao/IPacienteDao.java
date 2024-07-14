@@ -1,5 +1,9 @@
 package ista.sistemaClinica.model.dao;
 
-public interface IPacienteDao {
+import org.springframework.data.repository.CrudRepository;
+
+import ista.sistemaClinica.model.entity.Paciente;
+
+public interface IPacienteDao extends CrudRepository<Paciente, Long> {
 
 }

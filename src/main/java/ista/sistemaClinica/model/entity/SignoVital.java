@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "signos_vitales")
-public class SignosVitales implements Serializable {
+public class SignoVital implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
