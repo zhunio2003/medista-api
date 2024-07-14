@@ -20,7 +20,7 @@ import ista.sistemaClinica.model.services.IPacienteService;
 
 @RestController
 @RequestMapping("/api")
-public class PacienteRestController {
+public class SignoVitalRestController {
 	@Autowired
 	private IPacienteService pacienteService;
 	
