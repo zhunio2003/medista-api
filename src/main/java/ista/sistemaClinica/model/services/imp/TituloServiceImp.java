@@ -5,41 +5,41 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ista.sistemaClinica.model.dao.IPacienteDao;
-import ista.sistemaClinica.model.entity.Paciente;
-import ista.sistemaClinica.model.services.IPacienteService;
+import ista.sistemaClinica.model.dao.ITituloDao;
+import ista.sistemaClinica.model.entity.Titulo;
+import ista.sistemaClinica.model.services.ITituloService;
 
 @Service
-public class PacienteServiceImp implements IPacienteService{
+public class TituloServiceImp implements ITituloService {
 	
 	@Autowired
-	private IPacienteDao pacienteDao;
+	private ITituloDao tituloDao;
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Paciente> findAll() {
+	public List<Titulo> findAll() {
 		
-		return (List<Paciente>) pacienteDao.findAll();
+		return (List<Titulo>) tituloDao.findAll();
 	}
 
 	@Override
 	@Transactional
-	public Paciente save(Paciente paciente) {
+	public Titulo save(Titulo titulo) {
 		// TODO Auto-generated method stub
-		return pacienteDao.save(paciente);
+		return tituloDao.save(titulo);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Paciente findById(Long id) {
+	public Titulo findById(Long id) {
 		// TODO Auto-generated method stub
-		return pacienteDao.findById(id).orElse(null);
+		return tituloDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
 	public void delete(Long id) {
-		pacienteDao.deleteById(id);
+		tituloDao.deleteById(id);
 		
 	}
 
