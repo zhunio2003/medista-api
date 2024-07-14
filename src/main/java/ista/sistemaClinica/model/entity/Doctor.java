@@ -19,8 +19,10 @@ public class Doctor implements Serializable {
     private String telefono_doc;
     private String direccion_doc;
     private String especialidad_doc;
-    private String codigo_msp;
+    private String codigo_msp_doc;
     
+    private String genero__doc;
+    private String password__doc;
     
 
     private static final long serialVersionUID = 1L;
@@ -112,16 +114,40 @@ public class Doctor implements Serializable {
 
 
 	public String getCodigo_msp() {
-		return codigo_msp;
+		return codigo_msp_doc;
 	}
 
 
 
-	public void setCodigo_msp(String codigo_msp) {
-		this.codigo_msp = codigo_msp;
+	public void setCodigo_msp(String codigo_msp_doc) {
+		this.codigo_msp_doc = codigo_msp_doc;
+	}
+
+
+
+	public String getGenero__doc() {
+		return genero__doc;
+	}
+
+
+
+	public void setGenero__doc(String genero__doc) {
+		this.genero__doc = genero__doc;
+	}
+
+
+
+	public String getPassword__doc() {
+		return password__doc;
+	}
+
+
+
+	public void setPassword__doc(String password__doc) {
+		this.password__doc = password__doc;
 	}
     
-    
+	
 
 
 }
