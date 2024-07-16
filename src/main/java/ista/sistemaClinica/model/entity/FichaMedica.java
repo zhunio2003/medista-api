@@ -17,7 +17,7 @@ public class FichaMedica implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_pac")
-    private Paciente fk_id_pac;
+    private Paciente paciente;
 
     @Temporal(TemporalType.DATE)
     private Date fecha_elaboracion_fic;
@@ -50,12 +50,12 @@ public class FichaMedica implements Serializable {
 		this.discapacidad_fic = discapacidad_fic;
 	}
 
-	public Paciente getFk_id_pac() {
-		return fk_id_pac;
+	public Paciente getPaciente() {
+		return paciente;
 	}
 
-	public void setFk_id_pac(Paciente fk_id_pac) {
-		this.fk_id_pac = fk_id_pac;
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
 	}
 
 	public Date getFecha_elaboracion_fic() {

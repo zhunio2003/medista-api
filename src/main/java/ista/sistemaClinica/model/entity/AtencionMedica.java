@@ -15,7 +15,7 @@ public class AtencionMedica implements Serializable {
     private String enfermedad_actual_ate;
     private String tratamiento_ate;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_ficha_medica")
     private FichaMedica ficha_medica;
     

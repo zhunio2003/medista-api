@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,64 +15,62 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import ista.sistemaClinica.model.entity.Paciente;
-import ista.sistemaClinica.model.services.IPacienteService;
-
+import ista.sistemaClinica.model.entity.EmergenciaObstetrica;
+import ista.sistemaClinica.model.services.IEmergenciaObstetricaService;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins= {"http://localhost:4200"})
 public class EmergenciaObstetricaRestController {
 	@Autowired
-	private IPacienteService pacienteService;
+	private IEmergenciaObstetricaService emergenciaObstetricaService;
 	
-	@GetMapping("/pacientes")
-	public List<Paciente> index() {
-		return pacienteService.findAll();
+	@GetMapping("/emergencias_obstetricas")
+	public List<EmergenciaObstetrica> index() {
+		return emergenciaObstetricaService.findAll();
 	}
 	
-	@GetMapping("/pacientes/{id}")
-	public Paciente show(@PathVariable Long id) {
-		return pacienteService.findById(id);
+	@GetMapping("/emergencias_obstetricas/{id}")
+	public EmergenciaObstetrica show(@PathVariable Long id) {
+		return emergenciaObstetricaService.findById(id);
 	}
 	
-	@PostMapping("/pacientes")
+	@PostMapping("/emergencias_obstetricas")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Paciente create(@RequestBody Paciente paciente) {
-		return pacienteService.save(paciente);
+	public EmergenciaObstetrica create(@RequestBody EmergenciaObstetrica emergenciaObstetrica) {
+		return emergenciaObstetricaService.save(emergenciaObstetrica);
 	}
 	
-	@PutMapping("/pacientes/{id}")
+	@PutMapping("/emergencias_obstetricas/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Paciente update(@RequestBody Paciente paciente, @PathVariable Long id) {
-		Paciente pacienteActual = pacienteService.findById(id);
+	public EmergenciaObstetrica update(@RequestBody EmergenciaObstetrica emergenciaObstetrica, @PathVariable Long id) {
+		EmergenciaObstetrica emergenciaObstetricaActual = emergenciaObstetricaService.findById(id);
 		
-		
-		pacienteActual.setCedula_pac(paciente.getCedula_pac());
-		pacienteActual.setFecha_nacimiento_pac(paciente.getFecha_nacimiento_pac());
-		pacienteActual.setNombre_pac(paciente.getNombre_pac());
-		pacienteActual.setApellido_pac(paciente.getApellido_pac());
-		pacienteActual.setLugar_pac(paciente.getLugar_pac());
-		pacienteActual.setPais_pac(paciente.getPais_pac());
-		pacienteActual.setDireccion_pac(paciente.getDireccion_pac());
-		pacienteActual.setBarrio_pac(paciente.getBarrio_pac());
-		pacienteActual.setParroquia_pac(paciente.getParroquia_pac());
-		pacienteActual.setCanton_pac(paciente.getCanton_pac());
-		pacienteActual.setProvincia_pac(paciente.getProvincia_pac());
-		pacienteActual.setTelefono_pac(paciente.getTelefono_pac());
-		pacienteActual.setProfesion_pac(paciente.getProfesion_pac());
-		pacienteActual.setTipo_sangre_pac(paciente.getTipo_sangre_pac());
-		pacienteActual.setGenero_pac(paciente.getGenero_pac());
-		pacienteActual.setEstado_civil_pac(paciente.getEstado_civil_pac());
-		pacienteActual.setCarrera_pac(paciente.getCarrera_pac());
-		pacienteActual.setCiclo_pac(paciente.getCiclo_pac());
+		emergenciaObstetricaActual.setMenarca_eme(emergenciaObstetrica.getMenarca_eme());
+		emergenciaObstetricaActual.setRitmo_menstrual_eme(emergenciaObstetrica.getRitmo_menstrual_eme());
+		emergenciaObstetricaActual.setCiclos_eme(emergenciaObstetrica.getCiclos_eme());
+		emergenciaObstetricaActual.setFum_eme(emergenciaObstetrica.getFum_eme());
+		emergenciaObstetricaActual.setIvsa_eme(emergenciaObstetrica.getIvsa_eme());
+		emergenciaObstetricaActual.setNumero_parejas_sexuales_eme(emergenciaObstetrica.getNumero_parejas_sexuales_eme());
+		emergenciaObstetricaActual.setG_eme(emergenciaObstetrica.getG_eme());
+		emergenciaObstetricaActual.setP_eme(emergenciaObstetrica.getP_eme());
+		emergenciaObstetricaActual.setA_eme(emergenciaObstetrica.getA_eme());
+		emergenciaObstetricaActual.setC_eme(emergenciaObstetrica.getC_eme());
+		emergenciaObstetricaActual.setDismenorrea_eme(emergenciaObstetrica.getDismenorrea_eme());
+		emergenciaObstetricaActual.setMastodinia_eme(emergenciaObstetrica.getMastodinia_eme());
+		emergenciaObstetricaActual.setFpp_eme(emergenciaObstetrica.getFpp_eme());
+		emergenciaObstetricaActual.setControles_eme(emergenciaObstetrica.getControles_eme());
+		emergenciaObstetricaActual.setInmunizaciones_eme(emergenciaObstetrica.getInmunizaciones_eme());
+		emergenciaObstetricaActual.setDescripcion_eme(emergenciaObstetrica.getDescripcion_eme());
+		emergenciaObstetricaActual.setFichaMedica(emergenciaObstetrica.getFichaMedica());
 	
-		return pacienteService.save(pacienteActual);
+		return emergenciaObstetricaService.save(emergenciaObstetricaActual);
 		
 	}
 	
-	@DeleteMapping("/pacientes/{id}")
+	@DeleteMapping("/emergencias_obstetricas/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
-		pacienteService.delete(id);
+		emergenciaObstetricaService.delete(id);
 	}
 }

@@ -12,8 +12,7 @@ public class Diagnostico implements Serializable {
     private Long id_dia;
 
     private String nombre_dia;
-    private Boolean presuntivo_dia;
-    private Boolean definitivo_dia;
+    private Boolean estado_dia;
 
     private static final long serialVersionUID = 1L;
     
@@ -35,23 +34,14 @@ public class Diagnostico implements Serializable {
 		this.nombre_dia = nombre_dia;
 	}
 
-	public Boolean getPresuntivo_dia() {
-		return presuntivo_dia;
+	public Boolean getEstado_dia() {
+		return estado_dia;
 	}
 
-	public void setPresuntivo_dia(Boolean presuntivo_dia) {
-		this.presuntivo_dia = presuntivo_dia;
+	public void setEstado_dia(Boolean estado_dia) {
+		this.estado_dia = estado_dia;
 	}
 
-	public Boolean getDefinitivo_dia() {
-		return definitivo_dia;
-	}
-
-	public void setDefinitivo_dia(Boolean definitivo_dia) {
-		this.definitivo_dia = definitivo_dia;
-	}
-
-    
-    
+	
     
 }

@@ -14,9 +14,9 @@ public class EmergenciaObstetrica implements Serializable {
 
     private Integer menarca_eme;
 
-    private String ritmo_menstrual_eme;
+    private String ritmo_menstrual_eme; 
 
-    private String ciclos_eme;
+    private String ciclos_eme; 
 
     @Temporal(TemporalType.DATE)
     private Date fum_eme;
@@ -35,11 +35,11 @@ public class EmergenciaObstetrica implements Serializable {
     private Boolean mastodinia_eme;
 
     @Temporal(TemporalType.DATE)
-    private Date fpp;
+    private Date fpp_eme;
 
     private String controles_eme;
     private String inmunizaciones_eme;
-    private String descripccion_eme;
+    private String descripcion_eme;
     
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="fk_id_ficha_medica")
@@ -180,13 +180,13 @@ public class EmergenciaObstetrica implements Serializable {
 	}
 
 
-	public Date getFpp() {
-		return fpp;
+	public Date getFpp_eme() {
+		return fpp_eme;
 	}
 
 
-	public void setFpp(Date fpp) {
-		this.fpp = fpp;
+	public void setFpp_eme(Date fpp) {
+		this.fpp_eme = fpp;
 	}
 
 
@@ -210,13 +210,13 @@ public class EmergenciaObstetrica implements Serializable {
 	}
 
 
-	public String getDescripccion_eme() {
-		return descripccion_eme;
+	public String getDescripcion_eme() {
+		return descripcion_eme;
 	}
 
 
-	public void setDescripccion_eme(String descripccion_eme) {
-		this.descripccion_eme = descripccion_eme;
+	public void setDescripcion_eme(String descripccion_eme) {
+		this.descripcion_eme = descripccion_eme;
 	}
 
 
