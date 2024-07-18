@@ -46,9 +46,6 @@ public class FichaMedicaRestController {
 	public FichaMedica update(@RequestBody FichaMedica fichaMedica, @PathVariable Long id) {
 		FichaMedica fichaMedicaActual = fichaMedicaService.findById(id);
 		
-		
-		fichaMedicaActual.setAntecedentes_medicos_fic(fichaMedica.getAntecedentes_medicos_fic());
-		fichaMedicaActual.setDiscapacidad_fic(fichaMedica.getDiscapacidad_fic());
 		fichaMedicaActual.setPaciente(fichaMedica.getPaciente());
 		fichaMedicaActual.setFecha_elaboracion_fic(fichaMedica.getFecha_elaboracion_fic());
 	

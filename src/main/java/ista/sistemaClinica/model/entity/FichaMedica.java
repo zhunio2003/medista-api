@@ -12,9 +12,6 @@ public class FichaMedica implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id_fic;
 
-    private String antecedentes_medicos_fic;
-    private String discapacidad_fic;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_pac")
     private Paciente paciente;
@@ -32,22 +29,6 @@ public class FichaMedica implements Serializable {
 
 	public void setId_fic(Long id_fic) {
 		this.id_fic = id_fic;
-	}
-
-	public String getAntecedentes_medicos_fic() {
-		return antecedentes_medicos_fic;
-	}
-
-	public void setAntecedentes_medicos_fic(String antecedentes_medicos_fic) {
-		this.antecedentes_medicos_fic = antecedentes_medicos_fic;
-	}
-
-	public String getDiscapacidad_fic() {
-		return discapacidad_fic;
-	}
-
-	public void setDiscapacidad_fic(String discapacidad_fic) {
-		this.discapacidad_fic = discapacidad_fic;
 	}
 
 	public Paciente getPaciente() {

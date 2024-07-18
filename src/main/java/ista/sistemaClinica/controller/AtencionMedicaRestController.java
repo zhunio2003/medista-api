@@ -22,7 +22,7 @@ import ista.sistemaClinica.model.services.IAtencionMedicaService;
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins= {"http://localhost:4200"})
-public class AtencioMedicaRestController {
+public class AtencionMedicaRestController {
 	@Autowired
 	private IAtencionMedicaService atencionMedicaService;
 	
