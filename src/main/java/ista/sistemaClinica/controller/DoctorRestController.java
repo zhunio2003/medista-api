@@ -52,7 +52,7 @@ public class DoctorRestController {
 		doctorActual.setTelefono_doc(doctor.getTelefono_doc());
 		doctorActual.setDireccion_doc(doctor.getDireccion_doc());
 		doctorActual.setEspecialidad_doc(doctor.getEspecialidad_doc());
-		doctorActual.setCodigo_msp(doctor.getCedula_doc());
+		doctorActual.setCodigo_msp(doctor.getCodigo_msp());
 		doctorActual.setGenero_doc(doctor.getGenero_doc());
 		doctorActual.setPassword_doc(doctor.getPassword_doc());
 	
