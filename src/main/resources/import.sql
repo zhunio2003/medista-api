@@ -116,3 +116,14 @@ INSERT INTO `doctor` (`cedula_doc`, `nombre_doc`, `apellido_doc`, `telefono_doc`
 INSERT INTO `doctor` (`cedula_doc`, `nombre_doc`, `apellido_doc`, `telefono_doc`, `direccion_doc`, `especialidad_doc`, `codigo_msp_doc`, `genero_doc`, `password_doc`) VALUES ('0102030425', 'Ricardo', 'Castillo', '0887654320', 'Calle García Moreno 234', 'Endocrinología', 'CDE789', 'Masculino', 'mypassword456');
 INSERT INTO `doctor` (`cedula_doc`, `nombre_doc`, `apellido_doc`, `telefono_doc`, `direccion_doc`, `especialidad_doc`, `codigo_msp_doc`, `genero_doc`, `password_doc`) VALUES ('0102030426', 'Camila', 'Benítez', '0876543219', 'Av. 6 de Diciembre 345', 'Psiquiatría', 'EFG890', 'Femenino', 'password321');
 
+
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Instituto Nacional', 'Av. de los Pinos 123', 'Dr. Juan Pérez', 'BASE64_ENCODED_IMAGE_1');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Universidad Central', 'Calle de la Paz 456', 'Dra. Ana López', 'BASE64_ENCODED_IMAGE_2');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Colegio de Ciencias', 'Av. 10 de Agosto 789', 'Dr. Carlos González', 'BASE64_ENCODED_IMAGE_3');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Academia de Artes', 'Calle Ecuador 234', 'Dra. Isabel Torres', 'BASE64_ENCODED_IMAGE_4');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Instituto de Tecnología', 'Av. Libertador 567', 'Dr. Luis Morales', 'BASE64_ENCODED_IMAGE_5');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Centro de Estudios', 'Calle Bolívar 890', 'Dra. María García', 'BASE64_ENCODED_IMAGE_6');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Escuela de Negocios', 'Av. Amazonas 123', 'Dr. Fernando Ruiz', 'BASE64_ENCODED_IMAGE_7');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Instituto Superior', 'Calle Colón 456', 'Dra. Laura Méndez', 'BASE64_ENCODED_IMAGE_8');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Universidad Técnica', 'Av. 24 de Mayo 789', 'Dr. Miguel Fernández', 'BASE64_ENCODED_IMAGE_9');
+INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Academia de Ciencias', 'Calle Sucre 012', 'Dra. Claudia Sánchez', 'BASE64_ENCODED_IMAGE_10');

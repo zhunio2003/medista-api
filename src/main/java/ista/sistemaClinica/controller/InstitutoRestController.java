@@ -44,14 +44,12 @@ public class InstitutoRestController {
 	@PutMapping("/institutos/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Instituto update(@RequestBody Instituto instituto, @PathVariable Long id) {
-		Instituto institutoActual = institutoService.findById(id);
+		Instituto institutoActual = institutoService.findById(id);	
 		
-		
-		institutoActual.setNombre_ins(instituto.getNombre_ins());
-		institutoActual.setDireccion_ins(instituto.getDireccion_ins());
-		institutoActual.setRector_ins(instituto.getRector_ins());
-		institutoActual.setImage_instituto(instituto.getImage_instituto());
-
+		institutoActual.setNombreIns(instituto.getNombreIns());
+		institutoActual.setDireccionIns(instituto.getDireccionIns());
+		institutoActual.setRectorIns(instituto.getRectorIns());
+		institutoActual.setImageInstituto(instituto.getImageInstituto());
 	
 		return institutoService.save(institutoActual);
 		
