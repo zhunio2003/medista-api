@@ -24,54 +24,79 @@ public class Enfermedad implements Serializable {
     // Getters y Setters
     private static final long serialVersionUID = 1L;
 
-	public Long getId_enf() {
+
+
+	public Long getIdEnf() {
 		return idEnf;
 	}
 
-	public void setId_enf(Long id_enf) {
-		this.idEnf = id_enf;
+
+
+	public void setIdEnf(Long idEnf) {
+		this.idEnf = idEnf;
 	}
 
-	public String getCodigo_enf() {
+
+
+	public String getCodigoEnf() {
 		return codigoEnf;
 	}
 
-	public void setCodigo_enf(String codigo_enf) {
-		this.codigoEnf = codigo_enf;
+
+
+	public void setCodigoEnf(String codigoEnf) {
+		this.codigoEnf = codigoEnf;
 	}
 
-	public String getNombre_enf() {
+
+
+	public String getNombreEnf() {
 		return nombreEnf;
 	}
 
-	public void setNombre_enf(String nombre_enf) {
-		this.nombreEnf = nombre_enf;
+
+
+	public void setNombreEnf(String nombreEnf) {
+		this.nombreEnf = nombreEnf;
 	}
 
-	public String getTipo_enf() {
+
+
+	public String getTipoEnf() {
 		return tipoEnf;
 	}
 
-	public void setTipo_enf(String tipo_enf) {
-		this.tipoEnf = tipo_enf;
+
+
+	public void setTipoEnf(String tipoEnf) {
+		this.tipoEnf = tipoEnf;
 	}
 
-	public String getDescripcion_enf() {
+
+
+	public String getDescripcionEnf() {
 		return descripcionEnf;
 	}
 
-	public void setDescripcion_enf(String descripcion_enf) {
-		this.descripcionEnf = descripcion_enf;
+
+
+	public void setDescripcionEnf(String descripcionEnf) {
+		this.descripcionEnf = descripcionEnf;
 	}
 
-	public String getSintomas_enf() {
+
+
+	public String getSintomasEnf() {
 		return sintomasEnf;
 	}
 
-	public void setSintomas_enf(String sintomas_enf) {
-		this.sintomasEnf = sintomas_enf;
+
+
+	public void setSintomasEnf(String sintomasEnf) {
+		this.sintomasEnf = sintomasEnf;
 	}
 
+	
     
     
 }

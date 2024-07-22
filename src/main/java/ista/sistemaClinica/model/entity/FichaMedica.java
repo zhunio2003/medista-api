@@ -22,7 +22,7 @@ public class FichaMedica implements Serializable {
     
     @OneToOne()
     @JoinColumn(name = "fk_id_ant")
-    private AntecedenteFamiliar antedecenteFamiliar;
+    private AntecedenteFamiliar antecedenteFamiliar;
 
     @Temporal(TemporalType.DATE)
     private Date fechaElaboracionFic;
@@ -61,12 +61,12 @@ public class FichaMedica implements Serializable {
 		this.discapacidad = discapacidad;
 	}
 
-	public AntecedenteFamiliar getAntedecenteFamiliar() {
-		return antedecenteFamiliar;
+	public AntecedenteFamiliar getAntecedenteFamiliar() {
+		return antecedenteFamiliar;
 	}
 
-	public void setAntedecenteFamiliar(AntecedenteFamiliar antedecenteFamiliar) {
-		this.antedecenteFamiliar = antedecenteFamiliar;
+	public void setAntecedenteFamiliar(AntecedenteFamiliar antecedenteFamiliar) {
+		this.antecedenteFamiliar = antecedenteFamiliar;
 	}
     
 		
