@@ -12,7 +12,7 @@ public class EmergenciaObstetrica implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_eme;
 
-    private Integer menarca_eme;
+    private int menarca_eme;
 
     private String ritmo_menstrual_eme; 
 
@@ -24,12 +24,12 @@ public class EmergenciaObstetrica implements Serializable {
     private Boolean ivsa_eme;
 
     @Column(name = "numero_parejas_sexuales")
-    private Integer numero_parejas_sexuales_eme;
+    private int numero_parejas_sexuales_eme;
 
-    private Integer g_eme;
-    private Integer a_eme;
-    private Integer p_eme;
-    private Integer c_eme;
+    private int g_eme;
+    private int a_eme;
+    private int p_eme;
+    private int c_eme;
 
     private Boolean dismenorrea_eme;
     private Boolean mastodinia_eme;
@@ -60,12 +60,12 @@ public class EmergenciaObstetrica implements Serializable {
 	}
 
 
-	public Integer getMenarca_eme() {
+	public int getMenarca_eme() {
 		return menarca_eme;
 	}
 
 
-	public void setMenarca_eme(Integer menarca_eme) {
+	public void setMenarca_eme(int menarca_eme) {
 		this.menarca_eme = menarca_eme;
 	}
 
@@ -110,52 +110,52 @@ public class EmergenciaObstetrica implements Serializable {
 	}
 
 
-	public Integer getNumero_parejas_sexuales_eme() {
+	public int getNumero_parejas_sexuales_eme() {
 		return numero_parejas_sexuales_eme;
 	}
 
 
-	public void setNumero_parejas_sexuales_eme(Integer numero_parejas_sexuales_eme) {
+	public void setNumero_parejas_sexuales_eme(int numero_parejas_sexuales_eme) {
 		this.numero_parejas_sexuales_eme = numero_parejas_sexuales_eme;
 	}
 
 
-	public Integer getG_eme() {
+	public int getG_eme() {
 		return g_eme;
 	}
 
 
-	public void setG_eme(Integer g_eme) {
+	public void setG_eme(int g_eme) {
 		this.g_eme = g_eme;
 	}
 
 
-	public Integer getA_eme() {
+	public int getA_eme() {
 		return a_eme;
 	}
 
 
-	public void setA_eme(Integer a_eme) {
+	public void setA_eme(int a_eme) {
 		this.a_eme = a_eme;
 	}
 
 
-	public Integer getP_eme() {
+	public int getP_eme() {
 		return p_eme;
 	}
 
 
-	public void setP_eme(Integer p_eme) {
+	public void setP_eme(int p_eme) {
 		this.p_eme = p_eme;
 	}
 
 
-	public Integer getC_eme() {
+	public int getC_eme() {
 		return c_eme;
 	}
 
 
-	public void setC_eme(Integer c_eme) {
+	public void setC_eme(int c_eme) {
 		this.c_eme = c_eme;
 	}
 

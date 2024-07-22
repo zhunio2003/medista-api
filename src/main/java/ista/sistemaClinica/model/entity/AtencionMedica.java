@@ -1,6 +1,8 @@
 package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -30,6 +32,9 @@ public class AtencionMedica implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_diagnostico")
     private Diagnostico diagnostico;
+    
+    @Temporal(TemporalType.DATE)
+    private Date fechaAtencion;
     
     
 
@@ -132,5 +137,16 @@ public class AtencionMedica implements Serializable {
 		this.diagnostico = diagnostico;
 	}
 
+
+
+	public Date getFechaAtencion() {
+		return fechaAtencion;
+	}
+
+
+
+	public void setFechaAtencion(Date fechaAtencion) {
+		this.fechaAtencion = fechaAtencion;
+	}	
     
 }

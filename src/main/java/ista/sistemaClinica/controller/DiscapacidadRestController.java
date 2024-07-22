@@ -48,12 +48,10 @@ public class DiscapacidadRestController {
 		Discapacidad atencioMedicaActual = discapacidadService.findById(id);
 		
 		
-		atencioMedicaActual.setFisica_dis(discapacidad.getFisica_dis());
-		atencioMedicaActual.setIntelectual_dis(discapacidad.getIntelectual_dis());
-		atencioMedicaActual.setPorcentaje_dis(discapacidad.getPorcentaje_dis());
-		atencioMedicaActual.setFicha_medica(discapacidad.getFicha_medica());
-		atencioMedicaActual.setSubtipo_dis(discapacidad.getSubtipo_dis());
-		
+		atencioMedicaActual.setFisicaDis(discapacidad.getFisicaDis());
+		atencioMedicaActual.setIntelectualDis(discapacidad.getIntelectualDis());
+		atencioMedicaActual.setPorcentajeDis(discapacidad.getPorcentajeDis());
+		atencioMedicaActual.setSubtipoDis(discapacidad.getSubtipoDis());
 	
 		return discapacidadService.save(atencioMedicaActual);
 		

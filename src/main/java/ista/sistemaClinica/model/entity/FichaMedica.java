@@ -10,25 +10,31 @@ public class FichaMedica implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_fic;
+    private Long idFic;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne()
     @JoinColumn(name = "fk_id_pac")
     private Paciente paciente;
+    
+    @OneToOne()
+    @JoinColumn(name = "fk_id_dis")
+    private Discapacidad discapacidad;
+    
+    @OneToOne()
+    @JoinColumn(name = "fk_id_ant")
+    private AntecedenteFamiliar antedecenteFamiliar;
 
     @Temporal(TemporalType.DATE)
-    private Date fecha_elaboracion_fic;
+    private Date fechaElaboracionFic;
 
     private static final long serialVersionUID = 1L;
-    
-    
-    // Getters y Setters
-	public Long getId_fic() {
-		return id_fic;
+
+	public Long getIdFic() {
+		return idFic;
 	}
 
-	public void setId_fic(Long id_fic) {
-		this.id_fic = id_fic;
+	public void setIdFic(Long idFic) {
+		this.idFic = idFic;
 	}
 
 	public Paciente getPaciente() {
@@ -39,14 +45,29 @@ public class FichaMedica implements Serializable {
 		this.paciente = paciente;
 	}
 
-	public Date getFecha_elaboracion_fic() {
-		return fecha_elaboracion_fic;
+	public Date getFechaElaboracionFic() {
+		return fechaElaboracionFic;
 	}
 
-	public void setFecha_elaboracion_fic(Date fecha_elaboracion_fic) {
-		this.fecha_elaboracion_fic = fecha_elaboracion_fic;
+	public void setFechaElaboracionFic(Date fechaElaboracionFic) {
+		this.fechaElaboracionFic = fechaElaboracionFic;
 	}
 
+	public Discapacidad getDiscapacidad() {
+		return discapacidad;
+	}
+
+	public void setDiscapacidad(Discapacidad discapacidad) {
+		this.discapacidad = discapacidad;
+	}
+
+	public AntecedenteFamiliar getAntedecenteFamiliar() {
+		return antedecenteFamiliar;
+	}
+
+	public void setAntedecenteFamiliar(AntecedenteFamiliar antedecenteFamiliar) {
+		this.antedecenteFamiliar = antedecenteFamiliar;
+	}
     
-    
+		
 }

@@ -9,5 +9,6 @@ public interface IDoctorService {
 	public Doctor save(Doctor doctor);
 	public Doctor findById(Long id);
 	public void delete(Long id);
+	
 
 }
