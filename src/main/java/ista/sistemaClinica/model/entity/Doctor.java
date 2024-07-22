@@ -9,145 +9,125 @@ public class Doctor implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_doctor;
+    private Long idDoctor;
 
     @Column(unique = true)
-    private String cedula_doc;
+    private String cedulaDoc;
 
-    private String nombre_doc;
-    private String apellido_doc;
-    private String telefono_doc;
-    private String direccion_doc;
-    private String especialidad_doc;
-    private String codigo_msp_doc;
+    private String nombreDoc;
+    private String apellidoDoc;
+    private String telefonoDoc;
+    private String direccionDoc;
+    private String especialidadDoc;
+    private String codigoMspDoc;
     
-    private String genero_doc;
-    private String password_doc;
+    private String generoDoc;
+    private String passwordDoc;
     
 
     private static final long serialVersionUID = 1L;
 
     // Getters y Setters
-
-	public Long getId_doctor() {
-		return id_doctor;
+	public Long getIdDoctor() {
+		return idDoctor;
 	}
 
 
-
-	public void setId_doctor(Long id_doctor) {
-		this.id_doctor = id_doctor;
+	public void setIdDoctor(Long idDoctor) {
+		this.idDoctor = idDoctor;
 	}
 
 
-
-	public String getCedula_doc() {
-		return cedula_doc;
+	public String getCedulaDoc() {
+		return cedulaDoc;
 	}
 
 
-
-	public void setCedula_doc(String cedula_doc) {
-		this.cedula_doc = cedula_doc;
+	public void setCedulaDoc(String cedulaDoc) {
+		this.cedulaDoc = cedulaDoc;
 	}
 
 
-
-	public String getNombre_doc() {
-		return nombre_doc;
+	public String getNombreDoc() {
+		return nombreDoc;
 	}
 
 
-
-	public void setNombre_doc(String nombre_doc) {
-		this.nombre_doc = nombre_doc;
+	public void setNombreDoc(String nombreDoc) {
+		this.nombreDoc = nombreDoc;
 	}
 
 
-
-	public String getApellido_doc() {
-		return apellido_doc;
+	public String getApellidoDoc() {
+		return apellidoDoc;
 	}
 
 
-
-	public void setApellido_doc(String apellido_doc) {
-		this.apellido_doc = apellido_doc;
+	public void setApellidoDoc(String apellidoDoc) {
+		this.apellidoDoc = apellidoDoc;
 	}
 
 
-
-	public String getTelefono_doc() {
-		return telefono_doc;
+	public String getTelefonoDoc() {
+		return telefonoDoc;
 	}
 
 
-
-	public void setTelefono_doc(String telefono_doc) {
-		this.telefono_doc = telefono_doc;
+	public void setTelefonoDoc(String telefonoDoc) {
+		this.telefonoDoc = telefonoDoc;
 	}
 
 
-
-	public String getDireccion_doc() {
-		return direccion_doc;
+	public String getDireccionDoc() {
+		return direccionDoc;
 	}
 
 
-
-	public void setDireccion_doc(String direccion_doc) {
-		this.direccion_doc = direccion_doc;
+	public void setDireccionDoc(String direccionDoc) {
+		this.direccionDoc = direccionDoc;
 	}
 
 
-
-	public String getEspecialidad_doc() {
-		return especialidad_doc;
+	public String getEspecialidadDoc() {
+		return especialidadDoc;
 	}
 
 
-
-	public void setEspecialidad_doc(String especialidad_doc) {
-		this.especialidad_doc = especialidad_doc;
+	public void setEspecialidadDoc(String especialidadDoc) {
+		this.especialidadDoc = especialidadDoc;
 	}
 
 
-
-	public String getCodigo_msp() {
-		return codigo_msp_doc;
+	public String getCodigoMspDoc() {
+		return codigoMspDoc;
 	}
 
 
-
-	public void setCodigo_msp(String codigo_msp_doc) {
-		this.codigo_msp_doc = codigo_msp_doc;
+	public void setCodigoMspDoc(String codigoMspDoc) {
+		this.codigoMspDoc = codigoMspDoc;
 	}
 
 
-
-	public String getGenero_doc() {
-		return genero_doc;
+	public String getGeneroDoc() {
+		return generoDoc;
 	}
 
 
-
-	public void setGenero_doc(String genero_doc) {
-		this.genero_doc = genero_doc;
+	public void setGeneroDoc(String generoDoc) {
+		this.generoDoc = generoDoc;
 	}
 
 
-
-	public String getPassword_doc() {
-		return password_doc;
+	public String getPasswordDoc() {
+		return passwordDoc;
 	}
 
 
-
-	public void setPassword_doc(String password_doc) {
-		this.password_doc = password_doc;
+	public void setPasswordDoc(String passwordDoc) {
+		this.passwordDoc = passwordDoc;
 	}
-    
-	
+
+
 
 
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ista.sistemaClinica.model.dao.IDoctorDao;
 import ista.sistemaClinica.model.entity.Doctor;
+import ista.sistemaClinica.model.entity.Paciente;
 import ista.sistemaClinica.model.services.IDoctorService;
 
 
@@ -42,6 +43,12 @@ public class DoctorServiceImp implements IDoctorService{
 	public void delete(Long id) {
 		doctorDao.deleteById(id);
 		
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Doctor findByCedDoctor(String cedulaDoc) {
+		return doctorDao.findByCedulaDoc(cedulaDoc);
 	}
 
 

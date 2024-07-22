@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ista.sistemaClinica.model.entity.Doctor;
+import ista.sistemaClinica.model.entity.Paciente;
 import ista.sistemaClinica.model.services.IDoctorService;
 
 @RestController
@@ -47,14 +48,14 @@ public class DoctorRestController {
 		Doctor doctorActual = doctorService.findById(id);
 		
 		
-		doctorActual.setNombre_doc(doctor.getNombre_doc());
-		doctorActual.setApellido_doc(doctor.getApellido_doc());
-		doctorActual.setTelefono_doc(doctor.getTelefono_doc());
-		doctorActual.setDireccion_doc(doctor.getDireccion_doc());
-		doctorActual.setEspecialidad_doc(doctor.getEspecialidad_doc());
-		doctorActual.setCodigo_msp(doctor.getCodigo_msp());
-		doctorActual.setGenero_doc(doctor.getGenero_doc());
-		doctorActual.setPassword_doc(doctor.getPassword_doc());
+		doctorActual.setNombreDoc(doctor.getNombreDoc());
+		doctorActual.setApellidoDoc(doctor.getApellidoDoc());
+		doctorActual.setTelefonoDoc(doctor.getTelefonoDoc());
+		doctorActual.setDireccionDoc(doctor.getDireccionDoc());
+		doctorActual.setEspecialidadDoc(doctor.getEspecialidadDoc());
+		doctorActual.setCodigoMspDoc(doctor.getCodigoMspDoc());
+		doctorActual.setGeneroDoc(doctor.getGeneroDoc());
+		doctorActual.setPasswordDoc(doctor.getPasswordDoc());
 	
 		return doctorService.save(doctorActual);
 		
@@ -64,5 +65,11 @@ public class DoctorRestController {
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		doctorService.delete(id);
+	}
+	
+	// metodos para filtrar por cedula
+	@GetMapping("/doctores/cedula/{cedula}")
+	public Doctor showDoctor(@PathVariable String cedula) {
+		return doctorService.findByCedDoctor(cedula);
 	}
 }
