@@ -9,15 +9,15 @@ public class Enfermedad implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_enf;
+    private Long idEnf;
     
     @Column(unique = true)
-    private String codigo_enf;
+    private String codigoEnf;
 
-    private String nombre_enf;
-    private String tipo_enf;
-    private String descripcion_enf;
-    private String sintomas_enf;
+    private String nombreEnf;
+    private String tipoEnf;
+    private String descripcionEnf;
+    private String sintomasEnf;
     
     
     
@@ -25,51 +25,51 @@ public class Enfermedad implements Serializable {
     private static final long serialVersionUID = 1L;
 
 	public Long getId_enf() {
-		return id_enf;
+		return idEnf;
 	}
 
 	public void setId_enf(Long id_enf) {
-		this.id_enf = id_enf;
+		this.idEnf = id_enf;
 	}
 
 	public String getCodigo_enf() {
-		return codigo_enf;
+		return codigoEnf;
 	}
 
 	public void setCodigo_enf(String codigo_enf) {
-		this.codigo_enf = codigo_enf;
+		this.codigoEnf = codigo_enf;
 	}
 
 	public String getNombre_enf() {
-		return nombre_enf;
+		return nombreEnf;
 	}
 
 	public void setNombre_enf(String nombre_enf) {
-		this.nombre_enf = nombre_enf;
+		this.nombreEnf = nombre_enf;
 	}
 
 	public String getTipo_enf() {
-		return tipo_enf;
+		return tipoEnf;
 	}
 
 	public void setTipo_enf(String tipo_enf) {
-		this.tipo_enf = tipo_enf;
+		this.tipoEnf = tipo_enf;
 	}
 
 	public String getDescripcion_enf() {
-		return descripcion_enf;
+		return descripcionEnf;
 	}
 
 	public void setDescripcion_enf(String descripcion_enf) {
-		this.descripcion_enf = descripcion_enf;
+		this.descripcionEnf = descripcion_enf;
 	}
 
 	public String getSintomas_enf() {
-		return sintomas_enf;
+		return sintomasEnf;
 	}
 
 	public void setSintomas_enf(String sintomas_enf) {
-		this.sintomas_enf = sintomas_enf;
+		this.sintomasEnf = sintomas_enf;
 	}
 
     
