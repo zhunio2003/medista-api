@@ -31,10 +31,26 @@ public class PacienteRestController {
 		return pacienteService.findAll();
 	}
 	
-	@GetMapping("/pacientes/{id}")
-	public Paciente show(@PathVariable Long id) {
+	@GetMapping("/pacientes/id/{id}")
+	public Paciente showId(@PathVariable Long id) {
 		return pacienteService.findById(id);
 	}
+	
+	@GetMapping("/pacientes/cedula/{cedula}")
+	public Paciente showCedula(@PathVariable String cedula) {
+		return pacienteService.findByCedulaPac(cedula);
+	}
+	
+	@GetMapping("/pacientes/apellido/{apellido}")
+	public List<Paciente> filterByApellido(@PathVariable String apellido) {
+		return pacienteService.filterByApellidoPac(apellido);
+	}
+	
+	@GetMapping("/pacientes/profesion/{profesion}")
+	public List<Paciente> filterByProfesion(@PathVariable String profesion) {
+		return pacienteService.filterByProfesionPac(profesion);
+	}
+	
 	
 	
 	@PostMapping("/pacientes")
@@ -49,25 +65,25 @@ public class PacienteRestController {
 		Paciente pacienteActual = pacienteService.findById(id);
 		
 		
-		pacienteActual.setCedula_pac(paciente.getCedula_pac());
-		pacienteActual.setFecha_nacimiento_pac(paciente.getFecha_nacimiento_pac());
-		pacienteActual.setNombre_pac(paciente.getNombre_pac());
-		pacienteActual.setApellido_pac(paciente.getApellido_pac());
-		pacienteActual.setLugar_pac(paciente.getLugar_pac());
-		pacienteActual.setPais_pac(paciente.getPais_pac());
-		pacienteActual.setDireccion_pac(paciente.getDireccion_pac());
-		pacienteActual.setBarrio_pac(paciente.getBarrio_pac());
-		pacienteActual.setParroquia_pac(paciente.getParroquia_pac());
-		pacienteActual.setCanton_pac(paciente.getCanton_pac());
-		pacienteActual.setProvincia_pac(paciente.getProvincia_pac());
-		pacienteActual.setTelefono_pac(paciente.getTelefono_pac());
-		pacienteActual.setProfesion_pac(paciente.getProfesion_pac());
-		pacienteActual.setTipo_sangre_pac(paciente.getTipo_sangre_pac());
-		pacienteActual.setGenero_pac(paciente.getGenero_pac());
-		pacienteActual.setEstado_civil_pac(paciente.getEstado_civil_pac());
-		pacienteActual.setCarrera_pac(paciente.getCarrera_pac());
-		pacienteActual.setCiclo_pac(paciente.getCiclo_pac());
-	
+		pacienteActual.setCedulaPac(paciente.getCedulaPac());
+		pacienteActual.setFechaNacimientoPac(paciente.getFechaNacimientoPac());
+		pacienteActual.setNombrePac(paciente.getNombrePac());
+		pacienteActual.setApellidoPac(paciente.getApellidoPac());
+		pacienteActual.setLugarPac(paciente.getLugarPac());
+		pacienteActual.setPaisPac(paciente.getPaisPac());
+		pacienteActual.setDireccionPac(paciente.getDireccionPac());
+		pacienteActual.setBarrioPac(paciente.getBarrioPac());
+		pacienteActual.setParroquiaPac(paciente.getParroquiaPac());
+		pacienteActual.setCantonPac(paciente.getCantonPac());
+		pacienteActual.setProvinciaPac(paciente.getProvinciaPac());
+		pacienteActual.setTelefonoPac(paciente.getTelefonoPac());
+		pacienteActual.setProfesionPac(paciente.getProfesionPac());
+		pacienteActual.setTipoSangrePac(paciente.getTipoSangrePac());
+		pacienteActual.setGeneroPac(paciente.getGeneroPac());
+		pacienteActual.setEstadoCivilPac(paciente.getEstadoCivilPac());
+		pacienteActual.setCarreraPac(paciente.getCarreraPac());
+		pacienteActual.setCicloPac(paciente.getCicloPac());
+		
 		return pacienteService.save(pacienteActual);
 		
 	}
@@ -77,4 +93,7 @@ public class PacienteRestController {
 	public void delete(@PathVariable Long id) {
 		pacienteService.delete(id);
 	}
+	
+	
+	
 }

@@ -47,7 +47,9 @@ public class FichaMedicaRestController {
 		FichaMedica fichaMedicaActual = fichaMedicaService.findById(id);
 		
 		fichaMedicaActual.setPaciente(fichaMedica.getPaciente());
-		fichaMedicaActual.setFecha_elaboracion_fic(fichaMedica.getFecha_elaboracion_fic());
+		fichaMedicaActual.setFechaElaboracionFic(fichaMedica.getFechaElaboracionFic());
+		fichaMedicaActual.setDiscapacidad(fichaMedica.getDiscapacidad());
+		fichaMedicaActual.setAntedecenteFamiliar(fichaMedica.getAntedecenteFamiliar());
 	
 		return fichaMedicaService.save(fichaMedicaActual);
 		
