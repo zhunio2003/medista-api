@@ -47,11 +47,11 @@ public class EnfermedadRestController {
 		Enfermedad enfermedadActual = enfermedadService.findById(id);
 		
 		
-		enfermedadActual.setCodigo_enf(enfermedad.getCodigo_enf());
-		enfermedadActual.setNombre_enf(enfermedad.getNombre_enf());
-		enfermedadActual.setTipo_enf(enfermedad.getTipo_enf());
-		enfermedadActual.setDescripcion_enf(enfermedad.getDescripcion_enf());
-		enfermedadActual.setSintomas_enf(enfermedad.getSintomas_enf());
+		enfermedadActual.setCodigoEnf(enfermedad.getCodigoEnf());
+		enfermedadActual.setNombreEnf(enfermedad.getNombreEnf());
+		enfermedadActual.setTipoEnf(enfermedad.getTipoEnf());
+		enfermedadActual.setDescripcionEnf(enfermedad.getDescripcionEnf());
+		enfermedadActual.setSintomasEnf(enfermedad.getSintomasEnf());
 	
 	
 		return enfermedadService.save(enfermedadActual);

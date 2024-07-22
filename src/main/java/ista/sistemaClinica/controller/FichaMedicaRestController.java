@@ -49,7 +49,7 @@ public class FichaMedicaRestController {
 		fichaMedicaActual.setPaciente(fichaMedica.getPaciente());
 		fichaMedicaActual.setFechaElaboracionFic(fichaMedica.getFechaElaboracionFic());
 		fichaMedicaActual.setDiscapacidad(fichaMedica.getDiscapacidad());
-		fichaMedicaActual.setAntedecenteFamiliar(fichaMedica.getAntedecenteFamiliar());
+		fichaMedicaActual.setAntecedenteFamiliar(fichaMedica.getAntecedenteFamiliar());
 	
 		return fichaMedicaService.save(fichaMedicaActual);
 		
