@@ -9,39 +9,35 @@ public class Diagnostico implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_dia;
+    private Long idDia;
 
-    private String nombre_dia;
-    private Boolean estado_dia;
+    private String inicialDia;
+    private Boolean estadoDia; // Existe para ocultar y no eliminar el diagnostico
 
     private static final long serialVersionUID = 1L;
-    
-    // Getters y Setters
 
-	public Long getId_dia() {
-		return id_dia;
+	public Long getIdDia() {
+		return idDia;
 	}
 
-	public void setId_dia(Long id_dia) {
-		this.id_dia = id_dia;
+	public void setIdDia(Long idDia) {
+		this.idDia = idDia;
 	}
 
-	public String getNombre_dia() {
-		return nombre_dia;
+	public String getInicialDia() {
+		return inicialDia;
 	}
 
-	public void setNombre_dia(String nombre_dia) {
-		this.nombre_dia = nombre_dia;
+	public void setInicialDia(String inicialDia) {
+		this.inicialDia = inicialDia;
 	}
 
-	public Boolean getEstado_dia() {
-		return estado_dia;
+	public Boolean getEstadoDia() {
+		return estadoDia;
 	}
 
-	public void setEstado_dia(Boolean estado_dia) {
-		this.estado_dia = estado_dia;
+	public void setEstadoDia(Boolean estadoDia) {
+		this.estadoDia = estadoDia;
 	}
-
-	
-    
+       
 }

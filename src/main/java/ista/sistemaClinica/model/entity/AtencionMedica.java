@@ -11,15 +11,15 @@ public class AtencionMedica implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_ate;
+    private Long idAte;
 
-    private String motivo_ate;
-    private String enfermedad_actual_ate;
-    private String tratamiento_ate;
+    private String motivoAte;
+    private String enfermedadActualAte;
+    private String tratamientoAte;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_ficha_medica")
-    private FichaMedica ficha_medica;
+    private FichaMedica fichaMedica;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_instituto")
@@ -34,71 +34,66 @@ public class AtencionMedica implements Serializable {
     private Diagnostico diagnostico;
     
     @Temporal(TemporalType.DATE)
-    private Date fechaAtencion;
-    
-    
+    private Date fechaAtencionAte;
 
     private static final long serialVersionUID = 1L;
 
-
-    // Getters y Setters
-    
-	public Long getId_ate() {
-		return id_ate;
+	public Long getIdAte() {
+		return idAte;
 	}
 
 
 
-	public void setId_ate(Long id_ate) {
-		this.id_ate = id_ate;
+	public void setIdAte(Long idAte) {
+		this.idAte = idAte;
 	}
 
 
 
-	public String getMotivo_ate() {
-		return motivo_ate;
+	public String getMotivoAte() {
+		return motivoAte;
 	}
 
 
 
-	public void setMotivo_ate(String motivo_ate) {
-		this.motivo_ate = motivo_ate;
+	public void setMotivoAte(String motivoAte) {
+		this.motivoAte = motivoAte;
 	}
 
 
 
-	public String getEnfermedad_actual_ate() {
-		return enfermedad_actual_ate;
+	public String getEnfermedadActualAte() {
+		return enfermedadActualAte;
 	}
 
 
 
-	public void setEnfermedad_actual_ate(String enfermedad_actual_ate) {
-		this.enfermedad_actual_ate = enfermedad_actual_ate;
+	public void setEnfermedadActualAte(String enfermedadActualAte) {
+		this.enfermedadActualAte = enfermedadActualAte;
 	}
 
 
 
-	public String getTratamiento_ate() {
-		return tratamiento_ate;
+	public String getTratamientoAte() {
+		return tratamientoAte;
 	}
 
 
 
-	public void setTratamiento_ate(String tratamiento_ate) {
-		this.tratamiento_ate = tratamiento_ate;
+	public void setTratamientoAte(String tratamientoAte) {
+		this.tratamientoAte = tratamientoAte;
 	}
 
 
 
-	public FichaMedica getFicha_medica() {
-		return ficha_medica;
+	public FichaMedica getFichaMedica() {
+		return fichaMedica;
 	}
 
 
 
-	public void setFicha_medica(FichaMedica ficha_medica) {
-		this.ficha_medica = ficha_medica;
+	public void setFichaMedica(FichaMedica fichaMedica) {
+		this.fichaMedica = fichaMedica;
 	}
 
 
@@ -139,14 +134,14 @@ public class AtencionMedica implements Serializable {
 
 
 
-	public Date getFechaAtencion() {
-		return fechaAtencion;
+	public Date getFechaAtencionAte() {
+		return fechaAtencionAte;
 	}
 
 
 
-	public void setFechaAtencion(Date fechaAtencion) {
-		this.fechaAtencion = fechaAtencion;
-	}	
-    
+	public void setFechaAtencionAte(Date fechaAtencionAte) {
+		this.fechaAtencionAte = fechaAtencionAte;
+	}
+
 }

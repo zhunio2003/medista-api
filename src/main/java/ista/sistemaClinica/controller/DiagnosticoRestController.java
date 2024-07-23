@@ -47,8 +47,8 @@ public class DiagnosticoRestController {
 	public Diagnostico update(@RequestBody Diagnostico diagnostico, @PathVariable Long id) {
 		Diagnostico diagnosticoActual = diagnosticoService.findById(id);
 		
-		diagnosticoActual.setNombre_dia(diagnostico.getNombre_dia());
-		diagnosticoActual.setEstado_dia(diagnostico.getEstado_dia());
+		diagnosticoActual.setInicialDia(diagnostico.getInicialDia());
+		diagnosticoActual.setEstadoDia(diagnostico.getEstadoDia());
 	
 		return diagnosticoService.save(diagnosticoActual);
 		

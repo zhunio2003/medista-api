@@ -48,14 +48,13 @@ public class AtencionMedicaRestController {
 		AtencionMedica atencioMedicaActual = atencionMedicaService.findById(id);
 		
 		
-		atencioMedicaActual.setMotivo_ate(atencionMedica.getMotivo_ate());
-		atencioMedicaActual.setEnfermedad_actual_ate(atencionMedica.getEnfermedad_actual_ate());
-		atencioMedicaActual.setTratamiento_ate(atencionMedica.getTratamiento_ate());
-		atencioMedicaActual.setFicha_medica(atencionMedica.getFicha_medica());
+		atencioMedicaActual.setMotivoAte(atencionMedica.getMotivoAte());
+		atencioMedicaActual.setEnfermedadActualAte(atencionMedica.getEnfermedadActualAte());
+		atencioMedicaActual.setTratamientoAte(atencionMedica.getTratamientoAte());
+		atencioMedicaActual.setFichaMedica(atencionMedica.getFichaMedica());
 		atencioMedicaActual.setInstituto(atencionMedica.getInstituto());
 		atencioMedicaActual.setDoctor(atencionMedica.getDoctor());
 		atencioMedicaActual.setDiagnostico(atencionMedica.getDiagnostico());
-		atencioMedicaActual.setFechaAtencion(atencionMedica.getFechaAtencion());
 	
 		return atencionMedicaService.save(atencioMedicaActual);
 		
