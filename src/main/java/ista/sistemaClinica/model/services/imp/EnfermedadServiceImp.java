@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ista.sistemaClinica.model.dao.IEnfermedadDao;
+import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.Enfermedad;
 import ista.sistemaClinica.model.services.IEnfermedadService;
 
@@ -28,7 +29,6 @@ public class EnfermedadServiceImp implements IEnfermedadService{
 		// TODO Auto-generated method stub
 		return enfermedadDao.save(enfermedad);
 	}
-
 	@Override
 	@Transactional(readOnly = true)
 	public Enfermedad findById(Long id) {
@@ -43,5 +43,10 @@ public class EnfermedadServiceImp implements IEnfermedadService{
 		
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public Enfermedad findByCodEnf(String codigoEnf) {
+		return enfermedadDao.findBycodigoEnf(codigoEnf);
+	}
 
 }

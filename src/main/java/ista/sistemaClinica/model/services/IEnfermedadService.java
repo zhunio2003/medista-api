@@ -2,6 +2,7 @@ package ista.sistemaClinica.model.services;
 
 import java.util.List;
 
+
 import ista.sistemaClinica.model.entity.Enfermedad;
 
 public interface IEnfermedadService {
@@ -10,4 +11,6 @@ public interface IEnfermedadService {
 	public Enfermedad findById(Long id);
 	public void delete(Long id);
 
+	// Filtros y busquedas
+			public Enfermedad findByCodEnf(String codigoEnf);
 }

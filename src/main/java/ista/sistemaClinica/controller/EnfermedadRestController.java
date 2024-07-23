@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.Enfermedad;
 import ista.sistemaClinica.model.services.IEnfermedadService;
 
@@ -63,4 +64,11 @@ public class EnfermedadRestController {
 	public void delete(@PathVariable Long id) {
 		enfermedadService.delete(id);
 	}
+	
+	
+	// metodos para filtrar por codigo
+		@GetMapping("/enfermedades/codigoEnf/{codigoEnf}")
+		public Enfermedad showEnfermedad(@PathVariable String codigoEnf) {
+			return enfermedadService.findByCodEnf(codigoEnf);
+		}
 }
