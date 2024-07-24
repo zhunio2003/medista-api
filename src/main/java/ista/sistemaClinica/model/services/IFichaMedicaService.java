@@ -9,5 +9,6 @@ public interface IFichaMedicaService {
 	public FichaMedica save(FichaMedica fichaMedica);
 	public FichaMedica findById(Long id);
 	public void delete(Long id);
+	
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ista.sistemaClinica.model.dao.IFichaMedicaDao;
+import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.FichaMedica;
 import ista.sistemaClinica.model.services.IFichaMedicaService;
 
@@ -42,6 +43,6 @@ public class FichaMedicaServiceImp implements IFichaMedicaService{
 		fichaMedicaDao.deleteById(id);
 		
 	}
-
+	
 
 }

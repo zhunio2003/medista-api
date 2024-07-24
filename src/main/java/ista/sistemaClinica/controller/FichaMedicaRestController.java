@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.FichaMedica;
 import ista.sistemaClinica.model.services.IFichaMedicaService;
 
@@ -60,4 +61,5 @@ public class FichaMedicaRestController {
 	public void delete(@PathVariable Long id) {
 		fichaMedicaService.delete(id);
 	}
+	
 }
