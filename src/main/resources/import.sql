@@ -69,6 +69,7 @@ INSERT INTO `antecedente_familiar` (`alergia_ant`, `clinico_ant`, `ginecologo_an
 INSERT INTO `antecedente_familiar` (`alergia_ant`, `clinico_ant`, `ginecologo_ant`, `traumatologico_ant`, `quirurgico_ant`, `farmacologico_ant`) VALUES (TRUE, FALSE, TRUE, FALSE, TRUE, TRUE);
 INSERT INTO `antecedente_familiar` (`alergia_ant`, `clinico_ant`, `ginecologo_ant`, `traumatologico_ant`, `quirurgico_ant`, `farmacologico_ant`) VALUES (FALSE, TRUE, TRUE, TRUE, FALSE, TRUE);
 
+
 INSERT INTO `ficha_medica` (`fk_id_pac`, `fk_id_dis`, `fk_id_ant`, `fecha_elaboracion_fic`) VALUES (1, 1, 1, '2024-01-01');
 INSERT INTO `ficha_medica` (`fk_id_pac`, `fk_id_dis`, `fk_id_ant`, `fecha_elaboracion_fic`) VALUES (2, 2, 2, '2024-01-02');
 INSERT INTO `ficha_medica` (`fk_id_pac`, `fk_id_dis`, `fk_id_ant`, `fecha_elaboracion_fic`) VALUES (3, 3, 3, '2024-01-03');
@@ -128,19 +129,6 @@ INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_ins
 INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Universidad Técnica', 'Av. 24 de Mayo 789', 'Dr. Miguel Fernández', 'BASE64_ENCODED_IMAGE_9');
 INSERT INTO `instituto` (`nombre_ins`, `direccion_ins`, `rector_ins`, `image_instituto`) VALUES ('Academia de Ciencias', 'Calle Sucre 012', 'Dra. Claudia Sánchez', 'BASE64_ENCODED_IMAGE_10');
 
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E001', 'Diabetes Tipo 1', 'Metabólica', 'Enfermedad crónica que afecta la manera en que el cuerpo convierte los alimentos en energía.', 'Sed excesiva, pérdida de peso, fatiga.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E002', 'Hipertensión', 'Cardiovascular', 'Elevación persistente de la presión arterial.', 'Dolores de cabeza, visión borrosa, palpitaciones.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E003', 'Asma', 'Respiratoria', 'Enfermedad crónica que inflama y estrecha las vías respiratorias.', 'Sibilancias, tos, dificultad para respirar.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E004', 'Gripe', 'Infecciosa', 'Enfermedad viral que afecta las vías respiratorias.', 'Fiebre, tos, dolor muscular.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E005', 'Cáncer de Mama', 'Oncológica', 'Crecimiento anormal de células en los senos.', 'Bultos en el pecho, secreción del pezón, cambio en el tamaño del seno.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E006', 'Artritis', 'Reumática', 'Inflamación de las articulaciones.', 'Dolor articular, rigidez, hinchazón.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E007', 'Esclerosis Múltiple', 'Neurológica', 'Enfermedad que afecta al sistema nervioso central.', 'Fatiga, problemas de coordinación, dificultades en el habla.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E008', 'Tuberculosis', 'Infecciosa', 'Infección bacteriana que afecta principalmente los pulmones.', 'Tos persistente, pérdida de peso, fiebre.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E009', 'Hepatitis B', 'Infecciosa', 'Infección viral que afecta al hígado.', 'Fatiga, dolor abdominal, ictericia.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E010', 'Sida', 'Infecciosa', 'Síndrome de Inmunodeficiencia Adquirida, causado por el VIH.', 'Pérdida de peso, fiebre persistente, infecciones oportunistas.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E011', 'Migraña', 'Neurológica', 'Dolor de cabeza intenso y recurrente.', 'Dolor pulsátil, náuseas, sensibilidad a la luz.');
-INSERT INTO `enfermedad` (`codigoEnf`, `nombreEnf`, `tipoEnf`, `descripcionEnf`, `sintomasEnf`) VALUES ('E012', 'Epilepsia', 'Neurológica', 'Trastorno del sistema nervioso caracterizado por convulsiones recurrentes.', 'Convulsiones, pérdida de conciencia, confusión temporal.');
-
 
 INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_enf`, `sintomas_enf`) VALUES ('E013', 'Insuficiencia Cardíaca', 'Cardiovascular', 'Condición en la que el corazón no puede bombear sangre de manera eficiente.', 'Fatiga, hinchazón en las piernas, dificultad para respirar.');
 INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_enf`, `sintomas_enf`) VALUES ('E014', 'EPOC', 'Respiratoria', 'Enfermedad pulmonar obstructiva crónica que causa flujo de aire obstruido desde los pulmones.', 'Tos crónica, dificultad para respirar, producción de esputo.');
@@ -162,3 +150,168 @@ INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_e
 INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_enf`, `sintomas_enf`) VALUES ('E030', 'Migraña', 'Neurológica', 'Dolor de cabeza recurrente e intenso que puede causar náuseas y sensibilidad a la luz.', 'Dolor de cabeza severo, náuseas, sensibilidad a la luz.');
 INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_enf`, `sintomas_enf`) VALUES ('E031', 'Esclerosis Múltiple', 'Neurológica', 'Enfermedad crónica que afecta el sistema nervioso central.', 'Fatiga, problemas de equilibrio, visión borrosa.');
 INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_enf`, `sintomas_enf`) VALUES ('E032', 'Enfermedad Celíaca', 'Autoinmune', 'Trastorno en el cual la ingestión de gluten daña el intestino delgado.', 'Diarrea, dolor abdominal, pérdida de peso.');
+
+
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 1', 'Enfermedad 1', 'Tratamiento 1', 1, 1, 1, '2024-07-01');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 2', 'Enfermedad 2', 'Tratamiento 2', 2, 2, 2, '2024-07-02');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 3', 'Enfermedad 3', 'Tratamiento 3', 3, 3, 3, '2024-07-03');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 4', 'Enfermedad 4', 'Tratamiento 4', 4, 4, 4, '2024-07-04');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 5', 'Enfermedad 5', 'Tratamiento 5', 5, 5, 5, '2024-07-05');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 6', 'Enfermedad 6', 'Tratamiento 6', 6, 6, 6, '2024-07-06');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 7', 'Enfermedad 7', 'Tratamiento 7', 7, 7, 7, '2024-07-07');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 8', 'Enfermedad 8', 'Tratamiento 8', 8, 8, 8, '2024-07-08');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 9', 'Enfermedad 9', 'Tratamiento 9', 9, 9, 9, '2024-07-09');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 10', 'Enfermedad 10', 'Tratamiento 10', 10, 10, 10, '2024-07-10');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 11', 'Enfermedad 11', 'Tratamiento 11', 11, 1, 11, '2024-07-11');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 12', 'Enfermedad 12', 'Tratamiento 12', 12, 2, 12, '2024-07-12');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 13', 'Enfermedad 13', 'Tratamiento 13', 13, 3, 13, '2024-07-13');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 14', 'Enfermedad 14', 'Tratamiento 14', 14, 4, 14, '2024-07-14');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 15', 'Enfermedad 15', 'Tratamiento 15', 15, 5, 15, '2024-07-15');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 16', 'Enfermedad 16', 'Tratamiento 16', 16, 6, 16, '2024-07-16');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 17', 'Enfermedad 17', 'Tratamiento 17', 17, 7, 17, '2024-07-17');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 18', 'Enfermedad 18', 'Tratamiento 18', 18, 8, 18, '2024-07-18');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 19', 'Enfermedad 19', 'Tratamiento 19', 19, 9, 19, '2024-07-19');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 20', 'Enfermedad 20', 'Tratamiento 20', 20, 10, 20, '2024-07-20');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 21', 'Enfermedad 21', 'Tratamiento 21', 21, 1, 21, '2024-07-21');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 22', 'Enfermedad 22', 'Tratamiento 22', 22, 2, 22, '2024-07-22');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 23', 'Enfermedad 23', 'Tratamiento 23', 1, 10, 1, '2024-07-23');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 24', 'Enfermedad 24', 'Tratamiento 24', 2, 3, 2, '2024-07-24');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 25', 'Enfermedad 25', 'Tratamiento 25', 3, 4, 3, '2024-07-25');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 26', 'Enfermedad 26', 'Tratamiento 26', 4, 5, 4,'2024-07-26');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 27', 'Enfermedad 27', 'Tratamiento 27', 5, 6, 5, '2024-07-27');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 28', 'Enfermedad 28', 'Tratamiento 28', 6, 7, 6, '2024-07-28');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 29', 'Enfermedad 29', 'Tratamiento 29', 7, 8, 7, '2024-07-29');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 30', 'Enfermedad 30', 'Tratamiento 30', 8, 9, 8, '2024-07-30');
+
+
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('PA', 'mmHg');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('PESO', 'kg');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('TALLA', 'cm');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('IMC', 'kg/m2');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('FC', 'bpm');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('FR', 'rpm');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('T', '°C');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('SatO2', '%');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('GLASGOW', 'puntos');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('OCULAR', 'puntos');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('VERBAL', 'puntos');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('MOTORA', 'puntos');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('TOTAL', 'puntos');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('LLENADO_CAPILAR', 'segundos');
+INSERT INTO signo_vital (nombre_sig, unidad_sig) VALUES ('R_PUPILAR', 'puntos');
+
+
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (120.0, 1, 1);  -- PA
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (70.0, 1, 2);   -- PESO
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (170.0, 1, 3);  -- TALLA
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (24.2, 1, 4);   -- IMC
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (75.0, 1, 5);   -- FC
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (18.0, 1, 6);   -- FR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (36.5, 1, 7);   -- T
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (98.0, 1, 8);   -- SatO2
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (15.0, 1, 9);   -- GLASGOW
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (4.0, 1, 10);   -- OCULAR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (5.0, 1, 11);   -- VERBAL
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (6.0, 1, 12);   -- MOTORA
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (15.0, 1, 13);  -- TOTAL
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (2.0, 1, 14);   -- LLENADO_CAPILAR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (2.0, 1, 15);   -- R_PUPILAR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (130.0, 2, 1);  -- PA
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (75.0, 2, 2);   -- PESO
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (165.0, 2, 3);  -- TALLA
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (27.5, 2, 4);   -- IMC
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (80.0, 2, 5);   -- FC
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (20.0, 2, 6);   -- FR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (37.0, 2, 7);   -- T
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (99.0, 2, 8);   -- SatO2
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (14.0, 2, 9);   -- GLASGOW
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (3.0, 2, 10);   -- OCULAR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (4.0, 2, 11);   -- VERBAL
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (5.0, 2, 12);   -- MOTORA
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (12.0, 2, 13);  -- TOTAL
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (3.0, 2, 14);   -- LLENADO_CAPILAR
+INSERT INTO atencion_signo (valor_ats, fk_id_atencion_medica, fk_id_signos_vitales) VALUES (3.0, 2, 15);   -- R_PUPILAR
+
+
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Sangre', TRUE, 1);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Radiografía de Tórax', FALSE, 2);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Orina', TRUE, 3);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Electrocardiograma', TRUE, 4);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Glucosa', FALSE, 5);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Tomografía', TRUE, 6);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Ecografía Abdominal', TRUE, 7);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de Función Hepática', FALSE, 8);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de Función Renal', TRUE, 9);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Colesterol', TRUE, 10);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Triglicéridos', FALSE, 11);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Hemoglobina', TRUE, 12);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de Embarazo', TRUE, 13);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de VIH', FALSE, 14);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de Hepatitis', TRUE, 15);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Tiroides', TRUE, 16);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de VDRL', FALSE, 17);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de Esfuerzo', TRUE, 18);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Prueba de Alergias', TRUE, 19);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Creatinina', FALSE, 20);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Bilirrubina', TRUE, 21);
+INSERT INTO examen_complementario (titulo_exa, aplica_exa, fk_id_atencion_medica) VALUES ('Examen de Calcio', TRUE, 22);
+
+
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('PIEL Y FANERAS', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('CABEZA', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('CUELLO', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('TÓRAX', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('CORAZÓN', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('ABDOMEN', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('R. INGUINAL', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('M. SUPERIORES', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('M. INFERIORES', NULL, 'N', 1);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('PIEL Y FANERAS', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('CABEZA', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('CUELLO', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('TÓRAX', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('CORAZÓN', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('ABDOMEN', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('R. INGUINAL', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('M. SUPERIORES', NULL, 'N', 2);
+INSERT INTO examen_fisico (nombre_exa, numero_exa, descripcion_exa, fk_id_atencion_medica) VALUES ('M. INFERIORES', NULL, 'N', 2);
+
+
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion P', 'Departamento P', 'Entidad Sistema P', 'Establecimiento P', 'Servicio P', 'Especialidad P', '2023-05-01', 'Motivo P', 'Resumen P', 'Hallazgos P', NULL);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion Q', 'Departamento Q', 'Entidad Sistema Q', 'Establecimiento Q', 'Servicio Q', 'Especialidad Q', '2023-06-02', 'Motivo Q', 'Resumen Q', 'Hallazgos Q', NULL);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion R', 'Departamento R', 'Entidad Sistema R', 'Establecimiento R', 'Servicio R', 'Especialidad R', '2023-07-03', 'Motivo R', 'Resumen R', 'Hallazgos R', NULL);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion S', 'Departamento S', 'Entidad Sistema S', 'Establecimiento S', 'Servicio S', 'Especialidad S', '2023-08-04', 'Motivo S', 'Resumen S', 'Hallazgos S', NULL);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion T', 'Departamento T', 'Entidad Sistema T', 'Establecimiento T', 'Servicio T', 'Especialidad T', '2023-09-05', 'Motivo T', 'Resumen T', 'Hallazgos T', NULL);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion A', 'Departamento A', 'Entidad Sistema A', 'Establecimiento A', 'Servicio A', 'Especialidad A', '2023-01-01', 'Motivo A', 'Resumen A', 'Hallazgos A', 6);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion B', 'Departamento B', 'Entidad Sistema B', 'Establecimiento B', 'Servicio B', 'Especialidad B', '2023-01-02', 'Motivo B', 'Resumen B', 'Hallazgos B', 7);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion C', 'Departamento C', 'Entidad Sistema C', 'Establecimiento C', 'Servicio C', 'Especialidad C', '2023-01-03', 'Motivo C', 'Resumen C', 'Hallazgos C', 8);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion D', 'Departamento D', 'Entidad Sistema D', 'Establecimiento D', 'Servicio D', 'Especialidad D', '2023-01-04', 'Motivo D', 'Resumen D', 'Hallazgos D', 9);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion E', 'Departamento E', 'Entidad Sistema E', 'Establecimiento E', 'Servicio E', 'Especialidad E', '2023-01-05', 'Motivo E', 'Resumen E', 'Hallazgos E', 10);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion F', 'Departamento F', 'Entidad Sistema F', 'Establecimiento F', 'Servicio F', 'Especialidad F', '2023-01-06', 'Motivo F', 'Resumen F', 'Hallazgos F', 11);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion G', 'Departamento G', 'Entidad Sistema G', 'Establecimiento G', 'Servicio G', 'Especialidad G', '2023-01-07', 'Motivo G', 'Resumen G', 'Hallazgos G', 12);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion H', 'Departamento H', 'Entidad Sistema H', 'Establecimiento H', 'Servicio H', 'Especialidad H', '2023-01-08', 'Motivo H', 'Resumen H', 'Hallazgos H', 13);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion I', 'Departamento I', 'Entidad Sistema I', 'Establecimiento I', 'Servicio I', 'Especialidad I', '2023-01-09', 'Motivo I', 'Resumen I', 'Hallazgos I', 14);
+INSERT INTO referencia_medica (institucion_ref, departamento_ref, entidad_sistema_ref, establecimiento_ref, servicio_ref, especialidad_ref, fecha_ref, motivo_referencia_ref, resumen_ref, hallazgos_ref, fk_id_atencion_medica) VALUES ('Institucion J', 'Departamento J', 'Entidad Sistema J', 'Establecimiento J', 'Servicio J', 'Especialidad J', '2023-01-10', 'Motivo J', 'Resumen J', 'Hallazgos J', 15);
+
+
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag1', TRUE, 1, NULL, 1);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag2', FALSE, 2, NULL, 2);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag3', TRUE, 3, NULL, 3);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag4', FALSE, 4, NULL, 4);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag5', TRUE, 5, NULL, 5);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag11', TRUE, 1, NULL, 6);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag12', FALSE, 2, NULL, 7);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag13', TRUE, 3, NULL, 8);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag14', FALSE, 4, NULL, 9);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag15', TRUE, 5, NULL, 10);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag6', TRUE, NULL, 1, 11);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag7', FALSE, NULL, 2, 12);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag8', TRUE, NULL, 3, 13);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag9', FALSE, NULL, 4, 14);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag10', TRUE, NULL, 5, 15);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag16', TRUE, NULL, 1, 16);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag17', FALSE, NULL, 2, 17);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag18', TRUE, NULL, 3, 18);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag19', FALSE, NULL, 4, 19);
+INSERT INTO diagnostico (inicial_dia, estado_dia, fk_id_atencion_medica, fk_id_referencia_medica, fk_id_enfermedad) VALUES ('Diag20', TRUE, NULL, 5, 20);
+

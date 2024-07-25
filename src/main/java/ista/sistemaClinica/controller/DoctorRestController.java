@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ista.sistemaClinica.model.entity.Doctor;
-import ista.sistemaClinica.model.entity.Paciente;
 import ista.sistemaClinica.model.services.IDoctorService;
 
 @RestController

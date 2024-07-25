@@ -47,10 +47,10 @@ public class ExamenFisicoRestController {
 		ExamenFisico examenFisicoActual = examenFisicoService.findById(id);
 		
 		
-		examenFisicoActual.setNombre_exa(examenFisico.getNombre_exa());
-		examenFisicoActual.setNumero_exa(examenFisico.getNumero_exa());
-		examenFisicoActual.setDescripcion_exa(examenFisico.getDescripcion_exa());
-		examenFisicoActual.setAtencion_medica(examenFisico.getAtencion_medica());
+		examenFisicoActual.setNombreExa(examenFisico.getNombreExa());
+		examenFisicoActual.setNumeroExa(examenFisico.getNumeroExa());
+		examenFisicoActual.setDescripcionExa(examenFisico.getDescripcionExa());
+		examenFisicoActual.setAtencionMedica(examenFisico.getAtencionMedica());
 	
 		return examenFisicoService.save(examenFisicoActual);
 		

@@ -2,6 +2,7 @@ package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -29,9 +30,10 @@ public class AtencionMedica implements Serializable {
     @JoinColumn(name = "fk_id_doctor")
     private Doctor doctor;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_id_diagnostico")
-    private Diagnostico diagnostico;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_atencion_medica")
+	private List<Diagnostico> diagnostico;
+    
     
     @Temporal(TemporalType.DATE)
     private Date fechaAtencionAte;
@@ -121,14 +123,13 @@ public class AtencionMedica implements Serializable {
 	}
 
 
-
-	public Diagnostico getDiagnostico() {
+	public List<Diagnostico> getDiagnostico() {
 		return diagnostico;
 	}
 
 
 
-	public void setDiagnostico(Diagnostico diagnostico) {
+	public void setDiagnostico(List<Diagnostico> diagnostico) {
 		this.diagnostico = diagnostico;
 	}
 

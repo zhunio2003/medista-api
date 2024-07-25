@@ -2,6 +2,7 @@ package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -26,14 +27,14 @@ public class ReferenciaMedica implements Serializable {
     private String motivo_referencia_ref;
     private String resumen_ref;
     private String hallazgos_ref;
-    
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_diagnostico_ref")
-    private Diagnostico diagnostico;
-
+  
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_atencion_medica")
     private AtencionMedica atencionMedica;
+    
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_referencia_medica")
+	private List<Diagnostico> diagnostico;
 
     private static final long serialVersionUID = 1L;
 
@@ -126,11 +127,11 @@ public class ReferenciaMedica implements Serializable {
 		this.hallazgos_ref = hallazgos_ref;
 	}
 
-	public Diagnostico getDiagnostico() {
+	public List<Diagnostico> getDiagnostico() {
 		return diagnostico;
 	}
 
-	public void setDiagnostico(Diagnostico diagnostico) {
+	public void setDiagnostico(List<Diagnostico> diagnostico) {
 		this.diagnostico = diagnostico;
 	}
 

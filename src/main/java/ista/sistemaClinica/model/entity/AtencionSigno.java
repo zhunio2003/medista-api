@@ -4,59 +4,55 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "atencion_signos")
+@Table(name = "atencion_signo")
 public class AtencionSigno implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_ats;
+    private Long idAts;
 
-    private Double valor_ats;
+    private Double valorAts;
 
     @ManyToOne
     @JoinColumn(name = "fk_id_atencion_medica")
-    private AtencionMedica atencion_medica;
+    private AtencionMedica atencionMedica;
 
     @ManyToOne
     @JoinColumn(name = "fk_id_signos_vitales")
-    private SignoVital signos_vitales;
+    private SignoVital signosVitales;
 
     private static final long serialVersionUID = 1L;
 
-    // Getters y Setters
-	public Long getId_ats() {
-		return id_ats;
+	public Long getIdAts() {
+		return idAts;
 	}
 
-	public void setId_ats(Long id_ats) {
-		this.id_ats = id_ats;
+	public void setIdAts(Long idAts) {
+		this.idAts = idAts;
 	}
 
-	public Double getValor_ats() {
-		return valor_ats;
+	public Double getValorAts() {
+		return valorAts;
 	}
 
-	public void setValor_ats(Double valor_ats) {
-		this.valor_ats = valor_ats;
+	public void setValorAts(Double valorAts) {
+		this.valorAts = valorAts;
 	}
 
-	public AtencionMedica getAtencion_medica() {
-		return atencion_medica;
+	public AtencionMedica getAtencionMedica() {
+		return atencionMedica;
 	}
 
-	public void setAtencion_medica(AtencionMedica atencion_medica) {
-		this.atencion_medica = atencion_medica;
+	public void setAtencionMedica(AtencionMedica atencionMedica) {
+		this.atencionMedica = atencionMedica;
 	}
 
-	public SignoVital getSignos_vitales() {
-		return signos_vitales;
+	public SignoVital getSignosVitales() {
+		return signosVitales;
 	}
 
-	public void setSignos_vitales(SignoVital signos_vitales) {
-		this.signos_vitales = signos_vitales;
+	public void setSignosVitales(SignoVital signosVitales) {
+		this.signosVitales = signosVitales;
 	}
-
-   
-    
     
 }

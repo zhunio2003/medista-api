@@ -11,9 +11,13 @@ public class Diagnostico implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idDia;
 
+    @OneToOne()
+    @JoinColumn(name = "fk_id_enfermedad")
+    private Enfermedad enfermedad;
+    
     private String inicialDia;
-    private Boolean estadoDia; // Existe para ocultar y no eliminar el diagnostico
-
+    private Boolean estadoDia;
+    
     private static final long serialVersionUID = 1L;
 
 	public Long getIdDia() {
@@ -22,6 +26,14 @@ public class Diagnostico implements Serializable {
 
 	public void setIdDia(Long idDia) {
 		this.idDia = idDia;
+	}
+
+	public Enfermedad getEnfermedad() {
+		return enfermedad;
+	}
+
+	public void setEnfermedad(Enfermedad enfermedad) {
+		this.enfermedad = enfermedad;
 	}
 
 	public String getInicialDia() {
@@ -39,5 +51,5 @@ public class Diagnostico implements Serializable {
 	public void setEstadoDia(Boolean estadoDia) {
 		this.estadoDia = estadoDia;
 	}
-       
+
 }

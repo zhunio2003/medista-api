@@ -9,59 +9,58 @@ public class ExamenFisico implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_exa;
+    private Long idExa;
 
-    private String nombre_exa;
-    private Double numero_exa;
-    private String descripcion_exa;
+    private String nombreExa;
+    private Double numeroExa;
+    private String descripcionExa;
 
     @ManyToOne
     @JoinColumn(name = "fk_id_AtencionMedica")
-    private AtencionMedica atencion_medica;
+    private AtencionMedica atencionMedica;
 
     private static final long serialVersionUID = 1L;
 
+	public Long getIdExa() {
+		return idExa;
+	}
+
+	public void setIdExa(Long idExa) {
+		this.idExa = idExa;
+	}
+
+	public String getNombreExa() {
+		return nombreExa;
+	}
+
+	public void setNombreExa(String nombreExa) {
+		this.nombreExa = nombreExa;
+	}
+
+	public Double getNumeroExa() {
+		return numeroExa;
+	}
+
+	public void setNumeroExa(Double numeroExa) {
+		this.numeroExa = numeroExa;
+	}
+
+	public String getDescripcionExa() {
+		return descripcionExa;
+	}
+
+	public void setDescripcionExa(String descripcionExa) {
+		this.descripcionExa = descripcionExa;
+	}
+
+	public AtencionMedica getAtencionMedica() {
+		return atencionMedica;
+	}
+
+	public void setAtencionMedica(AtencionMedica atencionMedica) {
+		this.atencionMedica = atencionMedica;
+	}
+
     // Getters y Setters
-	public Long getId_exa() {
-		return id_exa;
-	}
 
-	public void setId_exa(Long id_exa) {
-		this.id_exa = id_exa;
-	}
-
-	public String getNombre_exa() {
-		return nombre_exa;
-	}
-
-	public void setNombre_exa(String nombre_exa) {
-		this.nombre_exa = nombre_exa;
-	}
-
-	public Double getNumero_exa() {
-		return numero_exa;
-	}
-
-	public void setNumero_exa(Double numero_exa) {
-		this.numero_exa = numero_exa;
-	}
-
-	public String getDescripcion_exa() {
-		return descripcion_exa;
-	}
-
-	public void setDescripcion_exa(String descripcion_exa) {
-		this.descripcion_exa = descripcion_exa;
-	}
-
-	public AtencionMedica getAtencion_medica() {
-		return atencion_medica;
-	}
-
-	public void setAtencion_medica(AtencionMedica atencion_medica) {
-		this.atencion_medica = atencion_medica;
-	}
-
-   
-    
 }

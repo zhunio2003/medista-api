@@ -47,8 +47,8 @@ public class ExamenComplementarioRestController {
 		ExamenComplementario examenComplementarioActual = examenComplementarioService.findById(id);
 		
 		
-		examenComplementarioActual.setTitulo_exa(examenComplementario.getTitulo_exa());
-		examenComplementarioActual.setAplica_exa(examenComplementario.getAplica_exa());
+		examenComplementarioActual.setTituloExa(examenComplementario.getTituloExa());
+		examenComplementarioActual.setAplicaExa(examenComplementario.getAplicaExa());
 		examenComplementarioActual.setAtencionMedica(examenComplementario.getAtencionMedica());
 
 		return examenComplementarioService.save(examenComplementarioActual);

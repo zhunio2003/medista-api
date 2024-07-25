@@ -4,48 +4,47 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "signos_vitales")
+@Table(name = "signo_vital")
 public class SignoVital implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_sig;
+    private Long idSig;
 
-    private String nombre_sig;
-    private String unidad_sig;
+    private String nombreSig;
+    private String unidadSig;
 
 
     private static final long serialVersionUID = 1L;
-    
-    // Getters y Setters
-	public Long getId_sig() {
-		return id_sig;
+
+
+	public Long getIdSig() {
+		return idSig;
 	}
 
 
-	public void setId_sig(Long id_sig) {
-		this.id_sig = id_sig;
+	public void setIdSig(Long idSig) {
+		this.idSig = idSig;
 	}
 
 
-	public String getNombre_sig() {
-		return nombre_sig;
+	public String getNombreSig() {
+		return nombreSig;
 	}
 
 
-	public void setNombre_sig(String nombre_sig) {
-		this.nombre_sig = nombre_sig;
+	public void setNombreSig(String nombreSig) {
+		this.nombreSig = nombreSig;
 	}
 
 
-	public String getUnidad_sig() {
-		return unidad_sig;
+	public String getUnidadSig() {
+		return unidadSig;
 	}
 
 
-	public void setUnidad_sig(String unidad_sig) {
-		this.unidad_sig = unidad_sig;
+	public void setUnidadSig(String unidadSig) {
+		this.unidadSig = unidadSig;
 	}
-
     
 }

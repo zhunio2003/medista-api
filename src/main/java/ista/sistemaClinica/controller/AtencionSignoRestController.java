@@ -48,9 +48,9 @@ public class AtencionSignoRestController {
 		AtencionSigno atencionSignoActual = atencionSignoService.findById(id);
 		
 		
-		atencionSignoActual.setValor_ats(atencionSigno.getValor_ats());
-		atencionSignoActual.setAtencion_medica(atencionSigno.getAtencion_medica());
-		atencionSignoActual.setSignos_vitales(atencionSigno.getSignos_vitales());	
+		atencionSignoActual.setValorAts(atencionSigno.getValorAts());
+		atencionSignoActual.setAtencionMedica(atencionSigno.getAtencionMedica());
+		atencionSignoActual.setSignosVitales(atencionSigno.getSignosVitales());	
 	
 		return atencionSignoService.save(atencionSignoActual);
 		

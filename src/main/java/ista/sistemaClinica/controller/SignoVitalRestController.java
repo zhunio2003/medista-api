@@ -48,8 +48,8 @@ public class SignoVitalRestController {
 		SignoVital signoVitalActual = signoVitalService.findById(id);
 		
 		
-		signoVitalActual.setUnidad_sig(signoVital.getUnidad_sig());
-		signoVitalActual.setNombre_sig(signoVital.getNombre_sig());
+		signoVitalActual.setUnidadSig(signoVital.getUnidadSig());
+		signoVitalActual.setNombreSig(signoVital.getNombreSig());
 
 		return signoVitalService.save(signoVitalActual);
 		
