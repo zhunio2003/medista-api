@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import ista.sistemaClinica.model.entity.Enfermedad;
 import ista.sistemaClinica.model.entity.Titulo;
 import ista.sistemaClinica.model.services.ITituloService;
 
@@ -48,9 +49,9 @@ public class TituloRestController {
 		Titulo tituloActual = tituloService.findById(id);
 		
 		
-		tituloActual.setContenido_tit(titulo.getContenido_tit());
-		tituloActual.setFecha_creacion_tit(titulo.getFecha_creacion_tit());
-		tituloActual.setLeyenda_tit(titulo.getLeyenda_tit());
+		tituloActual.setContenidoTit(titulo.getContenidoTit());
+		tituloActual.setFechaCreacion(titulo.getFechaCreacion());
+		tituloActual.setLeyendaTit(titulo.getLeyendaTit());
 		tituloActual.setInstituto(titulo.getInstituto());
 	
 		return tituloService.save(tituloActual);
@@ -62,4 +63,10 @@ public class TituloRestController {
 	public void delete(@PathVariable Long id) {
 		tituloService.delete(id);
 	}
+	// metodos para filtrar por codigo
+	@GetMapping("/titulos/codigoTit/{codigoTit}")
+	public Titulo showTitulo(@PathVariable Long codigoTit) {
+		return tituloService.findById(codigoTit);
+	}
+	
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ista.sistemaClinica.model.dao.IInstitutoDao;
 import ista.sistemaClinica.model.entity.Instituto;
+import ista.sistemaClinica.model.entity.Titulo;
 import ista.sistemaClinica.model.services.IInstitutoService;
 
 @Service
@@ -42,6 +43,7 @@ public class InstitutoServiceImp implements IInstitutoService {
 		institutoDao.deleteById(id);
 		
 	}
+
 
 
 }

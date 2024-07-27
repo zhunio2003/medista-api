@@ -1,9 +1,12 @@
 package ista.sistemaClinica.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import ista.sistemaClinica.model.entity.Instituto;
 import ista.sistemaClinica.model.services.IInstitutoService;
@@ -37,22 +42,38 @@ public class InstitutoRestController {
 	
 	@PostMapping("/institutos")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Instituto create(@RequestBody Instituto instituto) {
-		return institutoService.save(instituto);
+	public Instituto create(@RequestParam("nombreIns") String nombreIns,
+	                         @RequestParam("direccionIns") String direccionIns,
+	                         @RequestParam("rectorIns") String rectorIns,
+	                         @RequestParam("imageInstituto") MultipartFile imageInstituto) {
+	    Instituto instituto = new Instituto();
+	    instituto.setNombreIns(nombreIns);
+	    instituto.setDireccionIns(direccionIns);
+	    instituto.setRectorIns(rectorIns);
+
+	    if (imageInstituto != null && !imageInstituto.isEmpty()) {
+	        try {
+	            instituto.setImageInstituto(imageInstituto.getBytes()); // Guarda la imagen en bytes
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            throw new RuntimeException("Error al procesar la imagen", e);
+	        }
+	    }
+
+	    return institutoService.save(instituto);
 	}
-	
-	@PutMapping("/institutos/{id}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Instituto update(@RequestBody Instituto instituto, @PathVariable Long id) {
-		Instituto institutoActual = institutoService.findById(id);	
-		
-		institutoActual.setNombreIns(instituto.getNombreIns());
-		institutoActual.setDireccionIns(instituto.getDireccionIns());
-		institutoActual.setRectorIns(instituto.getRectorIns());
-		institutoActual.setImageInstituto(instituto.getImageInstituto());
-	
-		return institutoService.save(institutoActual);
-		
+
+	@GetMapping("/institutos/{id}/imagen")
+	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
+	    Instituto instituto = institutoService.findById(id);
+	    if (instituto != null && instituto.getImageInstituto() != null) {
+	        byte[] imageBytes = instituto.getImageInstituto();
+	        return ResponseEntity.ok()
+	                .contentType(MediaType.IMAGE_PNG) // Ajusta según el tipo de imagen
+	                .body(imageBytes);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
 	}
 	
 	@DeleteMapping("/institutos/{id}")

@@ -17,68 +17,73 @@ public class Titulo implements Serializable{
 	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id_tit;
+    private Long idTit;
 	
-	private String contenido_tit;
-    private String fecha_creacion_tit;
-    private String leyenda_tit;
+	private String contenidoTit;
+    private String fechaCreacion;
+    private String leyendaTit;
     
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_instituto")
     private Instituto instituto;
     
 
-	public Long getId_tit() {
-		return id_tit;
+
+	public Long getIdTit() {
+		return idTit;
 	}
 
 
 
 
-	public void setId_tit(Long id_tit) {
-		this.id_tit = id_tit;
+	public void setIdTit(Long idTit) {
+		this.idTit = idTit;
 	}
 
 
 
 
-	public String getContenido_tit() {
-		return contenido_tit;
+	public String getContenidoTit() {
+		return contenidoTit;
 	}
 
 
 
 
-	public void setContenido_tit(String contenido_tit) {
-		this.contenido_tit = contenido_tit;
+	public void setContenidoTit(String contenidoTit) {
+		this.contenidoTit = contenidoTit;
 	}
 
 
 
 
-	public String getFecha_creacion_tit() {
-		return fecha_creacion_tit;
+
+
+
+
+	public String getFechaCreacion() {
+		return fechaCreacion;
 	}
 
 
 
 
-	public void setFecha_creacion_tit(String fecha_creacion_tit) {
-		this.fecha_creacion_tit = fecha_creacion_tit;
+	public void setFechaCreacion(String fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
 	}
 
 
 
 
-	public String getLeyenda_tit() {
-		return leyenda_tit;
+	public String getLeyendaTit() {
+		return leyendaTit;
 	}
 
 
 
 
-	public void setLeyenda_tit(String leyenda_tit) {
-		this.leyenda_tit = leyenda_tit;
+	public void setLeyendaTit(String leyendaTit) {
+		this.leyendaTit = leyendaTit;
 	}
 
 
