@@ -12,10 +12,11 @@ public class Discapacidad implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idDis;
 
-    private Boolean fisicaDis;
-    private Boolean intelectualDis;
+    private Boolean discapacidadG; // si/no
+    //private Boolean intelectualDis;
     private Double porcentajeDis;
     private String subtipoDis;
+    private Boolean carnetCon;
         
     private static final long serialVersionUID = 1L;
 
@@ -26,21 +27,32 @@ public class Discapacidad implements Serializable {
 	public void setIdDis(Long idDis) {
 		this.idDis = idDis;
 	}
+	
 
-	public Boolean getFisicaDis() {
-		return fisicaDis;
-	}
+	
 
-	public void setFisicaDis(Boolean fisicaDis) {
-		this.fisicaDis = fisicaDis;
-	}
-
-	public Boolean getIntelectualDis() {
+	/*public Boolean getIntelectualDis() {
 		return intelectualDis;
 	}
 
 	public void setIntelectualDis(Boolean intelectualDis) {
 		this.intelectualDis = intelectualDis;
+	}*/
+
+	public Boolean getDiscapacidadG() {
+		return discapacidadG;
+	}
+
+	public void setDiscapacidadG(Boolean discapacidadG) {
+		this.discapacidadG = discapacidadG;
+	}
+
+	public Boolean getCarnetCon() {
+		return carnetCon;
+	}
+
+	public void setCarnetCon(Boolean carnetCon) {
+		this.carnetCon = carnetCon;
 	}
 
 	public Double getPorcentajeDis() {
@@ -58,6 +70,7 @@ public class Discapacidad implements Serializable {
 	public void setSubtipoDis(String subtipoDis) {
 		this.subtipoDis = subtipoDis;
 	}
+
     
     
     
