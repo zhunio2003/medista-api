@@ -17,6 +17,7 @@ public class Discapacidad implements Serializable {
     private Double porcentajeDis;
     private String subtipoDis;
     private Boolean carnetCon;
+    private int numeroConadis;
         
     private static final long serialVersionUID = 1L;
 
@@ -69,6 +70,14 @@ public class Discapacidad implements Serializable {
 
 	public void setSubtipoDis(String subtipoDis) {
 		this.subtipoDis = subtipoDis;
+	}
+
+	public int getNumeroConadis() {
+		return numeroConadis;
+	}
+
+	public void setNumeroConadis(int numeroConadis) {
+		this.numeroConadis = numeroConadis;
 	}
 
     

@@ -54,6 +54,7 @@ public class DiscapacidadRestController {
 		atencioMedicaActual.setPorcentajeDis(discapacidad.getPorcentajeDis());
 		atencioMedicaActual.setSubtipoDis(discapacidad.getSubtipoDis());
 		atencioMedicaActual.setCarnetCon(discapacidad.getCarnetCon());
+		atencioMedicaActual.setNumeroConadis(discapacidad.getNumeroConadis());
 	
 		return discapacidadService.save(atencioMedicaActual);
 		
