@@ -1,9 +1,12 @@
 package ista.sistemaClinica.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,4 +68,31 @@ public class AtencionMedicaRestController {
 	public void delete(@PathVariable Long id) {
 		atencionMedicaService.delete(id);
 	}
+	
+	@GetMapping("/enfermedades_actuales")
+    public ResponseEntity<Map<String, Integer>> getEnfermedadesActuales() {
+        List<AtencionMedica> atenciones = atencionMedicaService.findAll();
+        Map<String, Integer> enfermedadesCount = new HashMap<>();
+
+        for (AtencionMedica atencion : atenciones) {
+            String enfermedad = atencion.getEnfermedadActualAte();
+            enfermedadesCount.put(enfermedad, enfermedadesCount.getOrDefault(enfermedad, 0) + 1);
+        }
+
+        return new ResponseEntity<>(enfermedadesCount, HttpStatus.OK);
+    }
+	
+	@GetMapping("/atenciones_por_ano")
+	public ResponseEntity<Map<Integer, Integer>> getAtencionesPorAno() {
+	    List<AtencionMedica> atenciones = atencionMedicaService.findAll();
+	    Map<Integer, Integer> atencionesPorAno = new HashMap<>();
+
+	    for (AtencionMedica atencion : atenciones) {
+	        int ano = atencion.getFechaAtencionAte().toLocalDate().getYear();
+	        atencionesPorAno.put(ano, atencionesPorAno.getOrDefault(ano, 0) + 1);
+	    }
+
+	    return new ResponseEntity<>(atencionesPorAno, HttpStatus.OK);
+	}
+
 }
