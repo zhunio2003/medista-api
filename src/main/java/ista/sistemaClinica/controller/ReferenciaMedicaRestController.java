@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
+import ista.sistemaClinica.model.entity.AtencionMedica;
 import ista.sistemaClinica.model.entity.ReferenciaMedica;
+import ista.sistemaClinica.model.services.IAtencionMedicaService;
 import ista.sistemaClinica.model.services.IReferenciaMedicaService;
 
 
@@ -25,6 +28,8 @@ import ista.sistemaClinica.model.services.IReferenciaMedicaService;
 public class ReferenciaMedicaRestController {
 	@Autowired
 	private IReferenciaMedicaService referenciaMedicaService;
+	@Autowired
+    private IAtencionMedicaService atencionMedicaService;
 	
 	@GetMapping("/referencias_medicas")
 	public List<ReferenciaMedica> index() {
@@ -37,10 +42,22 @@ public class ReferenciaMedicaRestController {
 	}
 	
 	@PostMapping("/referencias_medicas")
-	@ResponseStatus(HttpStatus.CREATED)
-	public ReferenciaMedica create(@RequestBody ReferenciaMedica referenciaMedica) {
-		return referenciaMedicaService.save(referenciaMedica);
-	}
+    @ResponseStatus(HttpStatus.CREATED)
+    public ReferenciaMedica create(@RequestBody ReferenciaMedica referenciaMedica) {
+        // Cargar la entidad AtencionMedica por su ID y asignarla a ReferenciaMedica
+        if (referenciaMedica.getAtencionMedica() != null && referenciaMedica.getAtencionMedica().getIdAte() != null) {
+            AtencionMedica atencionMedica = atencionMedicaService.findById(referenciaMedica.getAtencionMedica().getIdAte());
+            if (atencionMedica != null) {
+                referenciaMedica.setAtencionMedica(atencionMedica);
+            } else {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Atención Médica no encontrada");
+            }
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID de Atención Médica no proporcionado");
+        }
+        return referenciaMedicaService.save(referenciaMedica);
+    }
+	
 	
 	@PutMapping("/referencias_medicas/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
@@ -49,17 +66,23 @@ public class ReferenciaMedicaRestController {
 		
 		
 		referenciaMedicaActual.setInstitucion_ref(referenciaMedica.getInstitucion_ref());
-		referenciaMedicaActual.setDepartamento_ref(referenciaMedica.getDepartamento_ref());
+		referenciaMedicaActual.setCedula_doc_ref(referenciaMedica.getCedula_doc_ref());
+		referenciaMedicaActual.setServicio_ref(referenciaMedica.getServicio_refe_ref());
+		
 		referenciaMedicaActual.setEntidad_sistema_ref(referenciaMedica.getEntidad_sistema_ref());
 		referenciaMedicaActual.setEstablecimiento_ref(referenciaMedica.getEstablecimiento_ref());
 		referenciaMedicaActual.setServicio_ref(referenciaMedica.getServicio_ref());
 		referenciaMedicaActual.setEspecialidad_ref(referenciaMedica.getEspecialidad_ref());
 		referenciaMedicaActual.setFecha_ref(referenciaMedica.getFecha_ref());
+		referenciaMedicaActual.setMotivo_limitada_ref(referenciaMedica.isMotivo_limitada_ref());
+		referenciaMedicaActual.setMotivo_falta_ref(referenciaMedica.isMotivo_falta_ref());
+		referenciaMedicaActual.setMotivo_otros_ref(referenciaMedica.isMotivo_otros_ref());
 
-		referenciaMedicaActual.setMotivo_referencia_ref(referenciaMedica.getMotivo_referencia_ref());
 		referenciaMedicaActual.setResumen_ref(referenciaMedica.getResumen_ref());
 		referenciaMedicaActual.setHallazgos_ref(referenciaMedica.getHallazgos_ref());
-		referenciaMedicaActual.setDiagnostico(referenciaMedica.getDiagnostico());
+		
+		referenciaMedicaActual.setNombre_doc_ref(referenciaMedica.getNombre_doc_ref());
+		referenciaMedicaActual.setCodigo_msp_ref(referenciaMedica.getCodigo_msp_ref());
 		referenciaMedicaActual.setAtencionMedica(referenciaMedica.getAtencionMedica());
 	
 		return referenciaMedicaService.save(referenciaMedicaActual);
