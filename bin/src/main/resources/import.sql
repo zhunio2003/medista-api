@@ -152,7 +152,7 @@ INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_e
 INSERT INTO `enfermedad` (`codigo_enf`, `nombre_enf`, `tipo_enf`, `descripcion_enf`, `sintomas_enf`) VALUES ('E032', 'Enfermedad Celíaca', 'Autoinmune', 'Trastorno en el cual la ingestión de gluten daña el intestino delgado.', 'Diarrea, dolor abdominal, pérdida de peso.');
 
 
-INSERT INTO `atencion_medica` (`motivoAte`, `enfermedadActualAte`, `tratamientoAte`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fechaAtencionAte`) VALUES ('Motivo 1', 'Enfermedad 1', 'Tratamiento 1', 1, 1, 1, '2024-07-01');
+INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 1', 'Enfermedad 1', 'Tratamiento 1', 1, 1, 1, '2024-07-01');
 INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 2', 'Enfermedad 2', 'Tratamiento 2', 2, 2, 2, '2024-07-02');
 INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 3', 'Enfermedad 3', 'Tratamiento 3', 3, 3, 3, '2024-07-03');
 INSERT INTO `atencion_medica` (`motivo_ate`, `enfermedad_actual_ate`, `tratamiento_ate`, `fk_id_ficha_medica`, `fk_id_instituto`, `fk_id_doctor`, `fecha_atencion_ate`) VALUES ('Motivo 4', 'Enfermedad 4', 'Tratamiento 4', 4, 4, 4, '2024-07-04');
