@@ -49,7 +49,6 @@ public class ExamenComplementarioRestController {
 		
 		examenComplementarioActual.setTituloExa(examenComplementario.getTituloExa());
 		examenComplementarioActual.setAplicaExa(examenComplementario.getAplicaExa());
-		examenComplementarioActual.setAtencionMedica(examenComplementario.getAtencionMedica());
 
 		return examenComplementarioService.save(examenComplementarioActual);
 		
