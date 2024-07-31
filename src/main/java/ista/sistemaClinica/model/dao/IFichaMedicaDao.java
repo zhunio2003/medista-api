@@ -1,11 +1,11 @@
 package ista.sistemaClinica.model.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 
-import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.FichaMedica;
+import ista.sistemaClinica.model.entity.Paciente;
 
-public interface IFichaMedicaDao extends CrudRepository<FichaMedica, Long>{
+public interface IFichaMedicaDao extends JpaRepository<FichaMedica, Long>{
+	FichaMedica findByPaciente(Paciente paciente);
 
 }

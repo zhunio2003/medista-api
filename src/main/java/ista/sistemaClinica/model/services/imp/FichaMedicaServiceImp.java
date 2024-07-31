@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ista.sistemaClinica.model.dao.IFichaMedicaDao;
 import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.FichaMedica;
+import ista.sistemaClinica.model.entity.Paciente;
 import ista.sistemaClinica.model.services.IFichaMedicaService;
 
 @Service
@@ -42,6 +43,11 @@ public class FichaMedicaServiceImp implements IFichaMedicaService{
 	public void delete(Long id) {
 		fichaMedicaDao.deleteById(id);
 		
+	}
+
+	@Override
+	public FichaMedica findByPaciente(Paciente paciente) {
+		return fichaMedicaDao.findByPaciente(paciente);
 	}
 	
 

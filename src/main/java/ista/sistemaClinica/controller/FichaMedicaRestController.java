@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import ista.sistemaClinica.model.entity.Doctor;
 import ista.sistemaClinica.model.entity.FichaMedica;
+import ista.sistemaClinica.model.entity.Paciente;
 import ista.sistemaClinica.model.services.IFichaMedicaService;
 
 @RestController
@@ -34,6 +34,11 @@ public class FichaMedicaRestController {
 	@GetMapping("/fichas_medicas/{id}")
 	public FichaMedica show(@PathVariable Long id) {
 		return fichaMedicaService.findById(id);
+	}
+	
+	@GetMapping("/fichas_medicas/paciente/{paciente}")
+	public FichaMedica show(@PathVariable Paciente paciente) {
+		return fichaMedicaService.findByPaciente(paciente);
 	}
 	
 	@PostMapping("/fichas_medicas")

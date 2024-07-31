@@ -14,12 +14,8 @@ public class AtencionSigno implements Serializable {
     private Double valorAts;
 
     @ManyToOne
-    @JoinColumn(name = "fk_id_atencion_medica")
-    private AtencionMedica atencionMedica;
-
-    @ManyToOne
     @JoinColumn(name = "fk_id_signos_vitales")
-    private SignoVital signosVitales;
+    private SignoVital signoVital;
 
     private static final long serialVersionUID = 1L;
 
@@ -39,20 +35,12 @@ public class AtencionSigno implements Serializable {
 		this.valorAts = valorAts;
 	}
 
-	public AtencionMedica getAtencionMedica() {
-		return atencionMedica;
+	public SignoVital getSignoVital() {
+		return signoVital;
 	}
 
-	public void setAtencionMedica(AtencionMedica atencionMedica) {
-		this.atencionMedica = atencionMedica;
-	}
-
-	public SignoVital getSignosVitales() {
-		return signosVitales;
-	}
-
-	public void setSignosVitales(SignoVital signosVitales) {
-		this.signosVitales = signosVitales;
+	public void setSignoVital(SignoVital signoVital) {
+		this.signoVital = signoVital;
 	}
     
 }

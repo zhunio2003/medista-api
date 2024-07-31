@@ -32,8 +32,15 @@ public class AtencionMedica implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_atencion_medica")
-	private List<Diagnostico> diagnostico;
+	private List<Diagnostico> diagnosticos;
     
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_atencion_medica")
+	private List<ExamenComplementario> examenescomplementarios;
+    
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_atencion_medica")
+	private List<AtencionSigno> atencionesSignos;
     
     @Temporal(TemporalType.DATE)
     private Date fechaAtencionAte;
@@ -61,8 +68,6 @@ public class AtencionMedica implements Serializable {
 	public void setMotivoAte(String motivoAte) {
 		this.motivoAte = motivoAte;
 	}
-
-
 
 	public String getEnfermedadActualAte() {
 		return enfermedadActualAte;
@@ -124,13 +129,13 @@ public class AtencionMedica implements Serializable {
 
 
 	public List<Diagnostico> getDiagnostico() {
-		return diagnostico;
+		return diagnosticos;
 	}
 
 
 
 	public void setDiagnostico(List<Diagnostico> diagnostico) {
-		this.diagnostico = diagnostico;
+		this.diagnosticos = diagnostico;
 	}
 
 
@@ -143,6 +148,42 @@ public class AtencionMedica implements Serializable {
 
 	public void setFechaAtencionAte(Date fechaAtencionAte) {
 		this.fechaAtencionAte = fechaAtencionAte;
+	}
+
+
+
+	public List<Diagnostico> getDiagnosticos() {
+		return diagnosticos;
+	}
+
+
+
+	public void setDiagnosticos(List<Diagnostico> diagnosticos) {
+		this.diagnosticos = diagnosticos;
+	}
+
+
+
+	public List<ExamenComplementario> getExamenescomplementarios() {
+		return examenescomplementarios;
+	}
+
+
+
+	public void setExamenescomplementarios(List<ExamenComplementario> examenescomplementarios) {
+		this.examenescomplementarios = examenescomplementarios;
+	}
+
+
+
+	public List<AtencionSigno> getAtencionesSignos() {
+		return atencionesSignos;
+	}
+
+
+
+	public void setAtencionesSignos(List<AtencionSigno> atencionesSignos) {
+		this.atencionesSignos = atencionesSignos;
 	}
 
 }

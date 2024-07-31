@@ -15,10 +15,6 @@ public class Diagnostico implements Serializable {
     @JoinColumn(name = "fk_id_enfermedad")
     private Enfermedad enfermedad;
     
-    @ManyToOne
-    @JoinColumn(name = "fk_id_atencion_medica", nullable = false)
-    private AtencionMedica atencionMedica;
-    
     private String inicialDia;
     private Boolean estadoDia;
     
@@ -54,14 +50,6 @@ public class Diagnostico implements Serializable {
 
 	public void setEstadoDia(Boolean estadoDia) {
 		this.estadoDia = estadoDia;
-	}
-
-	public AtencionMedica getAtencionMedica() {
-		return atencionMedica;
-	}
-
-	public void setAtencionMedica(AtencionMedica atencionMedica) {
-		this.atencionMedica = atencionMedica;
 	}
 
 	public static long getSerialversionuid() {

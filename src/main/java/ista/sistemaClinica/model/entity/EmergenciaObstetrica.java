@@ -23,7 +23,7 @@ public class EmergenciaObstetrica implements Serializable {
 
     private Boolean ivsa_eme;
 
-    @Column(name = "numero_parejas_sexuales")
+    @Column(name = "numero_parejas_sexuales_eme")
     private int numero_parejas_sexuales_eme;
 
     private int g_eme;
@@ -40,6 +40,7 @@ public class EmergenciaObstetrica implements Serializable {
     private String controles_eme;
     private String inmunizaciones_eme;
     private String descripcion_eme;
+    private Boolean isEmbarazada;
     
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="fk_id_ficha_medica")
@@ -227,6 +228,16 @@ public class EmergenciaObstetrica implements Serializable {
 
 	public void setFichaMedica(FichaMedica fichaMedica) {
 		this.fichaMedica = fichaMedica;
+	}
+
+
+	public Boolean getIsEmbarazada() {
+		return isEmbarazada;
+	}
+
+
+	public void setIsEmbarazada(Boolean isEmbarazada) {
+		this.isEmbarazada = isEmbarazada;
 	}
     
 }
