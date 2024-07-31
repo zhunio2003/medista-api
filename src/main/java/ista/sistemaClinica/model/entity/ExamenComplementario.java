@@ -13,10 +13,6 @@ public class ExamenComplementario implements Serializable {
 
     private String tituloExa;
     private Boolean aplicaExa;
-
-    @ManyToOne
-    @JoinColumn(name = "fk_id_atencion_medica")
-    private AtencionMedica atencionMedica;
     
 
     private static final long serialVersionUID = 1L;
@@ -50,16 +46,6 @@ public class ExamenComplementario implements Serializable {
 	public void setAplicaExa(Boolean aplicaExa) {
 		this.aplicaExa = aplicaExa;
 	}
-
-
-	public AtencionMedica getAtencionMedica() {
-		return atencionMedica;
-	}
-
-
-	public void setAtencionMedica(AtencionMedica atencionMedica) {
-		this.atencionMedica = atencionMedica;
-	}	
 
 }
 

@@ -14,6 +14,8 @@ public class ExamenFisico implements Serializable {
     private String nombreExa;
     private Double numeroExa;
     private String descripcionExa;
+    
+    
 
     @ManyToOne
     @JoinColumn(name = "fk_id_AtencionMedica")

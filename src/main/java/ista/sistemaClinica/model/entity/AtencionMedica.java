@@ -23,10 +23,6 @@ public class AtencionMedica implements Serializable {
     private FichaMedica fichaMedica;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_id_instituto")
-    private Instituto instituto;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_doctor")
     private Doctor doctor;
 
@@ -104,19 +100,6 @@ public class AtencionMedica implements Serializable {
 	}
 
 
-
-	public Instituto getInstituto() {
-		return instituto;
-	}
-
-
-
-	public void setInstituto(Instituto instituto) {
-		this.instituto = instituto;
-	}
-
-
-
 	public Doctor getDoctor() {
 		return doctor;
 	}
@@ -126,18 +109,6 @@ public class AtencionMedica implements Serializable {
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
-
-
-	public List<Diagnostico> getDiagnostico() {
-		return diagnosticos;
-	}
-
-
-
-	public void setDiagnostico(List<Diagnostico> diagnostico) {
-		this.diagnosticos = diagnostico;
-	}
-
 
 
 	public Date getFechaAtencionAte() {
@@ -185,5 +156,7 @@ public class AtencionMedica implements Serializable {
 	public void setAtencionesSignos(List<AtencionSigno> atencionesSignos) {
 		this.atencionesSignos = atencionesSignos;
 	}
+	
+	
 
 }

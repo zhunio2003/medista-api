@@ -1,6 +1,8 @@
 package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -23,6 +25,10 @@ public class Doctor implements Serializable {
     
     private String generoDoc;
     private String passwordDoc;
+    
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_doctor")
+	private List<AtencionMedica> atencionesMedicas;
     
 
     private static final long serialVersionUID = 1L;

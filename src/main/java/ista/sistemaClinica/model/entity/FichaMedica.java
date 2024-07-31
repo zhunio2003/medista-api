@@ -2,6 +2,7 @@ package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -28,9 +29,9 @@ public class FichaMedica implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date fechaElaboracionFic;
     
-    /*@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_ficha_medica")
-	private List<ReferenciaMedica> referenciasMedicas;*/
+	private List<AtencionMedica> atencionesMedicas;
 
     private static final long serialVersionUID = 1L;
 

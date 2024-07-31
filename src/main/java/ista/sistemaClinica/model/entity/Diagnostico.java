@@ -11,7 +11,7 @@ public class Diagnostico implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idDia;
 
-    @OneToOne()
+    @ManyToOne()
     @JoinColumn(name = "fk_id_enfermedad")
     private Enfermedad enfermedad;
     
