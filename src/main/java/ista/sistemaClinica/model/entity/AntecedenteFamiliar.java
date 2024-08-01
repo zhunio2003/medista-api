@@ -18,6 +18,14 @@ public class AntecedenteFamiliar implements Serializable {
     private Boolean quirurgicoAnt;
     private Boolean farmacologicoAnt;
     
+    private String descripcionAlergiaAnt;  
+    private String descripcionClinicoAnt;  
+    private String descripcionGinecologoAnt; 
+    private String descripcionTraumatologicoAnt;
+    private String descripcionQuirurgicoAnt; 
+    private String descripcionFarmacologicoAnt; 
+    
+    
     private static final long serialVersionUID = 1L;
 
 
@@ -88,6 +96,66 @@ public class AntecedenteFamiliar implements Serializable {
 
 	public void setFarmacologicoAnt(Boolean farmacologicoAnt) {
 		this.farmacologicoAnt = farmacologicoAnt;
+	}
+
+
+	public String getDescripcionAlergiaAnt() {
+		return descripcionAlergiaAnt;
+	}
+
+
+	public void setDescripcionAlergiaAnt(String descripcionAlergiaAnt) {
+		this.descripcionAlergiaAnt = descripcionAlergiaAnt;
+	}
+
+
+	public String getDescripcionClinicoAnt() {
+		return descripcionClinicoAnt;
+	}
+
+
+	public void setDescripcionClinicoAnt(String descripcionClinicoAnt) {
+		this.descripcionClinicoAnt = descripcionClinicoAnt;
+	}
+
+
+	public String getDescripcionGinecologoAnt() {
+		return descripcionGinecologoAnt;
+	}
+
+
+	public void setDescripcionGinecologoAnt(String descripcionGinecologoAnt) {
+		this.descripcionGinecologoAnt = descripcionGinecologoAnt;
+	}
+
+
+	public String getDescripcionTraumatologicoAnt() {
+		return descripcionTraumatologicoAnt;
+	}
+
+
+	public void setDescripcionTraumatologicoAnt(String descripcionTraumatologicoAnt) {
+		this.descripcionTraumatologicoAnt = descripcionTraumatologicoAnt;
+	}
+
+
+	public String getDescripcionQuirurgicoAnt() {
+		return descripcionQuirurgicoAnt;
+	}
+
+
+	public void setDescripcionQuirurgicoAnt(String descripcionQuirurgicoAnt) {
+		this.descripcionQuirurgicoAnt = descripcionQuirurgicoAnt;
+	}
+
+
+	public String getDescripcionFarmacologicoAnt() {
+		return descripcionFarmacologicoAnt;
+	}
+
+
+	public void setDescripcionFarmacologicoAnt(String descripcionFarmacologicoAnt) {
+		this.descripcionFarmacologicoAnt = descripcionFarmacologicoAnt;
 	}
 
 }

@@ -52,7 +52,14 @@ public class AntecedenteFamiliarRestController {
 		antecedenteFamiliarActual.setGinecologoAnt(antecedenteFamiliar.getGinecologoAnt());
 		antecedenteFamiliarActual.setTraumatologicoAnt(antecedenteFamiliar.getTraumatologicoAnt());
 		antecedenteFamiliarActual.setQuirurgicoAnt(antecedenteFamiliar.getQuirurgicoAnt());
-		antecedenteFamiliarActual.setFarmacologicoAnt(antecedenteFamiliar.getFarmacologicoAnt());		
+		antecedenteFamiliarActual.setFarmacologicoAnt(antecedenteFamiliar.getFarmacologicoAnt());	
+		
+		antecedenteFamiliarActual.setDescripcionAlergiaAnt(antecedenteFamiliar.getDescripcionAlergiaAnt());
+		antecedenteFamiliarActual.setDescripcionClinicoAnt(antecedenteFamiliar.getDescripcionClinicoAnt());
+		antecedenteFamiliarActual.setDescripcionGinecologoAnt(antecedenteFamiliar.getDescripcionGinecologoAnt());
+		antecedenteFamiliarActual.setDescripcionTraumatologicoAnt(antecedenteFamiliar.getDescripcionTraumatologicoAnt());
+		antecedenteFamiliarActual.setDescripcionQuirurgicoAnt(antecedenteFamiliar.getDescripcionQuirurgicoAnt());
+		antecedenteFamiliarActual.setDescripcionFarmacologicoAnt(antecedenteFamiliar.getDescripcionFarmacologicoAnt());
 	
 		return antecedenteFamiliarService.save(antecedenteFamiliarActual);
 		
