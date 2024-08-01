@@ -1,7 +1,7 @@
 package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
-
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -20,7 +20,8 @@ public class Instituto implements Serializable {
     @Lob // Large Object (BLOB) -> Binary Large Object
     @Column(columnDefinition="BLOB")
     private byte[] imageInstituto;
-
+    @OneToMany(mappedBy = "instituto", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Titulo> titulos;
     private static final long serialVersionUID = 1L;
 
 	public Long getIdIns() {
@@ -55,12 +56,25 @@ public class Instituto implements Serializable {
 		this.rectorIns = rectorIns;
 	}
 
+	public List<Titulo> getTitulos() {
+		return titulos;
+	}
+
+	public void setTitulos(List<Titulo> titulos) {
+		this.titulos = titulos;
+	}
+
 	public byte[] getImageInstituto() {
 		return imageInstituto;
 	}
 
 	public void setImageInstituto(byte[] imageInstituto) {
 		this.imageInstituto = imageInstituto;
+	}
+
+	public Instituto orElseThrow(Object object) {
+		// TODO Auto-generated method stub
+		return null;
 	}	
     
 }

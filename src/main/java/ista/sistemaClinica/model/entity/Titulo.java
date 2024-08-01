@@ -1,15 +1,23 @@
 package ista.sistemaClinica.model.entity;
 
-import java.io.Serializable;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "titulo")
@@ -20,15 +28,23 @@ public class Titulo implements Serializable{
     private Long idTit;
 	
 	private String contenidoTit;
-    private String fechaCreacion;
+
+	@Column(name="fechaCreacion")
+	@Temporal(TemporalType.DATE)
+	private Date fechaCreacion;
+
+	
+
     private String leyendaTit;
     
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_id_instituto")
-    private Instituto instituto;
+    @Column(name = "instituto_id")
+    private Long instituto;
     
-
-
+    @PrePersist
+	public void  prePersist() {
+    	fechaCreacion= new Date();
+	}
+    
 	public Long getIdTit() {
 		return idTit;
 	}
@@ -56,24 +72,14 @@ public class Titulo implements Serializable{
 
 
 
-
-
-
-
-
-	public String getFechaCreacion() {
+	
+	public Date getFechaCreacion() {
 		return fechaCreacion;
 	}
 
-
-
-
-	public void setFechaCreacion(String fechaCreacion) {
+	public void setFechaCreacion(Date fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-
-
-
 
 	public String getLeyendaTit() {
 		return leyendaTit;
@@ -89,14 +95,11 @@ public class Titulo implements Serializable{
 
 
 
-	public Instituto getInstituto() {
+	public Long getInstituto() {
 		return instituto;
 	}
 
-
-
-
-	public void setInstituto(Instituto instituto) {
+	public void setInstituto(Long instituto) {
 		this.instituto = instituto;
 	}
 

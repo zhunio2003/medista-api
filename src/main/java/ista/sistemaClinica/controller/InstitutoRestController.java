@@ -62,6 +62,9 @@ public class InstitutoRestController {
 
 	    return institutoService.save(instituto);
 	}
+    
+	
+
 
 	@GetMapping("/institutos/{id}/imagen")
 	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
@@ -76,9 +79,50 @@ public class InstitutoRestController {
 	    }
 	}
 	
-	@DeleteMapping("/institutos/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
-		institutoService.delete(id);
-	}
+	
+
+    
+    @DeleteMapping("/institutos/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        institutoService.delete(id);
+    }
+
+ // En InstitutoRestController.java
+
+    @PutMapping("/institutos/{id}")
+    public ResponseEntity<Instituto> update(
+            @PathVariable Long id,
+            @RequestParam(value = "nombreIns", required = false) String nombreIns,
+            @RequestParam(value = "direccionIns", required = false) String direccionIns,
+            @RequestParam(value = "rectorIns", required = false) String rectorIns,
+            @RequestParam(value = "imageInstituto", required = false) MultipartFile imageInstituto) {
+
+        Instituto instituto = institutoService.findById(id);
+        if (instituto == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        if (nombreIns != null) {
+            instituto.setNombreIns(nombreIns);
+        }
+        if (direccionIns != null) {
+            instituto.setDireccionIns(direccionIns);
+        }
+        if (rectorIns != null) {
+            instituto.setRectorIns(rectorIns);
+        }
+        if (imageInstituto != null && !imageInstituto.isEmpty()) {
+            try {
+                instituto.setImageInstituto(imageInstituto.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Error al procesar la imagen", e);
+            }
+        }
+
+        Instituto updatedInstituto = institutoService.save(instituto);
+        return ResponseEntity.ok(updatedInstituto);
+    }
+
 }

@@ -324,3 +324,11 @@ INSERT INTO emergencia_obstetrica (is_embarazada, menarca_eme, ritmo_menstrual_e
 INSERT INTO emergencia_obstetrica (is_embarazada, menarca_eme, ritmo_menstrual_eme, ciclos_eme, fum_eme, ivsa_eme, numero_parejas_sexuales_eme, g_eme, a_eme, p_eme, c_eme, dismenorrea_eme, mastodinia_eme, fpp_eme, controles_eme, inmunizaciones_eme, descripcion_eme, fk_id_ficha_medica) VALUES (TRUE, 12, 'Regular', '30 días', '2023-06-01', true, 3, 1, 0, 1, 0, false, false, '2025-03-01', 'Cada mes', 'Completa', 'Sin complicaciones', 12);
 INSERT INTO emergencia_obstetrica (is_embarazada, menarca_eme, ritmo_menstrual_eme, ciclos_eme, fum_eme, ivsa_eme, numero_parejas_sexuales_eme, g_eme, a_eme, p_eme, c_eme, dismenorrea_eme, mastodinia_eme, fpp_eme, controles_eme, inmunizaciones_eme, descripcion_eme, fk_id_ficha_medica) VALUES (TRUE, 13, 'Regular', '28 días', '2023-07-01', true, 2, 2, 1, 0, 1, true, true, '2025-04-01', 'Cada dos meses', 'Completa', 'Sin complicaciones', 14);
 
+INSERT INTO titulo (idTit, contenidoTit, fechaCreacion, leyendaTit, fk_id_instituto) VALUES (1,'Contenido titulo', '1992-01-04', 'Leyenda del título ', 1);
+
+
+
+
+
+
+
