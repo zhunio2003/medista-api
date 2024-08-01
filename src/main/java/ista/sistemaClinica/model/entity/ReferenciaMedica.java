@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -37,6 +39,10 @@ public class ReferenciaMedica implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_id_atencion_medica")
     private AtencionMedica atencionMedica;
+    
+    @OneToMany(mappedBy = "referencia", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference // gestion
+    private List<Diagnostico> diagnosticos;
 
     private static final long serialVersionUID = 1L;
 
@@ -180,9 +186,17 @@ public class ReferenciaMedica implements Serializable {
 		return serialVersionUID;
 	}
 
+	public List<Diagnostico> getDiagnosticos() {
+		return diagnosticos;
+	}
+
+	public void setDiagnosticos(List<Diagnostico> diagnosticos) {
+		this.diagnosticos = diagnosticos;
+	}
+
 	
 
-    // Getters y Setters
+    
 	
 
       

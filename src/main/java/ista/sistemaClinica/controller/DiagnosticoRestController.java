@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import ista.sistemaClinica.model.entity.Diagnostico;
 import ista.sistemaClinica.model.services.IDiagnosticoService;
@@ -47,9 +48,17 @@ public class DiagnosticoRestController {
 	public Diagnostico update(@RequestBody Diagnostico diagnostico, @PathVariable Long id) {
 		Diagnostico diagnosticoActual = diagnosticoService.findById(id);
 	
-		diagnosticoActual.setEstadoDia(diagnostico.getEstadoDia());
-		diagnosticoActual.setInicialDia(diagnostico.getInicialDia());
-		return diagnosticoService.save(diagnosticoActual);
+		if (diagnosticoActual == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Diagnóstico no encontrado");
+        }
+
+        diagnosticoActual.setEnfermedad(diagnostico.getEnfermedad());
+        diagnosticoActual.setReferencia(diagnostico.getReferencia());
+        diagnosticoActual.setDiagnostico_dia(diagnostico.getDiagnostico_dia());
+        diagnosticoActual.setCodigo_dia(diagnostico.getCodigo_dia());
+        diagnosticoActual.setEstado_dia(diagnostico.isEstado_dia());
+
+        return diagnosticoService.save(diagnosticoActual);
 		
 	}
 	

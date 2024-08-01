@@ -1,6 +1,9 @@
 package ista.sistemaClinica.model.entity;
 
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -9,23 +12,29 @@ public class Diagnostico implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long idDia;
+    private Long id_dia;
 
-    @ManyToOne()
+    @OneToOne()
     @JoinColumn(name = "fk_id_enfermedad")
     private Enfermedad enfermedad;
     
-    private String inicialDia;
-    private Boolean estadoDia;
+    @ManyToOne()
+    @JoinColumn(name = "fk_id_referencia")
+    @JsonBackReference // Indica que esta es la parte de regreso de la relación bidireccional
+    private ReferenciaMedica referencia;
+    
+    private String diagnostico_dia;
+    private String codigo_dia;
+    private boolean estado_dia;
     
     private static final long serialVersionUID = 1L;
 
-	public Long getIdDia() {
-		return idDia;
+	public Long getId_dia() {
+		return id_dia;
 	}
 
-	public void setIdDia(Long idDia) {
-		this.idDia = idDia;
+	public void setId_dia(Long id_dia) {
+		this.id_dia = id_dia;
 	}
 
 	public Enfermedad getEnfermedad() {
@@ -36,25 +45,44 @@ public class Diagnostico implements Serializable {
 		this.enfermedad = enfermedad;
 	}
 
-	public String getInicialDia() {
-		return inicialDia;
+	public ReferenciaMedica getReferencia() {
+		return referencia;
 	}
 
-	public void setInicialDia(String inicialDia) {
-		this.inicialDia = inicialDia;
+	public void setReferencia(ReferenciaMedica referencia) {
+		this.referencia = referencia;
 	}
 
-	public Boolean getEstadoDia() {
-		return estadoDia;
+	public String getDiagnostico_dia() {
+		return diagnostico_dia;
 	}
 
-	public void setEstadoDia(Boolean estadoDia) {
-		this.estadoDia = estadoDia;
+	public void setDiagnostico_dia(String diagnostico_dia) {
+		this.diagnostico_dia = diagnostico_dia;
 	}
+
+	public String getCodigo_dia() {
+		return codigo_dia;
+	}
+
+	public void setCodigo_dia(String codigo_dia) {
+		this.codigo_dia = codigo_dia;
+	}
+
+	public boolean isEstado_dia() {
+		return estado_dia;
+	}
+
+	public void setEstado_dia(boolean estado_dia) {
+		this.estado_dia = estado_dia;
+	}
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+
 	
 
 }

@@ -25,7 +25,7 @@ public class ReferenciaMedicaServiceImp implements IReferenciaMedicaService {
 		
 		return (List<ReferenciaMedica>) referenciaMedicaeDao.findAll();
 	}
-
+	
 	@Override
 	@Transactional
 	public ReferenciaMedica save(ReferenciaMedica referenciaMedica) {

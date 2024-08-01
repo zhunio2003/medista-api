@@ -1,9 +1,13 @@
 package ista.sistemaClinica.controller;
 
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +35,26 @@ public class ReferenciaMedicaRestController {
 	@Autowired
     private IAtencionMedicaService atencionMedicaService;
 	
-	@GetMapping("/referencias_medicas")
-	public List<ReferenciaMedica> index() {
-		return referenciaMedicaService.findAll();
-	}
+	//@GetMapping("/referencias_medicas")
+	//public List<ReferenciaMedica> index() {
+		//return referenciaMedicaService.findAll();
+	//}
 	
+	//@GetMapping(value = "/referencias_medicas", produces = MediaType.APPLICATION_JSON_VALUE)
+	//public List<ReferenciaMedica> index() {
+	  //  return referenciaMedicaService.findAll();
+	//}
+	@GetMapping("/referencias_medicas")
+	public ResponseEntity<List<ReferenciaMedica>> getAllReferenciasMedicas() {
+	    List<ReferenciaMedica> referencias = referenciaMedicaService.findAll();
+	    // Imprime para depurar
+	    System.out.println("Datos a devolver: " + referencias);
+	    return ResponseEntity.ok(referencias);
+	}
+
+
+
+
 	@GetMapping("/referencias_medicas/{id}")
 	public ReferenciaMedica show(@PathVariable Long id) {
 		return referenciaMedicaService.findById(id);
@@ -44,7 +63,6 @@ public class ReferenciaMedicaRestController {
 	@PostMapping("/referencias_medicas")
     @ResponseStatus(HttpStatus.CREATED)
     public ReferenciaMedica create(@RequestBody ReferenciaMedica referenciaMedica) {
-        // Cargar la entidad AtencionMedica por su ID y asignarla a ReferenciaMedica
         if (referenciaMedica.getAtencionMedica() != null && referenciaMedica.getAtencionMedica().getIdAte() != null) {
             AtencionMedica atencionMedica = atencionMedicaService.findById(referenciaMedica.getAtencionMedica().getIdAte());
             if (atencionMedica != null) {
@@ -84,6 +102,7 @@ public class ReferenciaMedicaRestController {
 		referenciaMedicaActual.setNombre_doc_ref(referenciaMedica.getNombre_doc_ref());
 		referenciaMedicaActual.setCodigo_msp_ref(referenciaMedica.getCodigo_msp_ref());
 		referenciaMedicaActual.setAtencionMedica(referenciaMedica.getAtencionMedica());
+		referenciaMedicaActual.setDiagnosticos(referenciaMedica.getDiagnosticos());
 	
 		return referenciaMedicaService.save(referenciaMedicaActual);
 		
