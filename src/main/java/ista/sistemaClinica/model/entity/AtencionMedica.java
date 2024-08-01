@@ -32,11 +32,15 @@ public class AtencionMedica implements Serializable {
     
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_atencion_medica")
-	private List<ExamenComplementario> examenescomplementarios;
+	private List<ExamenComplementario> examenesComplementarios;
     
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_atencion_medica")
 	private List<AtencionSigno> atencionesSignos;
+    
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_atencion_medica")
+	private List<ExamenFisico> examenesFisicos;
     
     @Temporal(TemporalType.DATE)
     private Date fechaAtencionAte;
@@ -135,14 +139,26 @@ public class AtencionMedica implements Serializable {
 
 
 
-	public List<ExamenComplementario> getExamenescomplementarios() {
-		return examenescomplementarios;
+	public List<ExamenComplementario> getExamenesComplementarios() {
+		return examenesComplementarios;
 	}
 
 
 
-	public void setExamenescomplementarios(List<ExamenComplementario> examenescomplementarios) {
-		this.examenescomplementarios = examenescomplementarios;
+	public void setExamenesComplementarios(List<ExamenComplementario> examenesComplementarios) {
+		this.examenesComplementarios = examenesComplementarios;
+	}
+
+
+
+	public List<ExamenFisico> getExamenesFisicos() {
+		return examenesFisicos;
+	}
+
+
+
+	public void setExamenesFisicos(List<ExamenFisico> examenesFisicos) {
+		this.examenesFisicos = examenesFisicos;
 	}
 
 
@@ -156,6 +172,8 @@ public class AtencionMedica implements Serializable {
 	public void setAtencionesSignos(List<AtencionSigno> atencionesSignos) {
 		this.atencionesSignos = atencionesSignos;
 	}
+	
+	
 	
 	
 

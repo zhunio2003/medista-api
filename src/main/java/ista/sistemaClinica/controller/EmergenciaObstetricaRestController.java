@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ista.sistemaClinica.model.entity.EmergenciaObstetrica;
+import ista.sistemaClinica.model.entity.FichaMedica;
+import ista.sistemaClinica.model.entity.Paciente;
 import ista.sistemaClinica.model.services.IEmergenciaObstetricaService;
 
 @RestController
@@ -33,6 +35,11 @@ public class EmergenciaObstetricaRestController {
 	@GetMapping("/emergencias_obstetricas/{id}")
 	public EmergenciaObstetrica show(@PathVariable Long id) {
 		return emergenciaObstetricaService.findById(id);
+	}
+	
+	@GetMapping("/emergencias_obstetricas/fichaMedica/{fichaMedica}")
+	public EmergenciaObstetrica show(@PathVariable FichaMedica fichaMedica) {
+		return emergenciaObstetricaService.findByFichaMedica(fichaMedica);
 	}
 	
 	@PostMapping("/emergencias_obstetricas")

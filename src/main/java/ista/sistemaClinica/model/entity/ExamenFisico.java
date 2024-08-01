@@ -14,12 +14,6 @@ public class ExamenFisico implements Serializable {
     private String nombreExa;
     private Double numeroExa;
     private String descripcionExa;
-    
-    
-
-    @ManyToOne
-    @JoinColumn(name = "fk_id_AtencionMedica")
-    private AtencionMedica atencionMedica;
 
     private static final long serialVersionUID = 1L;
 
@@ -53,14 +47,6 @@ public class ExamenFisico implements Serializable {
 
 	public void setDescripcionExa(String descripcionExa) {
 		this.descripcionExa = descripcionExa;
-	}
-
-	public AtencionMedica getAtencionMedica() {
-		return atencionMedica;
-	}
-
-	public void setAtencionMedica(AtencionMedica atencionMedica) {
-		this.atencionMedica = atencionMedica;
 	}
 
     // Getters y Setters

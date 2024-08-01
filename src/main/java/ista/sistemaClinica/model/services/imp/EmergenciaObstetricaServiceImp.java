@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ista.sistemaClinica.model.dao.IEmergenciaObstetricaDao;
 import ista.sistemaClinica.model.entity.EmergenciaObstetrica;
+import ista.sistemaClinica.model.entity.FichaMedica;
 import ista.sistemaClinica.model.services.IEmergenciaObstetricaService;
 
 @Service
@@ -41,6 +42,11 @@ public class EmergenciaObstetricaServiceImp implements IEmergenciaObstetricaServ
 	public void delete(Long id) {
 		emergenciaObstetricaDao.deleteById(id);
 		
+	}
+
+	@Override
+	public EmergenciaObstetrica findByFichaMedica(FichaMedica fichaMedica) {
+		return emergenciaObstetricaDao.findByfichaMedica(fichaMedica);
 	}
 
 

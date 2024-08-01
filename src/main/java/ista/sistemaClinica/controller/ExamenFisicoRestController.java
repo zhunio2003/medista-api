@@ -45,13 +45,10 @@ public class ExamenFisicoRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public ExamenFisico update(@RequestBody ExamenFisico examenFisico, @PathVariable Long id) {
 		ExamenFisico examenFisicoActual = examenFisicoService.findById(id);
-		
-		
+			
 		examenFisicoActual.setNombreExa(examenFisico.getNombreExa());
 		examenFisicoActual.setNumeroExa(examenFisico.getNumeroExa());
-		examenFisicoActual.setDescripcionExa(examenFisico.getDescripcionExa());
-		examenFisicoActual.setAtencionMedica(examenFisico.getAtencionMedica());
-	
+		examenFisicoActual.setDescripcionExa(examenFisico.getDescripcionExa());	
 		return examenFisicoService.save(examenFisicoActual);
 		
 	}

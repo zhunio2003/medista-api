@@ -5,9 +5,10 @@ import java.util.List;
 import ista.sistemaClinica.model.entity.ExamenComplementario;
 
 public interface IExamenComplementarioService {
-	public List<ExamenComplementario> findAll();
-	public ExamenComplementario save(ExamenComplementario examenComplementario);
-	public ExamenComplementario findById(Long id);
-	public void delete(Long id);
-
+    List<ExamenComplementario> findAll();
+    ExamenComplementario save(ExamenComplementario examenComplementario);
+    ExamenComplementario findById(Long id);
+    void delete(Long id);
+    void savePdf(Long id, byte[] archivoPdf);
+    byte[] getPdf(Long id);
 }

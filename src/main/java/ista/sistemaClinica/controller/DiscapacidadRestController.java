@@ -65,4 +65,6 @@ public class DiscapacidadRestController {
 	public void delete(@PathVariable Long id) {
 		discapacidadService.delete(id);
 	}
+	
+	
 }
