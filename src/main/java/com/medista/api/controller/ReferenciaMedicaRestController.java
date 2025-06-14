@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,10 +19,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.medista.api.model.entity.AtencionMedica;
-import com.medista.api.model.entity.ReferenciaMedica;
-import com.medista.api.model.services.IAtencionMedicaService;
-import com.medista.api.model.services.IReferenciaMedicaService;
+import com.medista.api.entity.AtencionMedica;
+import com.medista.api.entity.ReferenciaMedica;
+import com.medista.api.service.interfaces.IAtencionMedicaService;
+import com.medista.api.service.interfaces.IReferenciaMedicaService;
 
 
 @RestController

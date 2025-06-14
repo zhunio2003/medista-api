@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.medista.api.model.entity.Enfermedad;
-import com.medista.api.model.services.IEnfermedadService;
+import com.medista.api.entity.Enfermedad;
+import com.medista.api.service.interfaces.IEnfermedadService;
 
 @RestController
 @RequestMapping("/api")

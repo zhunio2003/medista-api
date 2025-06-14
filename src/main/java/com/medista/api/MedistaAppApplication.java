@@ -8,7 +8,6 @@ public class MedistaAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MedistaAppApplication.class, args);
-		System.out.print("Holan Bryan Farez");
 	}
 
 }

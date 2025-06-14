@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.medista.api.model.entity.Diagnostico;
-import com.medista.api.model.services.IDiagnosticoService;
+import com.medista.api.entity.Diagnostico;
+import com.medista.api.service.interfaces.IDiagnosticoService;
 
 
 @RestController

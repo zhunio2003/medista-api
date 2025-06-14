@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.medista.api.model.entity.AntecedenteFamiliar;
-import com.medista.api.model.services.IAntecedenteFamiliarService;
+import com.medista.api.entity.AntecedenteFamiliar;
+import com.medista.api.service.interfaces.IAntecedenteFamiliarService;
 
 @RestController
 @RequestMapping("/api")

@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.medista.api.model.entity.ExamenComplementario;
-import com.medista.api.model.services.IExamenComplementarioService;
+import com.medista.api.entity.ExamenComplementario;
+import com.medista.api.service.interfaces.IExamenComplementarioService;
 
 @RestController
 @RequestMapping("/api")

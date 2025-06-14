@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.medista.api.model.entity.Titulo;
+import com.medista.api.entity.Titulo;
 
-import com.medista.api.model.services.ITituloService;
-import com.medista.api.model.services.IInstitutoService;
+import com.medista.api.service.interfaces.ITituloService;
+import com.medista.api.service.interfaces.IInstitutoService;
 
 
 @RestController
