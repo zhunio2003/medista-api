@@ -9,8 +9,8 @@ import com.medista.api.entity.Paciente;
 
 public interface IPacienteDao extends JpaRepository<Paciente, Long> {
 	
-	Paciente findByCedulaPac(String cedulaPac);
-	List<Paciente> findByApellidoPac(String apellidoPac);
-	List<Paciente> findByProfesionPac(String profesionPac);
+	Paciente findByCedula(String cedulaPac);
+	List<Paciente> findByApellido(String apellidoPac);
+	List<Paciente> findByProfesion(String profesionPac);
 
 }

@@ -1,50 +1,23 @@
 package com.medista.api.entity;
 
-import java.io.Serializable;
-import jakarta.persistence.*;
+import lombok.Data;
 
-@Entity
-@Table(name = "signo_vital")
-public class SignoVital implements Serializable {
+@Data
+public class SignoVital {
+	private String presionArterial; // PA
+	private String peso;
+	private String talla;
+	private String imc;
+	private String frecuenciaCardiaca; // FC
+	private String frecuenciaRespiratoria; // FR
+	private String temperatura; // T°
+	private String saturacionOxigeno; // Sat.O2
+	private String llenadoCapilar;
+	private String reaccionPupilar;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long idSig;
-
-    private String nombreSig;
-    private String unidadSig;
-
-
-    private static final long serialVersionUID = 1L;
-
-
-	public Long getIdSig() {
-		return idSig;
-	}
-
-
-	public void setIdSig(Long idSig) {
-		this.idSig = idSig;
-	}
-
-
-	public String getNombreSig() {
-		return nombreSig;
-	}
-
-
-	public void setNombreSig(String nombreSig) {
-		this.nombreSig = nombreSig;
-	}
-
-
-	public String getUnidadSig() {
-		return unidadSig;
-	}
-
-
-	public void setUnidadSig(String unidadSig) {
-		this.unidadSig = unidadSig;
-	}
-    
+	// Glasgow
+	private int glasgowOcular;
+	private int glasgowVerbal;
+	private int glasgowMotora;
+	private int glasgowTotal;
 }

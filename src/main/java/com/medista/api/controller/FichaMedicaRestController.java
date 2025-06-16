@@ -2,8 +2,12 @@ package com.medista.api.controller;
 
 import java.util.List;
 
+import com.medista.api.entity.AtencionMedica;
+import com.medista.api.repository.IAtencionMedicaDao;
+import com.medista.api.service.interfaces.IAtencionMedicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +29,8 @@ import com.medista.api.service.interfaces.IFichaMedicaService;
 public class FichaMedicaRestController {
 	@Autowired
 	private IFichaMedicaService fichaMedicaService;
-	
+
+
 	@GetMapping("/fichas_medicas")
 	public List<FichaMedica> index() {
 		return fichaMedicaService.findAll();
@@ -53,7 +58,7 @@ public class FichaMedicaRestController {
 		FichaMedica fichaMedicaActual = fichaMedicaService.findById(id);
 		
 		fichaMedicaActual.setPaciente(fichaMedica.getPaciente());
-		fichaMedicaActual.setFechaElaboracionFic(fichaMedica.getFechaElaboracionFic());
+		fichaMedicaActual.setFechaElaboracion(fichaMedica.getFechaElaboracion());
 		fichaMedicaActual.setDiscapacidad(fichaMedica.getDiscapacidad());
 		fichaMedicaActual.setAntecedenteFamiliar(fichaMedica.getAntecedenteFamiliar());
 	
@@ -66,5 +71,16 @@ public class FichaMedicaRestController {
 	public void delete(@PathVariable Long id) {
 		fichaMedicaService.delete(id);
 	}
-	
+
+
+	@GetMapping("/fichas_medicas/{id}/con_atenciones")
+	public ResponseEntity<FichaMedica> getFichaConAtenciones(@PathVariable Long id) {
+		FichaMedica ficha = fichaMedicaService.findByIdWithAtenciones(id);
+		if (ficha == null) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(ficha);
+	}
+
+
 }

@@ -48,21 +48,21 @@ public class PacienteServiceImp implements IPacienteService{
 	@Transactional(readOnly = true)
 	public Paciente findByCedulaPac(String cedulaPac) {
 		
-		return pacienteDao.findByCedulaPac(cedulaPac);
+		return pacienteDao.findByCedula(cedulaPac);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
 	public List<Paciente> filterByApellidoPac(String apellidoPac) {
 		
-		return pacienteDao.findByApellidoPac(apellidoPac);
+		return pacienteDao.findByApellido(apellidoPac);
 	}
 
 	@Override
 	@Transactional(readOnly = true)
 	public List<Paciente> filterByProfesionPac(String profesionPac) {
 		
-		return pacienteDao.findByProfesionPac(profesionPac);
+		return pacienteDao.findByProfesion(profesionPac);
 	}
 	
 

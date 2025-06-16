@@ -12,6 +12,7 @@ public interface IFichaMedicaService {
 	public void delete(Long id);
 	
 	public FichaMedica findByPaciente(Paciente paciente);
-	
 
+
+    FichaMedica findByIdWithAtenciones(Long id);
 }

@@ -1,9 +1,12 @@
 package com.medista.api.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import com.medista.api.entity.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,14 +50,14 @@ public class DoctorRestController {
 		Doctor doctorActual = doctorService.findById(id);
 		
 		
-		doctorActual.setNombreDoc(doctor.getNombreDoc());
-		doctorActual.setApellidoDoc(doctor.getApellidoDoc());
-		doctorActual.setTelefonoDoc(doctor.getTelefonoDoc());
-		doctorActual.setDireccionDoc(doctor.getDireccionDoc());
-		doctorActual.setEspecialidadDoc(doctor.getEspecialidadDoc());
-		doctorActual.setCodigoMspDoc(doctor.getCodigoMspDoc());
-		doctorActual.setGeneroDoc(doctor.getGeneroDoc());
-		doctorActual.setPasswordDoc(doctor.getPasswordDoc());
+		doctorActual.setNombre(doctor.getNombre());
+		doctorActual.setApellido(doctor.getApellido());
+		doctorActual.setTelefono(doctor.getTelefono());
+		doctorActual.setDireccion(doctor.getDireccion());
+		doctorActual.setEspecialidad(doctor.getEspecialidad());
+		doctorActual.setCodigoMsp(doctor.getCodigoMsp());
+		doctorActual.setGenero(doctor.getGenero());
+		doctorActual.setPassword(doctor.getPassword());
 	
 		return doctorService.save(doctorActual);
 		
@@ -71,4 +74,16 @@ public class DoctorRestController {
 	public Doctor showDoctor(@PathVariable String cedula) {
 		return doctorService.findByCedDoctor(cedula);
 	}
+
+	@PostMapping("/doctores/login")
+	public ResponseEntity<Doctor> login(@RequestBody LoginRequest request) {
+		Doctor doctor = doctorService.findByCedulaAndPassword(request.getCedula(), request.getPassword());
+		if (doctor != null) {
+			return ResponseEntity.ok(doctor); // Envía TODO el objeto doctor
+		} else {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
+	}
+
+
 }

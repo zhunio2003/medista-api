@@ -1,180 +1,65 @@
 package com.medista.api.entity;
 
-import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "atencion_medica")
-public class AtencionMedica implements Serializable {
+import lombok.Data;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long idAte;
+@Data
+@Document(collection = "atenciones_medicas")
+public class AtencionMedica {
 
-    private String motivoAte;
-    private String enfermedadActualAte;
-    private String tratamientoAte;
+	@Id
+	private String id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_id_ficha_medica")
-    private FichaMedica fichaMedica;
-    
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fk_id_doctor")
-    private Doctor doctor;
+	private String motivoAte;
+	private String enfermedadActualAte;
+	private String tratamientoAte;
+	private Date fechaAtencionAte;
+	private boolean embarazada;
+	private EmbarazoActual embarazoActual;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_id_atencion_medica")
-	private List<Diagnostico> diagnosticos;
-    
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_id_atencion_medica")
+	private SignoVital signosVitales;
+	private ExamenFisico examenFisico;
 	private List<ExamenComplementario> examenesComplementarios;
-    
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_id_atencion_medica")
-	private List<AtencionSigno> atencionesSignos;
-    
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_id_atencion_medica")
-	private List<ExamenFisico> examenesFisicos;
-    
-    @Temporal(TemporalType.DATE)
-    private Date fechaAtencionAte;
+	private List<Diagnostico> diagnosticos;
 
-    private static final long serialVersionUID = 1L;
+	private DoctorRef doctor;
+	private FichaMedicaRef fichaMedica;
 
-	public Long getIdAte() {
-		return idAte;
+	@Data
+	public static class DoctorRef {
+		private Long id;
+		private String nombre;
+		private String cedula;
 	}
 
+	@Data
+	public static class FichaMedicaRef {
+		private Long id;
+		private String paciente;
+		private String cedula;
 
-
-	public void setIdAte(Long idAte) {
-		this.idAte = idAte;
 	}
 
+	@Data
+	public static class EmbarazoActual {
+		private Date fum;
+		private Fpp fpp;
+		private String controles;
+		private String inmunizaciones;
+		private String observaciones;
 
-
-	public String getMotivoAte() {
-		return motivoAte;
+		@Data
+		public static class Fpp {
+			private String fecha; // yyyy-MM-dd
+			private int dia;
+			private int mes;
+			private int anio;
+			private int sg;
+		}
 	}
-
-
-
-	public void setMotivoAte(String motivoAte) {
-		this.motivoAte = motivoAte;
-	}
-
-	public String getEnfermedadActualAte() {
-		return enfermedadActualAte;
-	}
-
-
-
-	public void setEnfermedadActualAte(String enfermedadActualAte) {
-		this.enfermedadActualAte = enfermedadActualAte;
-	}
-
-
-
-	public String getTratamientoAte() {
-		return tratamientoAte;
-	}
-
-
-
-	public void setTratamientoAte(String tratamientoAte) {
-		this.tratamientoAte = tratamientoAte;
-	}
-
-
-
-	public FichaMedica getFichaMedica() {
-		return fichaMedica;
-	}
-
-
-
-	public void setFichaMedica(FichaMedica fichaMedica) {
-		this.fichaMedica = fichaMedica;
-	}
-
-
-	public Doctor getDoctor() {
-		return doctor;
-	}
-
-
-
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
-	}
-
-
-	public Date getFechaAtencionAte() {
-		return fechaAtencionAte;
-	}
-
-
-
-	public void setFechaAtencionAte(Date fechaAtencionAte) {
-		this.fechaAtencionAte = fechaAtencionAte;
-	}
-
-
-
-	public List<Diagnostico> getDiagnosticos() {
-		return diagnosticos;
-	}
-
-
-
-	public void setDiagnosticos(List<Diagnostico> diagnosticos) {
-		this.diagnosticos = diagnosticos;
-	}
-
-
-
-	public List<ExamenComplementario> getExamenesComplementarios() {
-		return examenesComplementarios;
-	}
-
-
-
-	public void setExamenesComplementarios(List<ExamenComplementario> examenesComplementarios) {
-		this.examenesComplementarios = examenesComplementarios;
-	}
-
-
-
-	public List<ExamenFisico> getExamenesFisicos() {
-		return examenesFisicos;
-	}
-
-
-
-	public void setExamenesFisicos(List<ExamenFisico> examenesFisicos) {
-		this.examenesFisicos = examenesFisicos;
-	}
-
-
-
-	public List<AtencionSigno> getAtencionesSignos() {
-		return atencionesSignos;
-	}
-
-
-
-	public void setAtencionesSignos(List<AtencionSigno> atencionesSignos) {
-		this.atencionesSignos = atencionesSignos;
-	}
-	
-	
-	
-	
-
 }

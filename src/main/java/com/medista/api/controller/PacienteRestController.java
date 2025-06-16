@@ -65,24 +65,24 @@ public class PacienteRestController {
 		Paciente pacienteActual = pacienteService.findById(id);
 		
 		
-		pacienteActual.setCedulaPac(paciente.getCedulaPac());
-		pacienteActual.setFechaNacimientoPac(paciente.getFechaNacimientoPac());
-		pacienteActual.setNombrePac(paciente.getNombrePac());
-		pacienteActual.setApellidoPac(paciente.getApellidoPac());
-		pacienteActual.setLugarPac(paciente.getLugarPac());
-		pacienteActual.setPaisPac(paciente.getPaisPac());
-		pacienteActual.setDireccionPac(paciente.getDireccionPac());
-		pacienteActual.setBarrioPac(paciente.getBarrioPac());
-		pacienteActual.setParroquiaPac(paciente.getParroquiaPac());
-		pacienteActual.setCantonPac(paciente.getCantonPac());
-		pacienteActual.setProvinciaPac(paciente.getProvinciaPac());
-		pacienteActual.setTelefonoPac(paciente.getTelefonoPac());
-		pacienteActual.setProfesionPac(paciente.getProfesionPac());
-		pacienteActual.setTipoSangrePac(paciente.getTipoSangrePac());
-		pacienteActual.setGeneroPac(paciente.getGeneroPac());
-		pacienteActual.setEstadoCivilPac(paciente.getEstadoCivilPac());
-		pacienteActual.setCarreraPac(paciente.getCarreraPac());
-		pacienteActual.setCicloPac(paciente.getCicloPac());
+		pacienteActual.setCedula(paciente.getCedula());
+		pacienteActual.setFechaNacimiento(paciente.getFechaNacimiento());
+		pacienteActual.setNombre(paciente.getNombre());
+		pacienteActual.setApellido(paciente.getApellido());
+		pacienteActual.setLugar(paciente.getLugar());
+		pacienteActual.setPais(paciente.getPais());
+		pacienteActual.setDireccion(paciente.getDireccion());
+		pacienteActual.setBarrio(paciente.getBarrio());
+		pacienteActual.setParroquia(paciente.getParroquia());
+		pacienteActual.setCanton(paciente.getCanton());
+		pacienteActual.setProvincia(paciente.getProvincia());
+		pacienteActual.setTelefono(paciente.getTelefono());
+		pacienteActual.setProfesion(paciente.getProfesion());
+		pacienteActual.setTipoSangre(paciente.getTipoSangre());
+		pacienteActual.setGenero(paciente.getGenero());
+		pacienteActual.setEstadoCivil(paciente.getEstadoCivil());
+		pacienteActual.setCarrera(paciente.getCarrera());
+		pacienteActual.setCiclo(paciente.getCiclo());
 		
 		return pacienteService.save(pacienteActual);
 		

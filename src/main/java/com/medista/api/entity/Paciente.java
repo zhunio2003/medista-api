@@ -11,38 +11,40 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import lombok.Data;
 
 
 @Entity
 @Table(name = "paciente")
+@Data
 public class Paciente implements Serializable {
 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Long idPac;
+	 private Long id;
 
 	 @Column(unique = true)
-	 private String cedulaPac;    
+	 private String cedula;
 
 	 @Temporal(TemporalType.DATE)
-	 private Date fechaNacimientoPac;
+	 private Date fechaNacimiento;
 
-	 private String nombrePac;
-	 private String apellidoPac;
-	 private String lugarPac;
-	 private String paisPac;
-	 private String direccionPac;
-	 private String barrioPac;
-	 private String parroquiaPac;
-	 private String cantonPac;
-	 private String provinciaPac;
-	 private String telefonoPac;
-	 private String profesionPac;
-	 private String tipoSangrePac;
-	 private String generoPac;
-	 private String estadoCivilPac;
-	 private String carreraPac;
-	 private String cicloPac;
+	 private String nombre;
+	 private String apellido;
+	 private String lugar;
+	 private String pais;
+	 private String direccion;
+	 private String barrio;
+	 private String parroquia;
+	 private String canton;
+	 private String provincia;
+	 private String telefono;
+	 private String profesion;
+	 private String tipoSangre;
+	 private String genero;
+	 private String estadoCivil;
+	 private String carrera;
+	 private String ciclo;
 	
 
 	/**
@@ -51,157 +53,4 @@ public class Paciente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 
-
-
-	public Long getIdPac() {
-        return idPac;
-    }
-
-    public void setIdPac(Long idPac) {
-        this.idPac = idPac;
-    }
-
-    public String getCedulaPac() {
-        return cedulaPac;
-    }
-
-    public void setCedulaPac(String cedulaPac) {
-        this.cedulaPac = cedulaPac;
-    }
-
-    public Date getFechaNacimientoPac() {
-        return fechaNacimientoPac;
-    }
-
-    public void setFechaNacimientoPac(Date fechaNacimientoPac) {
-        this.fechaNacimientoPac = fechaNacimientoPac;
-    }
-
-    public String getNombrePac() {
-        return nombrePac;
-    }
-
-    public void setNombrePac(String nombrePac) {
-        this.nombrePac = nombrePac;
-    }
-
-    public String getApellidoPac() {
-        return apellidoPac;
-    }
-
-    public void setApellidoPac(String apellidoPac) {
-        this.apellidoPac = apellidoPac;
-    }
-
-    public String getLugarPac() {
-        return lugarPac;
-    }
-
-    public void setLugarPac(String lugarPac) {
-        this.lugarPac = lugarPac;
-    }
-
-    public String getPaisPac() {
-        return paisPac;
-    }
-
-    public void setPaisPac(String paisPac) {
-        this.paisPac = paisPac;
-    }
-
-    public String getDireccionPac() {
-        return direccionPac;
-    }
-
-    public void setDireccionPac(String direccionPac) {
-        this.direccionPac = direccionPac;
-    }
-
-    public String getBarrioPac() {
-        return barrioPac;
-    }
-
-    public void setBarrioPac(String barrioPac) {
-        this.barrioPac = barrioPac;
-    }
-
-    public String getParroquiaPac() {
-        return parroquiaPac;
-    }
-
-    public void setParroquiaPac(String parroquiaPac) {
-        this.parroquiaPac = parroquiaPac;
-    }
-
-    public String getCantonPac() {
-        return cantonPac;
-    }
-
-    public void setCantonPac(String cantonPac) {
-        this.cantonPac = cantonPac;
-    }
-
-    public String getProvinciaPac() {
-        return provinciaPac;
-    }
-
-    public void setProvinciaPac(String provinciaPac) {
-        this.provinciaPac = provinciaPac;
-    }
-
-    public String getTelefonoPac() {
-        return telefonoPac;
-    }
-
-    public void setTelefonoPac(String telefonoPac) {
-        this.telefonoPac = telefonoPac;
-    }
-
-    public String getProfesionPac() {
-        return profesionPac;
-    }
-
-    public void setProfesionPac(String profesionPac) {
-        this.profesionPac = profesionPac;
-    }
-
-    public String getTipoSangrePac() {
-        return tipoSangrePac;
-    }
-
-    public void setTipoSangrePac(String tipoSangrePac) {
-        this.tipoSangrePac = tipoSangrePac;
-    }
-
-    public String getGeneroPac() {
-        return generoPac;
-    }
-
-    public void setGeneroPac(String generoPac) {
-        this.generoPac = generoPac;
-    }
-
-    public String getEstadoCivilPac() {
-        return estadoCivilPac;
-    }
-
-    public void setEstadoCivilPac(String estadoCivilPac) {
-        this.estadoCivilPac = estadoCivilPac;
-    }
-
-    public String getCarreraPac() {
-        return carreraPac;
-    }
-
-    public void setCarreraPac(String carreraPac) {
-        this.carreraPac = carreraPac;
-    }
-
-    public String getCicloPac() {
-        return cicloPac;
-    }
-
-    public void setCicloPac(String cicloPac) {
-        this.cicloPac = cicloPac;
-    }
 }

@@ -1,9 +1,11 @@
 package com.medista.api.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.medista.api.entity.AtencionMedica;
 
-public interface IAtencionMedicaDao extends CrudRepository<AtencionMedica, Long>{
+import java.util.List;
 
+public interface IAtencionMedicaDao extends MongoRepository<AtencionMedica, String> {
+    List<AtencionMedica> findByFichaMedicaId(Long fichaMedicaId);
 }

@@ -53,10 +53,8 @@ public class DiagnosticoRestController {
         }
 
         diagnosticoActual.setEnfermedad(diagnostico.getEnfermedad());
-        diagnosticoActual.setReferencia(diagnostico.getReferencia());
-        diagnosticoActual.setDiagnostico_dia(diagnostico.getDiagnostico_dia());
-        diagnosticoActual.setCodigo_dia(diagnostico.getCodigo_dia());
-        diagnosticoActual.setEstado_dia(diagnostico.isEstado_dia());
+        diagnosticoActual.setDescripcion(diagnostico.getDescripcion());
+        diagnosticoActual.setEstado(diagnostico.getEstado());
 
         return diagnosticoService.save(diagnosticoActual);
 		

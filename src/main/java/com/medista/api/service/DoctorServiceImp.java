@@ -47,7 +47,12 @@ public class DoctorServiceImp implements IDoctorService{
 	@Override
 	@Transactional(readOnly = true)
 	public Doctor findByCedDoctor(String cedulaDoc) {
-		return doctorDao.findByCedulaDoc(cedulaDoc);
+		return doctorDao.findByCedula(cedulaDoc);
+	}
+
+	@Override
+	public Doctor findByCedulaAndPassword(String cedula, String password) {
+		return doctorDao.findByCedulaAndPassword(cedula, password);
 	}
 
 

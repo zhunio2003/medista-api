@@ -40,19 +40,26 @@ public class ExamenFisicoRestController {
 	public ExamenFisico create(@RequestBody ExamenFisico examenFisico) {
 		return examenFisicoService.save(examenFisico);
 	}
-	
+
 	@PutMapping("/examenes_fisicos/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ExamenFisico update(@RequestBody ExamenFisico examenFisico, @PathVariable Long id) {
 		ExamenFisico examenFisicoActual = examenFisicoService.findById(id);
-			
-		examenFisicoActual.setNombreExa(examenFisico.getNombreExa());
-		examenFisicoActual.setNumeroExa(examenFisico.getNumeroExa());
-		examenFisicoActual.setDescripcionExa(examenFisico.getDescripcionExa());	
+
+		examenFisicoActual.setPielFaneras(examenFisico.getPielFaneras());
+		examenFisicoActual.setCabeza(examenFisico.getCabeza());
+		examenFisicoActual.setCuello(examenFisico.getCuello());
+		examenFisicoActual.setTorax(examenFisico.getTorax());
+		examenFisicoActual.setCorazon(examenFisico.getCorazon());
+		examenFisicoActual.setAbdomen(examenFisico.getAbdomen());
+		examenFisicoActual.setRegionInguinal(examenFisico.getRegionInguinal());
+		examenFisicoActual.setMiembrosSuperiores(examenFisico.getMiembrosSuperiores());
+		examenFisicoActual.setMiembrosInferiores(examenFisico.getMiembrosInferiores());
+
 		return examenFisicoService.save(examenFisicoActual);
-		
 	}
-	
+
+
 	@DeleteMapping("/examenes_fisicos/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {

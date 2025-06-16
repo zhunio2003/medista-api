@@ -12,6 +12,7 @@ public class Discapacidad implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idDis;
 
+	@Column(name = "discapacidad_g")
     private Boolean discapacidadG; // si/no
     //private Boolean intelectualDis;
     private Double porcentajeDis;

@@ -11,6 +11,7 @@ public interface IDoctorService {
 	public void delete(Long id);
 	
 	// Filtros y busquedas
-		public Doctor findByCedDoctor(String cedulaDoc);
+	public Doctor findByCedDoctor(String cedulaDoc);
 
+    Doctor findByCedulaAndPassword(String cedula, String password);
 }

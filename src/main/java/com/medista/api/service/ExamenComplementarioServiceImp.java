@@ -12,14 +12,14 @@ import com.medista.api.service.interfaces.IExamenComplementarioService;
 
 @Service
 public class ExamenComplementarioServiceImp implements IExamenComplementarioService {
-    
+
     @Autowired
     private IExamenComplementarioDao examenComplementarioDao;
 
     @Override
     @Transactional(readOnly = true)
     public List<ExamenComplementario> findAll() {
-        return (List<ExamenComplementario>) examenComplementarioDao.findAll();
+        return examenComplementarioDao.findAll();
     }
 
     @Override
@@ -40,20 +40,22 @@ public class ExamenComplementarioServiceImp implements IExamenComplementarioServ
         examenComplementarioDao.deleteById(id);
     }
 
+    // Guarda un archivo PDF en el examen con ID dado
     @Override
     @Transactional
     public void savePdf(Long id, byte[] archivoPdf) {
-        ExamenComplementario examen = findById(id);
-        if (examen != null) {
+        ExamenComplementario examen = examenComplementarioDao.findById(id).orElse(null);
+        if (examen != null && archivoPdf != null) {
             examen.setArchivoPdf(archivoPdf);
-            save(examen);
+            examenComplementarioDao.save(examen);
         }
     }
 
+    // Devuelve el PDF del examen
     @Override
     @Transactional(readOnly = true)
     public byte[] getPdf(Long id) {
-        ExamenComplementario examen = findById(id);
-        return examen != null ? examen.getArchivoPdf() : null;
+        ExamenComplementario examen = examenComplementarioDao.findById(id).orElse(null);
+        return (examen != null) ? examen.getArchivoPdf() : null;
     }
 }

@@ -58,8 +58,10 @@ public class ExamenComplementarioRestController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Examen complementario no encontrado");
         }
 
-        examenComplementarioActual.setTituloExa(examenComplementario.getTituloExa());
-        examenComplementarioActual.setAplicaExa(examenComplementario.getAplicaExa());
+        examenComplementarioActual.setNombre(examenComplementario.getNombre());
+        examenComplementarioActual.setResultado(examenComplementario.getResultado());
+        examenComplementarioActual.setAplica(examenComplementario.isAplica());
+
 
         return examenComplementarioService.save(examenComplementarioActual);
     }
@@ -75,6 +77,8 @@ public class ExamenComplementarioRestController {
     public void uploadPdf(@PathVariable Long id, @RequestParam("file") MultipartFile file) throws IOException {
         examenComplementarioService.savePdf(id, file.getBytes());
     }
+
+
 
     @GetMapping("/examenes_complementarios/{id}/downloadPdf")
     public ResponseEntity<ByteArrayResource> downloadPdf(@PathVariable Long id) {

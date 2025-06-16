@@ -18,8 +18,8 @@ public class Instituto implements Serializable {
     private String rectorIns;
     
     @Lob // Large Object (BLOB) -> Binary Large Object
-    @Column(columnDefinition="BLOB")
-    private byte[] imageInstituto;
+	@Column(name = "image_instituto")
+	private byte[] imageInstituto;
     @OneToMany(mappedBy = "instituto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Titulo> titulos;
     private static final long serialVersionUID = 1L;

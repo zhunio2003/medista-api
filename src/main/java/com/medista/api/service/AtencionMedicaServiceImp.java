@@ -11,7 +11,7 @@ import com.medista.api.service.interfaces.IAtencionMedicaService;
 
 
 @Service
-public class AtencionMedicaServiceImp implements IAtencionMedicaService{
+public  class AtencionMedicaServiceImp implements IAtencionMedicaService{
 	
 	@Autowired
 	private IAtencionMedicaDao atencionMedicaDao;
@@ -32,14 +32,14 @@ public class AtencionMedicaServiceImp implements IAtencionMedicaService{
 
 	@Override
 	@Transactional(readOnly = true)
-	public AtencionMedica findById(Long id) {
+	public AtencionMedica findById(String id) {
 		// TODO Auto-generated method stub
 		return atencionMedicaDao.findById(id).orElse(null);
 	}
 
 	@Override
 	@Transactional
-	public void delete(Long id) {
+	public void delete(String id) {
 		atencionMedicaDao.deleteById(id);
 		
 	}

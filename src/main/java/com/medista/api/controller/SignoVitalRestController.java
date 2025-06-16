@@ -41,20 +41,31 @@ public class SignoVitalRestController {
 	public SignoVital create(@RequestBody SignoVital signoVital) {
 		return signoVitalService.save(signoVital);
 	}
-	
+
 	@PutMapping("/signos_vitales/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public SignoVital update(@RequestBody SignoVital signoVital, @PathVariable Long id) {
 		SignoVital signoVitalActual = signoVitalService.findById(id);
-		
-		
-		signoVitalActual.setUnidadSig(signoVital.getUnidadSig());
-		signoVitalActual.setNombreSig(signoVital.getNombreSig());
+
+		signoVitalActual.setPresionArterial(signoVital.getPresionArterial());
+		signoVitalActual.setPeso(signoVital.getPeso());
+		signoVitalActual.setTalla(signoVital.getTalla());
+		signoVitalActual.setImc(signoVital.getImc());
+		signoVitalActual.setFrecuenciaCardiaca(signoVital.getFrecuenciaCardiaca());
+		signoVitalActual.setFrecuenciaRespiratoria(signoVital.getFrecuenciaRespiratoria());
+		signoVitalActual.setTemperatura(signoVital.getTemperatura());
+		signoVitalActual.setSaturacionOxigeno(signoVital.getSaturacionOxigeno());
+		signoVitalActual.setGlasgowOcular(signoVital.getGlasgowOcular());
+		signoVitalActual.setGlasgowVerbal(signoVital.getGlasgowVerbal());
+		signoVitalActual.setGlasgowMotora(signoVital.getGlasgowMotora());
+		signoVitalActual.setGlasgowTotal(signoVital.getGlasgowTotal());
+		signoVitalActual.setLlenadoCapilar(signoVital.getLlenadoCapilar());
+		signoVitalActual.setReaccionPupilar(signoVital.getReaccionPupilar());
 
 		return signoVitalService.save(signoVitalActual);
-		
 	}
-	
+
+
 	@DeleteMapping("/signos_vitales/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {

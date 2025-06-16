@@ -2,6 +2,8 @@ package com.medista.api.service;
 
 import java.util.List;
 
+import com.medista.api.entity.AtencionMedica;
+import com.medista.api.repository.IAtencionMedicaDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,10 @@ public class FichaMedicaServiceImp implements IFichaMedicaService{
 	
 	@Autowired
 	private IFichaMedicaDao fichaMedicaDao;
+
+	@Autowired
+	private IAtencionMedicaDao atencionMedicaDao;
+
 
 	@Override
 	@Transactional(readOnly = true)
@@ -48,6 +54,15 @@ public class FichaMedicaServiceImp implements IFichaMedicaService{
 	public FichaMedica findByPaciente(Paciente paciente) {
 		return fichaMedicaDao.findByPaciente(paciente);
 	}
-	
+
+	@Override
+	public FichaMedica findByIdWithAtenciones(Long id) {
+		FichaMedica ficha = fichaMedicaDao.findById(id).orElse(null);
+		if (ficha != null) {
+			List<AtencionMedica> atenciones = atencionMedicaDao.findByFichaMedicaId(id);
+			ficha.setAtencionesMedicas(atenciones);
+		}
+		return ficha;
+	}
 
 }
