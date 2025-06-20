@@ -8,16 +8,7 @@ import com.medista.api.service.interfaces.IAtencionMedicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.medista.api.entity.FichaMedica;
 import com.medista.api.entity.Paciente;
@@ -81,6 +72,16 @@ public class FichaMedicaRestController {
 		}
 		return ResponseEntity.ok(ficha);
 	}
+
+	@GetMapping("/fichas_medicas/buscar")
+	public List<FichaMedica> buscarPorFiltros(
+			@RequestParam(required = false) String cedula,
+			@RequestParam(required = false) String apellido,
+			@RequestParam(required = false) String profesion) {
+		return fichaMedicaService.buscarPorFiltros(cedula, apellido, profesion);
+	}
+
+
 
 
 }

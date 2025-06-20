@@ -15,4 +15,6 @@ public interface IFichaMedicaService {
 
 
     FichaMedica findByIdWithAtenciones(Long id);
+
+	List<FichaMedica> buscarPorFiltros(String cedula, String apellido, String profesion);
 }

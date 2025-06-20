@@ -65,4 +65,10 @@ public class FichaMedicaServiceImp implements IFichaMedicaService{
 		return ficha;
 	}
 
+	@Override
+	public List<FichaMedica> buscarPorFiltros(String cedula, String apellido, String profesion) {
+		return fichaMedicaDao.buscarPorFiltros(cedula, apellido, profesion);
+	}
+
+
 }
