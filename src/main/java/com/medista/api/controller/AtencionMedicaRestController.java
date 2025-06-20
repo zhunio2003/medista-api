@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.medista.api.entity.AtencionMedica;
+import com.medista.api.entity.ExamenComplementario;
 import com.medista.api.service.interfaces.IAtencionMedicaService;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -52,6 +53,7 @@ public class AtencionMedicaRestController {
 		atencioMedicaActual.setFichaMedica(atencionMedica.getFichaMedica());
 		atencioMedicaActual.setDoctor(atencionMedica.getDoctor());
 		atencioMedicaActual.setDiagnosticos(atencionMedica.getDiagnosticos());
+		atencioMedicaActual.setExamenesComplementarios(atencionMedica.getExamenesComplementarios());
 
 		return atencionMedicaService.save(atencioMedicaActual);
 	}
@@ -90,41 +92,54 @@ public class AtencionMedicaRestController {
 		return new ResponseEntity<>(atencionesPorAno, HttpStatus.OK);
 	}
 
-	// SUBIR ARCHIVO PDF - MEJORADO
-	@PostMapping("/atenciones_medicas/{id}/examen-pdf")
-	public ResponseEntity<String> subirArchivoPdf(
-			@PathVariable String id,
+	/**
+	 * SUBIR ARCHIVO PDF A UN EXAMEN ESPECÍFICO
+	 */
+	@PostMapping("/atenciones_medicas/{atencionId}/examenes/{examenIndex}/pdf")
+	public ResponseEntity<String> subirPdfExamen(
+			@PathVariable String atencionId,
+			@PathVariable int examenIndex,
 			@RequestParam("archivo") MultipartFile archivo
 	) {
-		System.out.println("=== DEBUG POST PDF ===");
-		System.out.println("ID recibido: " + id);
-		System.out.println("Archivo recibido: " + (archivo != null ? archivo.getOriginalFilename() : "null"));
-		System.out.println("Archivo vacío: " + (archivo != null ? archivo.isEmpty() : "archivo es null"));
+		System.out.println("=== SUBIR PDF EXAMEN ===");
+		System.out.println("Atención ID: " + atencionId);
+		System.out.println("Examen Index: " + examenIndex);
+		System.out.println("Archivo: " + (archivo != null ? archivo.getOriginalFilename() : "null"));
 
 		// Validaciones
 		if (archivo == null || archivo.isEmpty()) {
-			return ResponseEntity.badRequest().body("El archivo está vacío o no se recibió");
+			return ResponseEntity.badRequest().body("El archivo está vacío");
 		}
 
-		AtencionMedica atencion = atencionMedicaService.findById(id);
-		if (atencion == null) {
-			return ResponseEntity.notFound().build();
+		if (!archivo.getContentType().equals("application/pdf")) {
+			return ResponseEntity.badRequest().body("Solo se permiten archivos PDF");
 		}
-
-		System.out.println("Atención encontrada: " + atencion.getId());
-		System.out.println("Exámenes complementarios: " + atencion.getExamenesComplementarios().size());
 
 		try {
-			byte[] pdfBytes = archivo.getBytes();
-			System.out.println("Bytes del archivo: " + pdfBytes.length);
-
-			if (!atencion.getExamenesComplementarios().isEmpty()) {
-				atencion.getExamenesComplementarios().get(0).setArchivoPdf(pdfBytes);
-				atencionMedicaService.save(atencion);
-				return ResponseEntity.ok("Archivo guardado correctamente. Tamaño: " + pdfBytes.length + " bytes");
-			} else {
-				return ResponseEntity.badRequest().body("No hay exámenes complementarios para esta atención médica");
+			AtencionMedica atencion = atencionMedicaService.findById(atencionId);
+			if (atencion == null) {
+				return ResponseEntity.notFound().build();
 			}
+
+			List<ExamenComplementario> examenes = atencion.getExamenesComplementarios();
+			if (examenes == null || examenIndex >= examenes.size() || examenIndex < 0) {
+				return ResponseEntity.badRequest().body("Índice de examen inválido");
+			}
+
+			// Obtener el examen específico
+			ExamenComplementario examen = examenes.get(examenIndex);
+
+			// Guardar el archivo PDF
+			byte[] pdfBytes = archivo.getBytes();
+			examen.setArchivoPdf(pdfBytes);
+			examen.setNombreArchivo(archivo.getOriginalFilename());
+			examen.setTipoContenido(archivo.getContentType());
+			examen.setTamañoArchivo(archivo.getSize());
+
+			// Guardar la atención médica actualizada
+			atencionMedicaService.save(atencion);
+
+			return ResponseEntity.ok("PDF guardado correctamente para el examen: " + examen.getNombre());
 
 		} catch (IOException e) {
 			System.err.println("Error al procesar archivo: " + e.getMessage());
@@ -132,22 +147,78 @@ public class AtencionMedicaRestController {
 		}
 	}
 
-	// DESCARGAR ARCHIVO PDF
-	@GetMapping("/atenciones_medicas/{id}/examen-pdf")
-	public ResponseEntity<byte[]> obtenerArchivoPdf(@PathVariable String id) {
-		AtencionMedica atencion = atencionMedicaService.findById(id);
-		if (atencion == null || atencion.getExamenesComplementarios().isEmpty()) {
-			return ResponseEntity.notFound().build();
-		}
+	/**
+	 * DESCARGAR ARCHIVO PDF DE UN EXAMEN ESPECÍFICO
+	 */
+	@GetMapping("/atenciones_medicas/{atencionId}/examenes/{examenIndex}/pdf")
+	public ResponseEntity<byte[]> descargarPdfExamen(
+			@PathVariable String atencionId,
+			@PathVariable int examenIndex
+	) {
+		try {
+			AtencionMedica atencion = atencionMedicaService.findById(atencionId);
+			if (atencion == null) {
+				return ResponseEntity.notFound().build();
+			}
 
-		byte[] archivo = atencion.getExamenesComplementarios().get(0).getArchivoPdf();
-		if (archivo == null) {
-			return ResponseEntity.noContent().build();
-		}
+			List<ExamenComplementario> examenes = atencion.getExamenesComplementarios();
+			if (examenes == null || examenIndex >= examenes.size() || examenIndex < 0) {
+				return ResponseEntity.badRequest().build();
+			}
 
-		return ResponseEntity.ok()
-				.header("Content-Disposition", "attachment; filename=\"examen.pdf\"")
-				.contentType(MediaType.APPLICATION_PDF)
-				.body(archivo);
+			ExamenComplementario examen = examenes.get(examenIndex);
+			byte[] archivo = examen.getArchivoPdf();
+
+			if (archivo == null) {
+				return ResponseEntity.noContent().build();
+			}
+
+			String nombreArchivo = examen.getNombreArchivo() != null
+					? examen.getNombreArchivo()
+					: "examen_" + examen.getNombre() + ".pdf";
+
+			return ResponseEntity.ok()
+					.header("Content-Disposition", "attachment; filename=\"" + nombreArchivo + "\"")
+					.contentType(MediaType.APPLICATION_PDF)
+					.body(archivo);
+
+		} catch (Exception e) {
+			System.err.println("Error al descargar PDF: " + e.getMessage());
+			return ResponseEntity.status(500).build();
+		}
+	}
+
+	/**
+	 * ELIMINAR PDF DE UN EXAMEN ESPECÍFICO
+	 */
+	@DeleteMapping("/atenciones_medicas/{atencionId}/examenes/{examenIndex}/pdf")
+	public ResponseEntity<String> eliminarPdfExamen(
+			@PathVariable String atencionId,
+			@PathVariable int examenIndex
+	) {
+		try {
+			AtencionMedica atencion = atencionMedicaService.findById(atencionId);
+			if (atencion == null) {
+				return ResponseEntity.notFound().build();
+			}
+
+			List<ExamenComplementario> examenes = atencion.getExamenesComplementarios();
+			if (examenes == null || examenIndex >= examenes.size() || examenIndex < 0) {
+				return ResponseEntity.badRequest().body("Índice de examen inválido");
+			}
+
+			ExamenComplementario examen = examenes.get(examenIndex);
+			examen.setArchivoPdf(null);
+			examen.setNombreArchivo(null);
+			examen.setTipoContenido(null);
+			examen.setTamañoArchivo(null);
+
+			atencionMedicaService.save(atencion);
+
+			return ResponseEntity.ok("PDF eliminado correctamente");
+
+		} catch (Exception e) {
+			return ResponseEntity.status(500).body("Error al eliminar PDF: " + e.getMessage());
+		}
 	}
 }
