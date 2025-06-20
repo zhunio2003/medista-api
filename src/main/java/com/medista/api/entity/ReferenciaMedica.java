@@ -1,31 +1,27 @@
 package com.medista.api.entity;
 
-import java.io.Serializable;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.sql.Date;
 import java.util.List;
 
-import jakarta.persistence.*;
-import lombok.Data;
-
-@Entity
-@Table(name = "referencia_medica")
 @Data
-public class ReferenciaMedica implements Serializable {
+@Document(collection = "referencias_medicas")
+public class ReferenciaMedica {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private String id;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "fk_doctor")
-	private Doctor doctor;
+	// Datos de doctor (referencia embebida)
+	private DoctorRef doctor;
+
+	// Datos de ficha médica (referencia embebida)
+	private FichaMedicaRef fichaMedica;
 
 	private String servicio;
-
-	// Institución que emite
 	private String institucion;
-
-	// Derivación
 	private String entidadSistema;
 	private String establecimiento;
 	private String servicioDerivado;
@@ -41,14 +37,20 @@ public class ReferenciaMedica implements Serializable {
 	private String resumen;
 	private String hallazgos;
 
-	// Relación con ficha médica
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "fk_ficha_medica")
-	private FichaMedica fichaMedica;
-
 	// Diagnósticos relacionados
-	@Transient
 	private List<Diagnostico> diagnosticos;
 
-	private static final long serialVersionUID = 1L;
+	@Data
+	public static class DoctorRef {
+		private Long id;
+		private String nombre;
+		private String cedula;
+	}
+
+	@Data
+	public static class FichaMedicaRef {
+		private Long id;
+		private String paciente;
+		private String cedula;
+	}
 }

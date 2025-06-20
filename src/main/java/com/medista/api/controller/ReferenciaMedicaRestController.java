@@ -45,24 +45,6 @@ public class ReferenciaMedicaRestController {
 	@PostMapping("/referencias_medicas")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ReferenciaMedica create(@RequestBody ReferenciaMedica referencia) {
-		// Validación de Ficha
-		if (referencia.getFichaMedica() == null || referencia.getFichaMedica().getId() == null) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID de ficha médica requerido");
-		}
-
-		// Validación de Doctor
-		if (referencia.getDoctor() == null || referencia.getDoctor().getId() == null) {
-			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID de doctor requerido");
-		}
-
-		FichaMedica ficha = fichaService.findById(referencia.getFichaMedica().getId());
-		Doctor doctor = doctorService.findById(referencia.getDoctor().getId());
-
-		if (ficha == null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Ficha médica no encontrada");
-		if (doctor == null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Doctor no encontrado");
-
-		referencia.setFichaMedica(ficha);
-		referencia.setDoctor(doctor);
 
 		return referenciaService.save(referencia);
 	}
