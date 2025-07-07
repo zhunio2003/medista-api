@@ -4,12 +4,14 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
 @Table(name = "ficha_medica")
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class FichaMedica implements Serializable {
 
     @Id
