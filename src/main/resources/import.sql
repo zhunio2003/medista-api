@@ -1,104 +1,26 @@
 INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, FALSE, TRUE, FALSE, TRUE, FALSE);
 INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, TRUE, FALSE, TRUE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, TRUE, FALSE, FALSE, TRUE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, FALSE, TRUE, TRUE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, FALSE, TRUE, TRUE, FALSE, FALSE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, TRUE, FALSE, TRUE, TRUE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, TRUE, TRUE, FALSE, TRUE, FALSE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, FALSE, TRUE, FALSE, TRUE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, TRUE, FALSE, TRUE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, TRUE, TRUE, FALSE, TRUE, FALSE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, FALSE, FALSE, TRUE, TRUE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, TRUE, TRUE, TRUE, FALSE, FALSE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, TRUE, TRUE, TRUE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, FALSE, FALSE, TRUE, TRUE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, TRUE, FALSE, FALSE, TRUE, FALSE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, TRUE, TRUE, FALSE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, FALSE, TRUE, TRUE, TRUE, FALSE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, FALSE, TRUE, TRUE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (TRUE, TRUE, TRUE, FALSE, FALSE, TRUE);
-INSERT INTO antecedente_familiar (alergia_ant, clinico_ant, ginecologo_ant, traumatologico_ant, quirurgico_ant, farmacologico_ant) VALUES (FALSE, TRUE, FALSE, TRUE, TRUE, FALSE);
 
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030405', 'Miguel', 'Zhunio', '0999999999', 'Av. Siempre Viva', 'Medicina General', 'MSP001', 'Masculino', '1234');
+INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030405', 'Maria Jose', 'Crespo', '0999999999', 'Av. Siempre Viva', 'Medicina General', 'MSP001', 'Femenino', 'Doc1234');
 INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030406', 'Andrea', 'Pérez', '0981111111', 'Calle 1', 'Pediatría', 'MSP002', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030407', 'Carlos', 'Gómez', '0982222222', 'Calle 2', 'Dermatología', 'MSP003', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030408', 'Lucía', 'Mendoza', '0983333333', 'Calle 3', 'Ginecología', 'MSP004', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030409', 'David', 'Reyes', '0984444444', 'Calle 4', 'Traumatología', 'MSP005', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030410', 'Ana', 'Cedeño', '0985555555', 'Calle 5', 'Neurología', 'MSP006', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030411', 'Javier', 'Salazar', '0986666666', 'Calle 6', 'Oftalmología', 'MSP007', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030412', 'Camila', 'Quispe', '0987777777', 'Calle 7', 'Cardiología', 'MSP008', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030413', 'Fernando', 'Yánez', '0988888888', 'Calle 8', 'Psicología', 'MSP009', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030414', 'Isabel', 'Romero', '0989999999', 'Calle 9', 'Gastroenterología', 'MSP010', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030415', 'Raúl', 'Mora', '0970000000', 'Calle 10', 'Otorrinolaringología', 'MSP011', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030416', 'Paola', 'Martínez', '0971111111', 'Calle 11', 'Oncología', 'MSP012', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030417', 'Santiago', 'Bravo', '0972222222', 'Calle 12', 'Urología', 'MSP013', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030418', 'Valeria', 'Navarrete', '0973333333', 'Calle 13', 'Endocrinología', 'MSP014', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030419', 'Diego', 'Estrella', '0974444444', 'Calle 14', 'Neumología', 'MSP015', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030420', 'Daniela', 'Cárdenas', '0975555555', 'Calle 15', 'Reumatología', 'MSP016', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030421', 'Marco', 'Castillo', '0976666666', 'Calle 16', 'Medicina Interna', 'MSP017', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030422', 'Gabriela', 'Palacios', '0977777777', 'Calle 17', 'Hematología', 'MSP018', 'Femenino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030423', 'Tomás', 'Vera', '0978888888', 'Calle 18', 'Geriatría', 'MSP019', 'Masculino', '1234');
-INSERT INTO doctor (cedula, nombre, apellido, telefono, direccion, especialidad, codigo_msp, genero, password) VALUES ('0102030424', 'Karina', 'Delgado', '0979999999', 'Calle 19', 'Nefrología', 'MSP020', 'Femenino', '1234');
 
 --- PACIENTES
 INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345001', '2001-01-01', 'Miguel', 'Zhunio', 'Cuenca', 'Ecuador', 'Av. Siempre Viva', 'San Sebastián', 'Yanuncay', 'Cuenca', 'Azuay', '0999990001', 'Estudiante', 'O+', 'Masculino', 'Soltero', 'Desarrollo de Software', '6');
 INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345002', '2002-02-02', 'Andrea', 'Pérez', 'Loja', 'Ecuador', 'Calle Bolívar', 'La Argelia', 'San Sebastián', 'Loja', 'Loja', '0999990002', 'Estudiante', 'A+', 'Femenino', 'Soltera', 'Enfermería', '4');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345003', '2003-03-03', 'Carlos', 'Gómez', 'Quito', 'Ecuador', 'Av. Amazonas', 'La Floresta', 'El Batán', 'Quito', 'Pichincha', '0999990003', 'Estudiante', 'B+', 'Masculino', 'Casado', 'Diseño Gráfico', '3');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345004', '2000-12-12', 'Lucía', 'Mendoza', 'Riobamba', 'Ecuador', 'Calle 10 de Agosto', 'San Alfonso', 'Lizarzaburu', 'Riobamba', 'Chimborazo', '0999990004', 'Estudiante', 'AB', 'Femenino', 'Soltera', 'Ingeniería Civil', '5');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345005', '1999-05-10', 'David', 'Reyes', 'Guayaquil', 'Ecuador', 'Av. del Bombero', 'Urdesa', 'Tarqui', 'Guayaquil', 'Guayas', '0999990005', 'Profesor', 'O-', 'Masculino', 'Casado', 'Contabilidad', '7');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345006', '1998-07-07', 'Ana', 'Cedeño', 'Machala', 'Ecuador', 'Calle Rocafuerte', 'El Cambio', 'Puerto Bolívar', 'Machala', 'El Oro', '0999990006', 'Profesor', 'A-', 'Femenino', 'Casada', 'Derecho', '8');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345007', '2004-04-14', 'Javier', 'Salazar', 'Ibarra', 'Ecuador', 'Av. Teodoro Gómez', 'La Victoria', 'Caranqui', 'Ibarra', 'Imbabura', '0999990007', 'Estudiante', 'B-', 'Masculino', 'Soltero', 'Medicina', '2');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345008', '2003-06-16', 'Camila', 'Quispe', 'Ambato', 'Ecuador', 'Calle Montalvo', 'Huachi Chico', 'Ficoa', 'Ambato', 'Tungurahua', '0999990008', 'Estudiante', 'O+', 'Femenino', 'Soltera', 'Educación', '1');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345009', '1997-11-11', 'Fernando', 'Yánez', 'Latacunga', 'Ecuador', 'Calle Bolívar', 'Centro', 'La Matriz', 'Latacunga', 'Cotopaxi', '0999990009', 'Profesor', 'AB-', 'Masculino', 'Divorciado', 'Ciencias Sociales', '9');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345010', '2005-10-20', 'Isabel', 'Romero', 'Cuenca', 'Ecuador', 'Calle Sucre', 'Totoracocha', 'El Vecino', 'Cuenca', 'Azuay', '0999990010', 'Estudiante', 'A+', 'Femenino', 'Soltera', 'Arquitectura', '6');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345011', '2001-01-22', 'Raúl', 'Mora', 'Loja', 'Ecuador', 'Av. Catamayo', 'Zamora Huayco', 'Sucre', 'Loja', 'Loja', '0999990011', 'Estudiante', 'B+', 'Masculino', 'Soltero', 'Electrónica', '4');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345012', '2002-02-12', 'Paola', 'Martínez', 'Milagro', 'Ecuador', 'Calle 5 de Junio', 'Los Álamos', 'Milagro Centro', 'Milagro', 'Guayas', '0999990012', 'Estudiante', 'O+', 'Femenino', 'Casada', 'Finanzas', '5');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345013', '1996-09-09', 'Santiago', 'Bravo', 'Portoviejo', 'Ecuador', 'Av. Reales Tamarindos', 'Centro', 'Colón', 'Portoviejo', 'Manabí', '0999990013', 'Profesor', 'AB+', 'Masculino', 'Casado', 'Psicología', '7');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345014', '2000-03-03', 'Valeria', 'Navarrete', 'Manta', 'Ecuador', 'Calle Malecon', 'Tarqui', 'Manta Centro', 'Manta', 'Manabí', '0999990014', 'Estudiante', 'B-', 'Femenino', 'Soltera', 'Turismo', '2');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345015', '1995-08-08', 'Diego', 'Estrella', 'Tena', 'Ecuador', 'Calle Amazonas', 'El Dorado', 'Central', 'Tena', 'Napo', '0999990015', 'Profesor', 'A-', 'Masculino', 'Casado', 'Agronomía', '8');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345016', '2004-12-24', 'Daniela', 'Cárdenas', 'Macas', 'Ecuador', 'Calle Olmedo', 'La Loma', 'Macas Centro', 'Macas', 'Morona Santiago', '0999990016', 'Estudiante', 'AB', 'Femenino', 'Soltera', 'Biotecnología', '1');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345017', '1998-01-15', 'Marco', 'Castillo', 'Esmeraldas', 'Ecuador', 'Av. Del Pacífico', 'Centro Sur', 'La Concordia', 'Esmeraldas', 'Esmeraldas', '0999990017', 'Profesor', 'O-', 'Masculino', 'Viudo', 'Educación Física', '3');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345018', '2000-06-06', 'Gabriela', 'Palacios', 'Zamora', 'Ecuador', 'Calle Bolívar', 'Centro', 'Zamora Centro', 'Zamora', 'Zamora Chinchipe', '0999990018', 'Profesor', 'B+', 'Femenino', 'Casada', 'Medio Ambiente', '4');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345019', '1999-09-09', 'Tomás', 'Vera', 'Puyo', 'Ecuador', 'Av. 20 de Julio', 'Centro', 'Puyo Norte', 'Puyo', 'Pastaza', '0999990019', 'Profesor', 'A+', 'Masculino', 'Casado', 'Forestal', '6');
-INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345020', '2003-03-23', 'Karina', 'Delgado', 'Tulag', 'Ecuador', 'Calle Principal', 'Centro', 'Tulcán Norte', 'Tulcán', 'Carchi', '0999990020', 'Estudiante', 'O+', 'Femenino', 'Soltera', 'Veterinaria', '3');
 
 INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (12, '28/4', 28, 16, 2, 1, 0, 1, 0, true, false, '2024-01-10');
-
 INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (13, '30/5', 30, 18, 1, 0, 0, 0, 0, false, true, '2024-01-11');
 INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (11, '26/3', 26, 17, 3, 2, 1, 1, 0, true, true, '2024-01-12');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (14, '32/6', 32, 19, 1, 1, 0, 0, 1, false, false, '2024-01-13');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (12, '28/4', 28, 20, 2, 3, 0, 2, 1, true, false, '2024-01-14');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (13, '29/5', 29, 16, 1, 0, 0, 0, 0, false, true, '2024-01-15');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (11, '27/4', 27, 18, 4, 2, 1, 1, 0, true, true, '2024-01-16');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (15, '35/7', 35, 21, 1, 1, 0, 1, 0, false, false, '2024-01-17');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (12, '28/3', 28, 17, 2, 2, 0, 0, 2, true, false, '2024-01-18');
-INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (14, '30/5', 30, 19, 3, 1, 1, 0, 0, false, true, '2024-01-19');
 
 
 ---- FICHA MEDICA
 -- Pacientes HOMBRES (sin historial ginecológico - fk_id_his = NULL)
 INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (1, NULL, 1, '2024-01-10', NULL);
 INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (3, NULL, 3, '2024-01-12', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (5, NULL, 5, '2024-01-14', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (7, NULL, 7, '2024-01-16', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (9, NULL, 9, '2024-01-18', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (11, NULL, 11, '2024-01-20', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (13, NULL, 13, '2024-01-22', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (15, NULL, 15, '2024-01-24', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (17, NULL, 17, '2024-01-26', NULL);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (19, NULL, 19, '2024-01-28', NULL);
 
 -- Pacientes MUJERES (con historial ginecológico - fk_id_his vinculado)
 INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (2, NULL, 2, '2024-01-11', 1);
 INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (4, NULL, 4, '2024-01-13', 2);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (6, NULL, 6, '2024-01-15', 3);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (8, NULL, 8, '2024-01-17', 4);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (10, NULL, 10, '2024-01-19', 5);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (12, NULL, 12, '2024-01-21', 6);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (14, NULL, 14, '2024-01-23', 7);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (16, NULL, 16, '2024-01-25', 8);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (18, NULL, 18, '2024-01-27', 9);
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (20, NULL, 20, '2024-01-29', 10);
 
 
 INSERT INTO enfermedad (codigo_enf, nombre_enf, tipo_enf, descripcion_enf, sintomas_enf) VALUES ('K29.0', 'Gastritis aguda', 'Digestiva', 'Inflamación aguda del revestimiento del estómago', 'Dolor abdominal, náuseas, vómito');
@@ -125,25 +47,4 @@ INSERT INTO enfermedad (codigo_enf, nombre_enf, tipo_enf, descripcion_enf, sinto
 
 INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 45.0, 'Auditiva', true, 100001);
 INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (false, 0.0, NULL, false, 0);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 60.5, 'Visual', true, 100002);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 75.3, 'Intelectual', false, 100003);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 30.0, 'Motora', true, 100004);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (false, 0.0, NULL, false, 0);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 50.0, 'Psicosocial', true, 100005);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 42.5, 'Múltiple', false, 100006);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 85.0, 'Intelectual', true, 100007);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 20.0, 'Motora', false, 100008);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 95.0, 'Visual', true, 100009);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (false, 0.0, NULL, false, 0);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 35.0, 'Auditiva', true, 100010);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 40.0, 'Psicosocial', true, 100011);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 65.2, 'Visual', false, 100012);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 72.1, 'Múltiple', true, 100013);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (false, 0.0, NULL, false, 0);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 80.0, 'Intelectual', true, 100014);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 55.0, 'Auditiva', true, 100015);
-INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 90.0, 'Motora', true, 100016);
-
-
-
 
