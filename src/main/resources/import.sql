@@ -62,27 +62,43 @@ INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, d
 INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345019', '1999-09-09', 'Tomás', 'Vera', 'Puyo', 'Ecuador', 'Av. 20 de Julio', 'Centro', 'Puyo Norte', 'Puyo', 'Pastaza', '0999990019', 'Profesor', 'A+', 'Masculino', 'Casado', 'Forestal', '6');
 INSERT INTO paciente (cedula, fecha_nacimiento, nombre, apellido, lugar, pais, direccion, barrio, parroquia, canton, provincia, telefono, profesion, tipo_sangre, genero, estado_civil, carrera, ciclo) VALUES ('0912345020', '2003-03-23', 'Karina', 'Delgado', 'Tulag', 'Ecuador', 'Calle Principal', 'Centro', 'Tulcán Norte', 'Tulcán', 'Carchi', '0999990020', 'Estudiante', 'O+', 'Femenino', 'Soltera', 'Veterinaria', '3');
 
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (12, '28/4', 28, 16, 2, 1, 0, 1, 0, true, false, '2024-01-10');
+
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (13, '30/5', 30, 18, 1, 0, 0, 0, 0, false, true, '2024-01-11');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (11, '26/3', 26, 17, 3, 2, 1, 1, 0, true, true, '2024-01-12');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (14, '32/6', 32, 19, 1, 1, 0, 0, 1, false, false, '2024-01-13');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (12, '28/4', 28, 20, 2, 3, 0, 2, 1, true, false, '2024-01-14');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (13, '29/5', 29, 16, 1, 0, 0, 0, 0, false, true, '2024-01-15');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (11, '27/4', 27, 18, 4, 2, 1, 1, 0, true, true, '2024-01-16');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (15, '35/7', 35, 21, 1, 1, 0, 1, 0, false, false, '2024-01-17');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (12, '28/3', 28, 17, 2, 2, 0, 0, 2, true, false, '2024-01-18');
+INSERT INTO historial_ginecologico (menarca, ritmo_menstrual, ciclos, ivsa, numero_parejas_sexuales, gestas, abortos, partos, cesareas, dismenorrea, mastodinia, fecha_actualizacion) VALUES (14, '30/5', 30, 19, 3, 1, 1, 0, 0, false, true, '2024-01-19');
+
+
 ---- FICHA MEDICA
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (1, NULL, 1, '2024-01-10');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (2, NULL, 2, '2024-01-11');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (3, NULL, 3, '2024-01-12');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (4, NULL, 4, '2024-01-13');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (5, NULL, 5, '2024-01-14');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (6, NULL, 6, '2024-01-15');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (7, NULL, 7, '2024-01-16');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (8, NULL, 8, '2024-01-17');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (9, NULL, 9, '2024-01-18');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (10, NULL, 10, '2024-01-19');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (11, NULL, 11, '2024-01-20');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (12, NULL, 12, '2024-01-21');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (13, NULL, 13, '2024-01-22');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (14, NULL, 14, '2024-01-23');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (15, NULL, 15, '2024-01-24');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (16, NULL, 16, '2024-01-25');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (17, NULL, 17, '2024-01-26');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (18, NULL, 18, '2024-01-27');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (19, NULL, 19, '2024-01-28');
-INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion) VALUES (20, NULL, 20, '2024-01-29');
+-- Pacientes HOMBRES (sin historial ginecológico - fk_id_his = NULL)
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (1, NULL, 1, '2024-01-10', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (3, NULL, 3, '2024-01-12', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (5, NULL, 5, '2024-01-14', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (7, NULL, 7, '2024-01-16', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (9, NULL, 9, '2024-01-18', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (11, NULL, 11, '2024-01-20', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (13, NULL, 13, '2024-01-22', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (15, NULL, 15, '2024-01-24', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (17, NULL, 17, '2024-01-26', NULL);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (19, NULL, 19, '2024-01-28', NULL);
+
+-- Pacientes MUJERES (con historial ginecológico - fk_id_his vinculado)
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (2, NULL, 2, '2024-01-11', 1);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (4, NULL, 4, '2024-01-13', 2);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (6, NULL, 6, '2024-01-15', 3);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (8, NULL, 8, '2024-01-17', 4);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (10, NULL, 10, '2024-01-19', 5);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (12, NULL, 12, '2024-01-21', 6);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (14, NULL, 14, '2024-01-23', 7);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (16, NULL, 16, '2024-01-25', 8);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (18, NULL, 18, '2024-01-27', 9);
+INSERT INTO ficha_medica (fk_id_pac, fk_id_dis, fk_id_ant, fecha_elaboracion, fk_id_his) VALUES (20, NULL, 20, '2024-01-29', 10);
 
 
 INSERT INTO enfermedad (codigo_enf, nombre_enf, tipo_enf, descripcion_enf, sintomas_enf) VALUES ('K29.0', 'Gastritis aguda', 'Digestiva', 'Inflamación aguda del revestimiento del estómago', 'Dolor abdominal, náuseas, vómito');
@@ -127,5 +143,7 @@ INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_co
 INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 80.0, 'Intelectual', true, 100014);
 INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 55.0, 'Auditiva', true, 100015);
 INSERT INTO discapacidad (discapacidad_g, porcentaje_dis, subtipo_dis, carnet_con, numero_conadis) VALUES (true, 90.0, 'Motora', true, 100016);
+
+
 
 

@@ -28,26 +28,25 @@ public class AtencionMedica {
 	@Field("fecha_atencion_ate")
 	private Date fechaAtencionAte;
 
-	private boolean embarazada;
-
+	// ✅ EMBEBIDO: EmbarazoActual (como SignoVital)
 	@Field("embarazo_actual")
-	private EmbarazoActual embarazoActual;
+	private EmbarazoActual embarazoActual = new EmbarazoActual();
 
 	@Field("signos_vitales")
-	private SignoVital signosVitales;
+	private SignoVital signosVitales = new SignoVital();
 
 	@Field("examen_fisico")
-	private ExamenFisico examenFisico;
+	private ExamenFisico examenFisico = new ExamenFisico();
 
 	@Field("examenes_complementarios")
 	private List<ExamenComplementario> examenesComplementarios;
 
 	private List<Diagnostico> diagnosticos;
 
-	private DoctorRef doctor;
+	private DoctorRef doctor = new DoctorRef();
 
 	@Field("ficha_medica")
-	private FichaMedicaRef fichaMedica;
+	private FichaMedicaRef fichaMedica = new FichaMedicaRef();
 
 	@Data
 	public static class DoctorRef {
@@ -61,23 +60,5 @@ public class AtencionMedica {
 		private Long id;
 		private String paciente;
 		private String cedula;
-	}
-
-	@Data
-	public static class EmbarazoActual {
-		private Date fum;
-		private Fpp fpp;
-		private String controles;
-		private String inmunizaciones;
-		private String observaciones;
-
-		@Data
-		public static class Fpp {
-			private String fecha; // yyyy-MM-dd
-			private int dia;
-			private int mes;
-			private int anio;
-			private int sg;
-		}
 	}
 }

@@ -34,6 +34,11 @@ public class FichaMedica implements Serializable {
     @Transient // No es un campo persistido en la base de datos
 	private List<AtencionMedica> atencionesMedicas;
 
+    @OneToOne()
+    @JoinColumn(name = "fk_id_his")
+    private HistorialGinecologico historialGinecologico;
+
+
     private static final long serialVersionUID = 1L;
 
 
